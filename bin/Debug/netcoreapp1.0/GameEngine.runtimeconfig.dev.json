@@ -1,0 +1,7 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/seppy/.nuget/packages"
+    ]
+  }
+}
