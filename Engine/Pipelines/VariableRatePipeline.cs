@@ -1,10 +1,11 @@
 namespace Engine.Pipelines
 {
-    public class VariableRatePipeline : IPipeline
+    public class VariableRatePipeline : PipelineBase
     {
-        public void RunFrame(FrameInfo frame) {
-            DoFrame(frame);
+        public override bool ProcessFrame(FrameInfo frame) {
+            action();
+            LastProcessedFrame = frame;
+            return false;
         }
-        public void DoFrame(FrameInfo frame) {}
     }
 }

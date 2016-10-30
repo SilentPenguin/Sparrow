@@ -2,7 +2,7 @@ using System;
 
 namespace Engine.Pipelines
 {
-    public class FixedRatePipeline : IPipeline
+    public class FixedRatePipeline : PipelineBase
     {
         public FixedRatePipeline(int framerate)
         {
@@ -10,17 +10,15 @@ namespace Engine.Pipelines
         }
 
         private TimeSpan frameDuration;
-        public FrameInfo physicsFrame { get; private set; }
+        public FrameInfo nextFixedFrame { get; private set; }
 
-        public void RunFrame(FrameInfo frame)
+        public override bool ProcessFrame(FrameInfo frame)
         {
-            while (physicsFrame.Time < frame.Time)
-            {
-                DoFrame(physicsFrame);
-                physicsFrame = new FrameInfo { Time = physicsFrame.Time + frameDuration, TimeSinceLastFrame = frameDuration };
-            }
+            if (nextFixedFrame.Time > frame.Time) return false;
+            action();
+            LastProcessedFrame = nextFixedFrame;
+            nextFixedFrame = new FrameInfo { Time = nextFixedFrame.Time + frameDuration, TimeSinceLastFrame = frameDuration };
+            return true;
         }
-        
-        public void DoFrame(FrameInfo frame) {}
     }
 }
