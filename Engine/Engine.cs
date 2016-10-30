@@ -4,20 +4,20 @@ namespace Engine
 {
     public class Engine
     {
-        public Engine(params IPipeline[] pipelines)
+        public Engine(params PipelineBase[] pipelines)
         {
             this.frameGenerator = new FrameGenerator();
             this.pipelines = pipelines;
         }
 
         private FrameGenerator frameGenerator;
-        private IPipeline[] pipelines;
+        private PipelineBase[] pipelines;
 
         public void Loop()
         {
             foreach (var frame in frameGenerator)
                 foreach (var pipeline in pipelines)
-                    pipeline.RunFrame(frame);
+                    if (pipeline.ProcessFrame(frame)) continue;
         }
     }
 }
