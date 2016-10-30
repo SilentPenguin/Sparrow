@@ -17,7 +17,7 @@ namespace Engine
         {
             foreach (var frame in frameGenerator)
                 foreach (var pipeline in pipelines)
-                    if (pipeline.ProcessFrame(frame)) continue;
+                    if (pipeline.ProcessFrame(frame)) break;
         }
     }
 }
