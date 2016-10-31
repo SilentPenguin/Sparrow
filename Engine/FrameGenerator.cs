@@ -10,7 +10,7 @@ namespace Engine
 
         public IEnumerator<FrameInfo> GetEnumerator()
         {
-            frame = new FrameInfo { Time = DateTime.Now };
+            frame = new FrameInfo { Time = DateTime.UtcNow };
 
             while(true)
             {

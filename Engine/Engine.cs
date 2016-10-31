@@ -1,23 +1,16 @@
-using Engine.Pipelines;
+using System;
 
 namespace Engine
 {
     public class Engine
     {
-        public Engine(params PipelineBase[] pipelines)
-        {
-            this.frameGenerator = new FrameGenerator();
-            this.pipelines = pipelines;
-        }
-
-        private FrameGenerator frameGenerator;
-        private PipelineBase[] pipelines;
+        public Func<FrameInfo, bool> action;
+        private FrameGenerator frameGenerator = new FrameGenerator();
 
         public void Loop()
         {
             foreach (var frame in frameGenerator)
-                foreach (var pipeline in pipelines)
-                    if (pipeline.ProcessFrame(frame)) break;
+                action(frame);
         }
     }
 }
