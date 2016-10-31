@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 namespace Engine
 {
@@ -10,7 +11,10 @@ namespace Engine
         public void Loop()
         {
             foreach (var frame in frameGenerator)
+            {
                 action(frame);
+                Thread.Sleep(0);
+            }
         }
     }
 }
