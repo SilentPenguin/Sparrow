@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 namespace Engine.Numerics
 {
@@ -75,6 +76,23 @@ namespace Engine.Numerics
             for (int i = result.Length; i-- != 0;)
                 result[i] = Vector.Dot(m.Row(i), v);
             return new Vector(result);
+        }
+        
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("Matrix(");
+            for(int i = 0; i < this.Width; i++)
+            {
+                for (int j = 0; j < this.Height; j++)
+                {
+                    if (j != 0) sb.Append(", ");
+                    sb.Append(items[i, j]);
+                }
+                sb.Append("; ");
+            }
+            sb.Append(")");
+            return sb.ToString();
         }
     }
 }

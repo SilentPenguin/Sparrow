@@ -5,14 +5,14 @@ namespace Engine
 {
     public class Engine
     {
-        public Func<FrameInfo, bool> action;
+        public Action<FrameState> action;
         private FrameGenerator frameGenerator = new FrameGenerator();
 
         public void Loop()
         {
             foreach (var frame in frameGenerator)
             {
-                action(frame);
+                action(new FrameState(frame));
                 Thread.Sleep(0);
             }
         }
