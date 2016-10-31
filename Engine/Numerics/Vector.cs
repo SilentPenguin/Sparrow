@@ -97,11 +97,16 @@ namespace Engine.Numerics
             return v;
         }
 
-        public string ToString()
+        public override string ToString()
         {
             var sb = new StringBuilder();
-            foreach(var i in this)
-                sb.Append(i + ",");
+            sb.Append("Vector(");
+            for(var i = 0; i < items.Length; i++)
+            {
+                if (i != 0) sb.Append(", ");
+                sb.Append(i);
+            }
+            sb.Append(")");
             return sb.ToString();
         }
     }

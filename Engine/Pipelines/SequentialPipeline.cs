@@ -4,18 +4,20 @@ namespace Engine.Pipelines
 {
     public class SequentialPipeline : PipelineBase
     {
-        public SequentialPipeline(Func<FrameInfo, bool>[] actions)
+        public SequentialPipeline(Action<FrameState>[] actions)
         {
             this.actions = actions;    
         }
 
-        private Func<FrameInfo, bool>[] actions;
+        private Action<FrameState>[] actions;
 
-        public override bool ProcessFrame(FrameInfo frame)
+        public override void ProcessFrame(FrameState frame)
         {
-            foreach (var pipeline in actions)
-                if (pipeline(frame)) return true;
-            return false;
+            foreach (var action in actions)
+            {
+                if (frame.HaltFrame) break;
+                action(frame);
+            }
         }
     }
 }
