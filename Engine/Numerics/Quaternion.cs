@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace Engine.Numerics
 {
     public struct Quaternion
@@ -11,6 +13,19 @@ namespace Engine.Numerics
         public double y { get { return items[1]; } }
         public double z { get { return items[2]; } }
         public double w { get { return items[3]; } }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.Append("Quaternion(");
+            for(var i = 0; i < items.Length; i++)
+            {
+                if (i != 0) sb.Append(", ");
+                sb.Append(i);
+            }
+            sb.Append(")");
+            return sb.ToString();
+        }
 
     }
 }

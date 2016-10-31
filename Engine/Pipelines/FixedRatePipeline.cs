@@ -9,17 +9,18 @@ namespace Engine.Pipelines
             frameDuration = TimeSpan.FromTicks(1 / framerate * TimeSpan.TicksPerMillisecond);
         }
 
-        public Func<FrameInfo, bool> action;
-        private FrameInfo nextFixedFrame;
+        public Action<FrameState> action;
+        private FrameState nextFixedFrame;
         private TimeSpan frameDuration;
 
-        public override bool ProcessFrame(FrameInfo frame)
+        public override void ProcessFrame(FrameState frame)
         {
-            if (nextFixedFrame.Time > frame.Time) return false;
+            if (nextFixedFrame.FrameInfo.Time > frame.FrameInfo.Time) return;
             action(nextFixedFrame);
-            LastProcessedFrame = nextFixedFrame;
-            nextFixedFrame = new FrameInfo { Time = nextFixedFrame.Time + frameDuration, TimeSinceLastFrame = frameDuration };
-            return true;
+            frame.HaltFrame = nextFixedFrame.HaltFrame;
+            LastProcessedFrame = nextFixedFrame.FrameInfo;
+            var nextFrameInfo = new FrameInfo { Time = nextFixedFrame.FrameInfo.Time + frameDuration, TimeSinceLastFrame = frameDuration };
+            nextFixedFrame = new FrameState(nextFrameInfo);
         }
     }
 }

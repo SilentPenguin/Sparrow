@@ -4,12 +4,11 @@ namespace Engine.Pipelines
 {
     public class VariableRatePipeline : PipelineBase
     {
-        public Func<FrameInfo, bool> action;
+        public Action<FrameState> action;
 
-        public override bool ProcessFrame(FrameInfo frame) {
+        public override void ProcessFrame(FrameState frame) {
             action(frame);
-            LastProcessedFrame = frame;
-            return false;
+            LastProcessedFrame = frame.FrameInfo;
         }
     }
 }
