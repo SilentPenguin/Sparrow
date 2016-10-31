@@ -1,5 +1,3 @@
-using System;
-
 namespace Engine.Pipelines
 {
     public abstract class PipelineBase
