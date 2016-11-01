@@ -1,6 +1,6 @@
 using System;
 
-namespace Engine.Messages
+namespace Sparrow.Messages
 {
     public class Receiver<T> : IReceiver<T>
     {
