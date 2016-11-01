@@ -1,4 +1,4 @@
-namespace Engine.Messages
+namespace Sparrow.Messages
 {
     public interface IReceiver<T>
     {

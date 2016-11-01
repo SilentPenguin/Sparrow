@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Engine.Messages
+namespace Sparrow.Messages
 {
     public class Sender<T> : ISender<T>
     {

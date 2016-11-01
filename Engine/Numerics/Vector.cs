@@ -3,7 +3,7 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace Engine.Numerics
+namespace Sparrow.Numerics
 {
     public struct Vector : IEnumerable
     {

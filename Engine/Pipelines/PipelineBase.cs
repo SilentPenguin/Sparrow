@@ -1,4 +1,4 @@
-namespace Engine.Pipelines
+namespace Sparrow.Pipelines
 {
     public abstract class PipelineBase
     {
