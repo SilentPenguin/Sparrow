@@ -12,16 +12,12 @@ namespace Engine
         {
             frame = new FrameInfo { Time = DateTime.UtcNow };
 
-            while(true)
-            {
-                var now = DateTime.Now;
-                frame = new FrameInfo
-                {
-                    Time = now,
-                    TimeSinceLastFrame = now - frame.Time
-                };
-                yield return frame;
-            }
+            while (true)
+                yield return frame = new FrameInfo
+                (
+                    lastTime: frame.Time,
+                    currentTime: DateTime.UtcNow
+                );
         }
         
         IEnumerator IEnumerable.GetEnumerator()

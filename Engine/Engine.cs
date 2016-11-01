@@ -1,12 +1,13 @@
 using System;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace Engine
 {
     public class Engine
     {
         public Action<FrameState> action;
-        private FrameGenerator frameGenerator = new FrameGenerator();
+        private IEnumerable<FrameInfo> frameGenerator = new FrameGenerator();
 
         public void Loop()
         {
