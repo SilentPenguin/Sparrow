@@ -1,6 +1,6 @@
 using System;
 
-namespace Engine.Pipelines
+namespace Sparrow.Pipelines
 {
     public class FixedRatePipeline : PipelineBase
     {

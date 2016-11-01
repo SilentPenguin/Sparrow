@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace Engine.Numerics
+namespace Sparrow.Numerics
 {
     public struct Matrix
     {

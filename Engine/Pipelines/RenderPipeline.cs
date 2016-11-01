@@ -1,2 +1,2 @@
-namespace Engine.Pipelines
+namespace Sparrow.Pipelines
 { }

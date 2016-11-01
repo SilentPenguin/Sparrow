@@ -1,6 +1,6 @@
 using System;
 
-namespace Engine.Messages
+namespace Sparrow.Messages
 {
     public interface ISender<T>
     {

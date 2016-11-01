@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using System.Collections.Generic;
 
-namespace Engine
+namespace Sparrow
 {
     public class Engine
     {
