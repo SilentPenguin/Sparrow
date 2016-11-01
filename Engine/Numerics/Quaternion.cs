@@ -5,44 +5,44 @@ namespace Sparrow.Numerics
 {
     public struct Quaternion
     {
-        public Quaternion(double x, double y, double z, double w) : this(new double[] {x, y, z, w}) {}
+        public Quaternion(double r, double i, double j, double k) : this(new double[] {r, i, j, k}) {}
         private Quaternion(double[] items) { this.items = items; }
 
         private double[] items;
 
-        public double x { get { return items[0]; } }
-        public double y { get { return items[1]; } }
-        public double z { get { return items[2]; } }
-        public double w { get { return items[3]; } }
+        public double r { get { return items[0]; } }
+        public double i { get { return items[1]; } }
+        public double j { get { return items[2]; } }
+        public double k { get { return items[3]; } }
 
-        public Quaternion Conjugate { get { return new Quaternion(-x, -y, -z, w); } }
+        public Quaternion Conjugate { get { return new Quaternion(r, -i, -j, -k); } }
         public Quaternion Normalised
         {
             get
             {
-                double n = Math.Sqrt(x * x + y * y + z * z + w * w);
-                return new Quaternion(x / n, y / n, z / n, w / n);
+                double n = Math.Sqrt(i * i + j * j + k * k + r * r);
+                return new Quaternion(r / n, i / n, j / n, k / n);
             }
         }
 
         public static Quaternion operator * (Quaternion q, double s)
         {
-            return new Quaternion(q.x * s, q.y * s, q.z * s, q.w * s);
+            return new Quaternion(q.r * s, q.i * s, q.j * s, q.k * s);
         }
 
         public static Quaternion operator * (Quaternion q1, Quaternion q2)
         {
             return new Quaternion(
-                q1.x * q2.w + q1.y + q2.z - q1.z * q2.y + q1.w * q2.x,
-               -q1.x * q2.z + q1.y * q2.w + q1.z * q2.x + q1.w * q2.y,
-                q1.x * q2.y - q1.y * q2.x + q1.z * q2.w + q1.w * q2.z,
-               -q1.x * q2.x - q1.y * q2.y + q1.z * q2.z + q1.w * q2.w
+                q1.r * q2.r - q1.i * q2.i - q1.j * q2.j - q1.k * q2.k,
+                q1.r * q2.i + q1.i * q2.r + q1.j * q2.k - q1.k * q2.j,
+                q1.r * q2.j + q1.j * q2.r + q1.k * q2.i - q1.i * q2.k,
+                q1.r * q2.k + q1.k * q2.r + q1.i * q2.j - q1.j * q2.i
             );
         }
 
         public static Quaternion operator + (Quaternion q1, Quaternion q2)
         {
-            return new Quaternion(q1.x + q2.x, q1.y + q2.y, q1.z + q2.z, q1.w + q2.w);
+            return new Quaternion(q1.r + q2.r, q1.i + q2.i, q1.j + q2.j, q1.k + q2.k);
         }
 
         public override string ToString()
@@ -52,7 +52,7 @@ namespace Sparrow.Numerics
             for(var i = 0; i < items.Length; i++)
             {
                 if (i != 0) sb.Append(", ");
-                sb.Append(i);
+                sb.Append(items[i]);
             }
             sb.Append(")");
             return sb.ToString();
