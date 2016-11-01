@@ -104,7 +104,7 @@ namespace Sparrow.Numerics
             for(var i = 0; i < items.Length; i++)
             {
                 if (i != 0) sb.Append(", ");
-                sb.Append(i);
+                sb.Append(items[i]);
             }
             sb.Append(")");
             return sb.ToString();
