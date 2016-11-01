@@ -5,11 +5,11 @@ namespace Engine.Numerics
 {
     public struct Matrix
     {
-        private double[,] items;
-
         public Matrix(double[,] items) { this.items = items; }
         private Matrix(int size) : this(size, size) {}
         private Matrix(int width, int height) : this(new double[width,height]) {}
+        
+        private double[,] items;
 
         public double this[int x, int y]
         {

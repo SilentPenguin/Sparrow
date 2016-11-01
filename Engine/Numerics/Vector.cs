@@ -7,13 +7,13 @@ namespace Engine.Numerics
 {
     public struct Vector : IEnumerable
     {
-        private double[] items;
-
         public Vector(double x, double y) : this (new double[] {x, y}) {}
         public Vector(double x, double y, double z) : this(new double[] {x, y, z}) {}
         public Vector(double x, double y, double z, double w) : this(new double[] {x, y, z, w}) {}
         public Vector(params double[] items) { this.items = items; }
         private Vector(int size) : this(new double[size]) {}
+        
+        private double[] items;
 
         public double x { get { return items[0]; } }
         public double y { get { return items[1]; } }
