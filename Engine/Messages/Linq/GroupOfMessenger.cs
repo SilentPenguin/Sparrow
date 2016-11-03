@@ -8,23 +8,22 @@ namespace Sparrow.Messages.Linq
     {
         public GroupOfMessenger(ISender<T> sender, int count) : base(null)
         {
-            group = new Grouping<int, T> { Key = count, elements = new List<T>() };
+            Count = count;
+            queue = new List<T>();
             sender.Attach(this);
         }
 
-        private Grouping<int, T> group;
+        private int Count;
+        private List<T> queue;
         
         public override void Receive(T value)
         {
-            group.elements.Add(value);
+            queue.Add(value);
 
-            if (group.Key == group.elements.Count())
+            if (Count == queue.Count())
             {
-                Send(group);
-                group = new Grouping<int, T> {
-                    Key = group.Key,
-                    elements = new List<T>()
-                };
+                Send(new Grouping<int, T> { Key = Count, elements = queue});
+                queue = new List<T>();
             }
         }
     }
