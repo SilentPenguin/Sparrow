@@ -3,31 +3,31 @@ using System.Collections.Generic;
 
 namespace Sparrow.Messages
 {
-    public class Messenger<TIn, TOut> : IReceiver<TIn>, ISender<TOut>
+    public class Messenger<TSource, TResult> : IReceiver<TSource>, ISender<TResult>
     {
-        public Messenger(Func<TIn, TOut> action)
+        public Messenger(Func<TSource, TResult> action)
         {
             Action = action;
-            Receivers = new List<Action<TOut>>();
+            Receivers = new List<Action<TResult>>();
         }
 
-        private Func<TIn, TOut>  Action { get; set; }
-        public List<Action<TOut>> Receivers { get; private set; }
+        private Func<TSource, TResult>  Action { get; set; }
+        public List<Action<TResult>> Receivers { get; private set; }
 
-        public TOut Value { get; private set; }
+        public TResult Value { get; protected set; }
         
-        public void Receive(TIn value) { Send(Action(value)); }
+        public virtual void Receive(TSource value) { Send(Action(value)); }
 
-        public void Send(TOut value)
+        public virtual void Send(TResult value)
         {
             Value = value;
             foreach(var receiver in Receivers)
                 receiver(Value);
         }
 
-        public void Attach(IReceiver<TOut> receiver) { Receivers.Add(receiver.Receive); }
-        public void Attach(Action<TOut> action) { Receivers.Add(action); }
-        public void Detach(IReceiver<TOut> receiver) { Receivers.Remove(receiver.Receive); }
-        public void Detach(Action<TOut> action) { Receivers.Remove(action); }
+        public void Attach(IReceiver<TResult> receiver) { Receivers.Add(receiver.Receive); }
+        public void Attach(Action<TResult> action) { Receivers.Add(action); }
+        public void Detach(IReceiver<TResult> receiver) { Receivers.Remove(receiver.Receive); }
+        public void Detach(Action<TResult> action) { Receivers.Remove(action); }
     } 
 }
