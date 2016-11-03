@@ -91,6 +91,21 @@ namespace Sparrow.Messages.Linq
             return new PairMessenger<TSource, TOther, TResult>(sender, other, predicate);
         }
 
+        public static ISender<T> QueueBy<T, TKey>(this ISender<T> sender, Func<T, TKey> predicate)
+        {
+            return new QueueByMessenger<T, TKey>(sender, predicate);
+        }
+
+        public static ISender<T> QueueOf<T>(this ISender<T> sender, int count)
+        {
+            return new QueueOfMessenger<T>(sender, count);
+        }
+
+        public static ISender<T> QueueWhen<T, TKey>(this ISender<T> sender, ISender<TKey> trigger)
+        {
+            return new QueueWhenMessenger<T, TKey>(sender, trigger);
+        }
+
         public static ISender<TResult> Select<TSource, TResult> (this ISender<TSource> sender, Func<TSource, TResult> predicate)
         {
             return new SelectMessenger<TSource, TResult>(sender, predicate);
