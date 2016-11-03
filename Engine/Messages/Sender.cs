@@ -9,9 +9,9 @@ namespace Sparrow.Messages
 
         public List<Action<T>> Receivers { get; private set; }
 
-        public T Value { get; private set; }
+        public T Value { get; protected set; }
         
-        public void Send(T value)
+        public virtual void Send(T value)
         {
             Value = value;
             foreach(var receiver in Receivers)
