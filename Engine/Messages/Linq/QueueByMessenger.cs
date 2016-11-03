@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace Sparrow.Messages.Linq
 {
-    public class GroupByMessenger<T, TKey> : Messenger<T, IGrouping<TKey, T>>
+    public class QueueByMessenger<T, TKey> : Messenger<T, T>
     {
-        public GroupByMessenger(ISender<T> sender, Func<T, TKey> predictate) : base(null)
+        public QueueByMessenger(ISender<T> sender, Func<T, TKey> predictate) : base(null)
         {
             queue = new List<T>();
             func = predictate;
@@ -23,14 +23,12 @@ namespace Sparrow.Messages.Linq
             
             if (!key.Equals(receivedkey))
             {
-                if (queue.Any())
-                {
-                    Send(new Grouping<TKey, T> { Key = key, elements = queue} );
-                    queue = new List<T>();
-                }
-                key = receivedkey;
+                foreach (var item in queue)
+                    Send(item);
+                queue.Clear();
             }
-            
+
+            key = receivedkey;
             queue.Add(value);
         }
     }
