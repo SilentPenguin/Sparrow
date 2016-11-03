@@ -11,7 +11,7 @@ namespace Sparrow.Messages
             Receivers = new List<Action<TResult>>();
         }
 
-        private Func<TSource, TResult>  Action { get; set; }
+        protected Func<TSource, TResult>  Action { get; set; }
         public List<Action<TResult>> Receivers { get; private set; }
 
         public TResult Value { get; protected set; }
