@@ -15,24 +15,26 @@ namespace Sparrow.Messages.Linq
 
         private ISender<TSource> Sender;
         private ISender<TOther> Other;
+        private bool senderPublished;
+        private bool receiverPublished;
 
         private Func<TSource, TOther, TResult> Selector;
         
-        public void Receive(TSource value) { Send(value); }
-        public void Receive(TOther value) { Send(value); }
-        
-        public void Send(TSource value)
+        public void Receive(TSource value)
         {
-            Value = Selector(value, Other.Value);
-            foreach(var receiver in Receivers)
-                receiver(Value);
+            senderPublished = true;
+            if (receiverPublished) Send(Selector(value, Other.Value));
         }
-
-        public void Send(TOther value)
+        public void Receive(TOther value)
         {
-            Value = Selector(Sender.Value, value);
-            foreach(var receiver in Receivers)
-                receiver(Value);
+            receiverPublished = true;
+            if (senderPublished) Send(Selector(Sender.Value, value));
+        }
+        
+        public override void Send(TResult value)
+        {
+            base.Send(value);
+            senderPublished = receiverPublished = false;
         }
     }
 }
