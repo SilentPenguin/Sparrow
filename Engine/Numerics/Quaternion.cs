@@ -15,6 +15,7 @@ namespace Sparrow.Numerics
         public double j { get { return items[2]; } }
         public double k { get { return items[3]; } }
 
+        public static Quaternion Identity { get { return new Quaternion(0, 0, 0, 0); } }
         public Quaternion Conjugate { get { return new Quaternion(r, -i, -j, -k); } }
         public Quaternion Normalised
         {
