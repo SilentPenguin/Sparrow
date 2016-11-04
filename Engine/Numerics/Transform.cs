@@ -42,10 +42,10 @@ namespace Sparrow.Numerics
                     m = new Matrix(
                         new double[4,4]
                         {
-                            { s.x - (jj + kk),         ij - rk,         ik + rj, t.x },
-                            {         ij + rk, s.y - (ii + kk),         jk - ri, t.y },
-                            {         ik - rj,         jk + ri, s.z - (ii + jj), t.z },
-                            {               0,               0,               0,   1 }
+                            { s.x * (1 - (jj + kk)),       s.y * (ij - rk),       s.z * (ik + rj), t.x },
+                            {       s.x * (ij + rk), s.y * (1 - (ii + kk)),       s.z * (jk - ri), t.y },
+                            {       s.x * (ik - rj),       s.y * (jk + ri), s.z * (1 - (ii + jj)), t.z },
+                            {                     0,                     0,                     0,   1 }
                         }
                     );
                 }
