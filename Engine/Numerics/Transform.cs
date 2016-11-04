@@ -2,21 +2,21 @@ namespace Sparrow.Numerics
 {
     public class Transform
     {
-        public Vector Translation { get; set; }
-        public Quaternion Rotation { get; set; }
-        public Vector Scale { get; set; }
+        public Vector Translation { get { return t; } set { t = value; transformation = null; } }
+        public Quaternion Rotation { get { return q; } set { q = value; transformation = null; } }
+        public Vector Scale { get { return s; } set { s = value; transformation = null; } }
 
+        private Vector t;
+        private Quaternion q;
+        private Vector s;
         private Matrix? transformation;
+
         public Matrix Transformation
         {
             get
             {
                 if (!transformation.HasValue)
                 {
-                    var t = Translation;
-                    var q = Rotation;
-                    var s = Scale;
-
                     var n = q.r * q.r + q.i * q.i + q.j * q.j + q.k * q.k;
                     if (n != 0) n = 2/n;
                     double
@@ -37,9 +37,5 @@ namespace Sparrow.Numerics
                 return transformation.Value;
             }
         }
-
-        public double RotS(double a, double b) { return RotS(a, a, b, b); }
-        public double Rot(double a, double b, double c, double d) { return 2 * a * b + 2 * c * d; }
-        public double RotS(double a, double b, double c, double d) { return 2 * a * b - 2 * c * d; }
     }
 }
