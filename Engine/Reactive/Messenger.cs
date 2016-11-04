@@ -5,23 +5,23 @@ namespace Sparrow.Reactive
 {
     public class Messenger<T> : Messenger<T,T>
     {
-        public Messenger(Func<T, T> action) : base(action) {}
+        public Messenger(Action<T> action) : base(action) {}
     }
-    
+
     public class Messenger<TSource, TResult> : IMessenger<TSource, TResult>
     {
-        public Messenger(Func<TSource, TResult> action)
+        public Messenger(Action<TSource> action)
         {
             Action = action;
             Receivers = new List<Action<TResult>>();
         }
 
-        protected Func<TSource, TResult>  Action { get; set; }
+        protected Action<TSource>  Action { get; set; }
         public List<Action<TResult>> Receivers { get; private set; }
 
         public TResult Value { get; protected set; }
         
-        public virtual void Receive(TSource value) { Send(Action(value)); }
+        public virtual void Receive(TSource value) { Action(value); }
 
         public virtual void Send(TResult value)
         {
