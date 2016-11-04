@@ -1,21 +1,15 @@
-using System;
-using System.Threading;
-using System.Collections.Generic;
+using Sparrow.Reactive;
 
 namespace Sparrow
 {
-    public class Engine
+    public class Engine : EngineBase
     {
-        public Action<FrameState> action;
-        private IEnumerable<FrameInfo> frameGenerator = new FrameGenerator();
-
-        public void Loop()
+        public Engine()
         {
-            foreach (var frame in frameGenerator)
-            {
-                action(new FrameState(frame));
-                Thread.Sleep(0);
-            }
+            frame = new Sender<FrameState>();
+            action = frame.Send;
         }
+
+        public readonly ISender<FrameState> frame;
     }
 }
