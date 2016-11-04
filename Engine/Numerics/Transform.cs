@@ -6,10 +6,10 @@ namespace Sparrow.Numerics
         public Quaternion Rotation { get { return q; } set { q = value; transformation = null; } }
         public Vector Scale { get { return s; } set { s = value; transformation = null; } }
 
-        private Vector t;
-        private Quaternion q;
-        private Vector s;
-        private Matrix? transformation;
+        private Vector t = Vector.Zeros(3);
+        private Quaternion q = Quaternion.Identity;
+        private Vector s = Vector.Zeros(3);
+        private Matrix? transformation = null;
 
         public Matrix Transformation
         {
@@ -19,6 +19,7 @@ namespace Sparrow.Numerics
                 {
                     var n = q.r * q.r + q.i * q.i + q.j * q.j + q.k * q.k;
                     if (n != 0) n = 2/n;
+
                     double
                         ri = n * q.r * q.i, rj = n * q.r * q.j, rk = n * q.r * q.k,
                         ii = n * q.i * q.i, ij = n * q.i * q.j, ik = n * q.i * q.k,
