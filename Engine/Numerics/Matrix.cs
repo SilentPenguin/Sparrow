@@ -34,16 +34,16 @@ namespace Sparrow.Numerics
 
         public Vector Column(int x)
         {
-            var result = new double[x];
-            for (int i = items.GetLength(1); i-- != 0;)
+            var result = new double[Height];
+            for (int i = Height; i-- != 0;)
                 result[i] = this[x, i];
             return new Vector(result);
         }
 
         public Vector Row(int y)
         {
-            var result = new double[y];
-            for (int i = items.GetLength(0); i-- != 0;)
+            var result = new double[Width];
+            for (int i = Width; i-- != 0;)
                 result[i] = this[i, y];
             return new Vector(result);
         }
