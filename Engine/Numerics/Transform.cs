@@ -2,20 +2,34 @@ namespace Sparrow.Numerics
 {
     public class Transform
     {
-        public Vector Translation { get { return t; } set { t = value; transformation = null; } }
-        public Quaternion Rotation { get { return q; } set { q = value; transformation = null; } }
-        public Vector Scale { get { return s; } set { s = value; transformation = null; } }
+        public Transform()
+        {
+            t = Vector.Zeros(3);
+            q = Quaternion.Identity;
+            s = Vector.Zeros(3);
+        }
+        
+        public Transform(Vector translate, Quaternion rotate, Vector scale)
+        {
+            t = translate;
+            q = rotate;
+            s = scale;
+        }
 
-        private Vector t = Vector.Zeros(3);
-        private Quaternion q = Quaternion.Identity;
-        private Vector s = Vector.Zeros(3);
-        private Matrix? transformation = null;
+        public Vector Translation { get { return t; } set { t = value; m = null; } }
+        public Quaternion Rotation { get { return q; } set { q = value; m = null; } }
+        public Vector Scale { get { return s; } set { s = value; m = null; } }
+
+        private Vector t;
+        private Quaternion q;
+        private Vector s;
+        private Matrix? m = null;
 
         public Matrix Transformation
         {
             get
             {
-                if (!transformation.HasValue)
+                if (!m.HasValue)
                 {
                     var n = q.r * q.r + q.i * q.i + q.j * q.j + q.k * q.k;
                     if (n != 0) n = 2/n;
@@ -25,8 +39,9 @@ namespace Sparrow.Numerics
                         ii = n * q.i * q.i, ij = n * q.i * q.j, ik = n * q.i * q.k,
                         jj = n * q.j * q.j, jk = n * q.j * q.k, kk = n * q.k * q.k;
 
-                    transformation = new Matrix(
-                        new double[4,4]{
+                    m = new Matrix(
+                        new double[4,4]
+                        {
                             { s.x - (jj + kk),         ij - rk,         ik + rj, t.x },
                             {         ij + rk, s.y - (ii + kk),         jk - ri, t.y },
                             {         ik - rj,         jk + ri, s.z - (ii + jj), t.z },
@@ -35,7 +50,7 @@ namespace Sparrow.Numerics
                     );
                 }
 
-                return transformation.Value;
+                return m.Value;
             }
         }
     }
