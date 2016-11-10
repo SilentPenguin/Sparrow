@@ -6,9 +6,10 @@ using Sparrow.Numerics;
 
 namespace Benchmarks
 {
-    public class Program
+    public class Program : Sparrow.Graphics.OpenGL.Generate.Program
     {
 
+            /*
         public static void Main(string[] args)
         {
             
@@ -23,6 +24,7 @@ namespace Benchmarks
             var test = new Test();
             test.MySender.Send(2);
         }
+            */
     }
 
     public class Test
