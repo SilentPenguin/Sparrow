@@ -1,6 +1,6 @@
-namespace Sparrow.Graphics.Raw
+namespace Sparrow.Graphics.OpenGL
 {
-    public static partial class Gl
+    public static partial class Raw
     {
         public const uint GL_CURRENT_BIT = 0x00000001;
         public const uint GL_POINT_BIT = 0x00000002;
@@ -2029,6 +2029,18 @@ namespace Sparrow.Graphics.Raw
         public const uint GL_SECONDARY_COLOR_ARRAY = 0x845E;
         public const uint GL_SECONDARY_COLOR_ARRAY_EXT = 0x845E;
         public const uint GL_CURRENT_RASTER_SECONDARY_COLOR = 0x845F;
+        public const uint GL_RGB_ICC_SGIX = 0x8460;
+        public const uint GL_RGBA_ICC_SGIX = 0x8461;
+        public const uint GL_ALPHA_ICC_SGIX = 0x8462;
+        public const uint GL_LUMINANCE_ICC_SGIX = 0x8463;
+        public const uint GL_INTENSITY_ICC_SGIX = 0x8464;
+        public const uint GL_LUMINANCE_ALPHA_ICC_SGIX = 0x8465;
+        public const uint GL_R5_G6_B5_ICC_SGIX = 0x8466;
+        public const uint GL_R5_G6_B5_A8_ICC_SGIX = 0x8467;
+        public const uint GL_ALPHA16_ICC_SGIX = 0x8468;
+        public const uint GL_LUMINANCE16_ICC_SGIX = 0x8469;
+        public const uint GL_INTENSITY16_ICC_SGIX = 0x846A;
+        public const uint GL_LUMINANCE16_ALPHA8_ICC_SGIX = 0x846B;
         public const uint GL_ALIASED_POINT_SIZE_RANGE = 0x846D;
         public const uint GL_ALIASED_LINE_WIDTH_RANGE = 0x846E;
         public const uint GL_SCREEN_COORDINATES_REND = 0x8490;

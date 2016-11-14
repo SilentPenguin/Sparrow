@@ -20,9 +20,9 @@ namespace Sparrow.Graphics.OpenGL.Generate
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.AppendLine("namespace Sparrow.Graphics.Raw");
+            sb.AppendLine("namespace Sparrow.Graphics.OpenGL");
             sb.AppendLine("{");
-            sb.AppendLine("    public static partial class Gl");
+            sb.AppendLine("    public static partial class Raw");
             sb.AppendLine("    {");
 
             foreach(var @enum in enums)

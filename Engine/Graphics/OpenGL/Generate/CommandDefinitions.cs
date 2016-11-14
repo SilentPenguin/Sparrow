@@ -20,10 +20,10 @@ namespace Sparrow.Graphics.OpenGL.Generate
             var sb = new StringBuilder();
             sb.AppendLine("using System;");
             sb.AppendLine("using System.Runtime.InteropServices;");
-            sb.AppendLine("namespace Sparrow.Graphics.OpenGL.Raw");
+            sb.AppendLine("namespace Sparrow.Graphics.OpenGL");
             sb.AppendLine("{");
             sb.AppendLine("    public unsafe delegate void GLDEBUGPROC (uint source, uint type, uint id, uint severity, int length, char* message, void* userParam);");
-            sb.AppendLine("    public static partial class Gl");
+            sb.AppendLine("    public static partial class Raw");
             sb.AppendLine("    {");
 
             foreach(var feature in commands)
