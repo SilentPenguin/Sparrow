@@ -1,4 +1,4 @@
-namespace Sparrow.Graphics.OpenGL.Raw
+namespace Sparrow.Graphics.OpenGL
 {
     public static partial class Gl
     {
