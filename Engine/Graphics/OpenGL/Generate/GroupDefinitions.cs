@@ -1,17 +1,15 @@
-/*
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
-namespace Sparrow.Graphics.Generate
+namespace Sparrow.Graphics.OpenGL.Generate
 {
-
     public class Groups
     {
-        public Groups(IEnumerable<XElement> groups, IEnumerable<XElement> enums)
+        public Groups(IEnumerable<XElement> groups)
         {
-            this.groups = groups.Descendants("group").Select(e => new Group(e, enums));
+            this.groups = groups.Descendants("group").Select(e => new Group(e));
         }
 
         public IEnumerable<Group> groups;
@@ -19,15 +17,12 @@ namespace Sparrow.Graphics.Generate
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.AppendLine("namespace Sparrow.Graphics.Raw");
+            sb.AppendLine("namespace Sparrow.Graphics.OpenGL");
             sb.AppendLine("{");
-            sb.AppendLine("    public static partial class Gl");
-            sb.AppendLine("    {");
 
             foreach(var group in groups)
                 sb.Append(group);
 
-            sb.AppendLine("    }");
             sb.AppendLine("}");
 
             return sb.ToString();
@@ -37,45 +32,37 @@ namespace Sparrow.Graphics.Generate
     public class Group
     {
 
-        public Group(XElement group, IEnumerable<XElement> enums)
+        public Group(XElement group)
         {
             name = group.Attribute("name").Value;
-            values = @group.Descendants("enum").Select(e => new Enumeration(e, enums));
+            values = @group.Descendants("enum").Select(e => new Property(e));
         }
 
         public string name;
-        public IEnumerable<Enumeration> values;
+        public IEnumerable<Property> values;
 
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.AppendLine(String.Format("        public enum {0} : uint", name));
+            sb.AppendLine(String.Format("    public enum {0} : uint", name));
             sb.AppendLine("        {");
             foreach(var value in values)
             {
-                sb.AppendLine("            " + value.ToString() + ",");
+                sb.AppendLine("        " + value.ToString() + ",");
             }
             sb.AppendLine("        }");
             return sb.ToString();
         }
     }
 
-    public class Enumeration
+    public class Property
     {
-        public Enumeration(XElement @enum, IEnumerable<XElement> enums)
+        public Property(XElement @enum)
         {
             name = @enum.Attribute("name").Value;
-
-            var element = enums.Descendants("enum")
-                .SingleOrDefault(e => e.Attribute("name").Value == name);
-
-            if (element == null) return;
-
-            value = element.Attribute("value").Value;
         }
 
         public string name;
-        public string value;
 
         public override string ToString()
         {
@@ -96,10 +83,7 @@ namespace Sparrow.Graphics.Generate
                             sanitisedName.Split("_".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
                             .Select(s => s[0] + s.Substring(1).ToLower()));
 
-            if (String.IsNullOrWhiteSpace(value))
-                return sanitisedName; 
-            return String.Format("{0} = {1}", sanitisedName, value);
+            return String.Format("{0} = Raw.{1}", sanitisedName, name);
         }
     }
 }
-*/

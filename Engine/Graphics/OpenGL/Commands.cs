@@ -1,9 +1,9 @@
 using System;
 using System.Runtime.InteropServices;
-namespace Sparrow.Graphics.OpenGL.Raw
+namespace Sparrow.Graphics.OpenGL
 {
     public unsafe delegate void GLDEBUGPROC (uint source, uint type, uint id, uint severity, int length, char* message, void* userParam);
-    public static partial class Gl
+    public static partial class Raw
     {
         [DllImport(DllName)]
         public static extern unsafe void glAccum (uint op, float value);
@@ -5100,9 +5100,9 @@ namespace Sparrow.Graphics.OpenGL.Raw
         [DllImport(DllName)]
         public static extern unsafe void glUniform1fARB (int location, float v0);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform1fv (int location, int count, float* value);
+        public static extern unsafe void glUniform1fv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] float* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform1fvARB (int location, int count, float* value);
+        public static extern unsafe void glUniform1fvARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)]  float* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform1i (int location, int v0);
         [DllImport(DllName)]
@@ -5110,15 +5110,15 @@ namespace Sparrow.Graphics.OpenGL.Raw
         [DllImport(DllName)]
         public static extern unsafe void glUniform1i64NV (int location, long x);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform1i64vARB (int location, int count, long* value);
+        public static extern unsafe void glUniform1i64vARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] long* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform1i64vNV (int location, int count, long* value);
+        public static extern unsafe void glUniform1i64vNV (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] long* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform1iARB (int location, int v0);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform1iv (int location, int count, int* value);
+        public static extern unsafe void glUniform1iv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] int* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform1ivARB (int location, int count, int* value);
+        public static extern unsafe void glUniform1ivARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] int* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform1ui (int location, uint v0);
         [DllImport(DllName)]
@@ -5126,27 +5126,27 @@ namespace Sparrow.Graphics.OpenGL.Raw
         [DllImport(DllName)]
         public static extern unsafe void glUniform1ui64NV (int location, ulong x);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform1ui64vARB (int location, int count, ulong* value);
+        public static extern unsafe void glUniform1ui64vARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] ulong* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform1ui64vNV (int location, int count, ulong* value);
+        public static extern unsafe void glUniform1ui64vNV (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] ulong* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform1uiEXT (int location, uint v0);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform1uiv (int location, int count, uint* value);
+        public static extern unsafe void glUniform1uiv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] uint* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform1uivEXT (int location, int count, uint* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform2d (int location, double x, double y);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform2dv (int location, int count, double* value);
+        public static extern unsafe void glUniform2dv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] double* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform2f (int location, float v0, float v1);
         [DllImport(DllName)]
         public static extern unsafe void glUniform2fARB (int location, float v0, float v1);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform2fv (int location, int count, float* value);
+        public static extern unsafe void glUniform2fv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] float* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform2fvARB (int location, int count, float* value);
+        public static extern unsafe void glUniform2fvARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] float* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform2i (int location, int v0, int v1);
         [DllImport(DllName)]
@@ -5154,15 +5154,15 @@ namespace Sparrow.Graphics.OpenGL.Raw
         [DllImport(DllName)]
         public static extern unsafe void glUniform2i64NV (int location, long x, long y);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform2i64vARB (int location, int count, long* value);
+        public static extern unsafe void glUniform2i64vARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] long* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform2i64vNV (int location, int count, long* value);
+        public static extern unsafe void glUniform2i64vNV (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] long* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform2iARB (int location, int v0, int v1);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform2iv (int location, int count, int* value);
+        public static extern unsafe void glUniform2iv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] int* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform2ivARB (int location, int count, int* value);
+        public static extern unsafe void glUniform2ivARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] int* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform2ui (int location, uint v0, uint v1);
         [DllImport(DllName)]
@@ -5170,27 +5170,27 @@ namespace Sparrow.Graphics.OpenGL.Raw
         [DllImport(DllName)]
         public static extern unsafe void glUniform2ui64NV (int location, ulong x, ulong y);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform2ui64vARB (int location, int count, ulong* value);
+        public static extern unsafe void glUniform2ui64vARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] ulong* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform2ui64vNV (int location, int count, ulong* value);
+        public static extern unsafe void glUniform2ui64vNV (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] ulong* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform2uiEXT (int location, uint v0, uint v1);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform2uiv (int location, int count, uint* value);
+        public static extern unsafe void glUniform2uiv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] uint* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform2uivEXT (int location, int count, uint* value);
+        public static extern unsafe void glUniform2uivEXT (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] uint* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform3d (int location, double x, double y, double z);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform3dv (int location, int count, double* value);
+        public static extern unsafe void glUniform3dv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] double* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform3f (int location, float v0, float v1, float v2);
         [DllImport(DllName)]
         public static extern unsafe void glUniform3fARB (int location, float v0, float v1, float v2);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform3fv (int location, int count, float* value);
+        public static extern unsafe void glUniform3fv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] float* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform3fvARB (int location, int count, float* value);
+        public static extern unsafe void glUniform3fvARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] float* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform3i (int location, int v0, int v1, int v2);
         [DllImport(DllName)]
@@ -5198,15 +5198,15 @@ namespace Sparrow.Graphics.OpenGL.Raw
         [DllImport(DllName)]
         public static extern unsafe void glUniform3i64NV (int location, long x, long y, long z);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform3i64vARB (int location, int count, long* value);
+        public static extern unsafe void glUniform3i64vARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] long* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform3i64vNV (int location, int count, long* value);
+        public static extern unsafe void glUniform3i64vNV (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] long* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform3iARB (int location, int v0, int v1, int v2);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform3iv (int location, int count, int* value);
+        public static extern unsafe void glUniform3iv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] int* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform3ivARB (int location, int count, int* value);
+        public static extern unsafe void glUniform3ivARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] int* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform3ui (int location, uint v0, uint v1, uint v2);
         [DllImport(DllName)]
@@ -5214,27 +5214,27 @@ namespace Sparrow.Graphics.OpenGL.Raw
         [DllImport(DllName)]
         public static extern unsafe void glUniform3ui64NV (int location, ulong x, ulong y, ulong z);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform3ui64vARB (int location, int count, ulong* value);
+        public static extern unsafe void glUniform3ui64vARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] ulong* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform3ui64vNV (int location, int count, ulong* value);
+        public static extern unsafe void glUniform3ui64vNV (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] ulong* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform3uiEXT (int location, uint v0, uint v1, uint v2);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform3uiv (int location, int count, uint* value);
+        public static extern unsafe void glUniform3uiv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] uint* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform3uivEXT (int location, int count, uint* value);
+        public static extern unsafe void glUniform3uivEXT (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] uint* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform4d (int location, double x, double y, double z, double w);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform4dv (int location, int count, double* value);
+        public static extern unsafe void glUniform4dv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] double* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform4f (int location, float v0, float v1, float v2, float v3);
         [DllImport(DllName)]
         public static extern unsafe void glUniform4fARB (int location, float v0, float v1, float v2, float v3);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform4fv (int location, int count, float* value);
+        public static extern unsafe void glUniform4fv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] float* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform4fvARB (int location, int count, float* value);
+        public static extern unsafe void glUniform4fvARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] float* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform4i (int location, int v0, int v1, int v2, int v3);
         [DllImport(DllName)]
@@ -5242,15 +5242,15 @@ namespace Sparrow.Graphics.OpenGL.Raw
         [DllImport(DllName)]
         public static extern unsafe void glUniform4i64NV (int location, long x, long y, long z, long w);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform4i64vARB (int location, int count, long* value);
+        public static extern unsafe void glUniform4i64vARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] long* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform4i64vNV (int location, int count, long* value);
+        public static extern unsafe void glUniform4i64vNV (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] long* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform4iARB (int location, int v0, int v1, int v2, int v3);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform4iv (int location, int count, int* value);
+        public static extern unsafe void glUniform4iv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] int* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform4ivARB (int location, int count, int* value);
+        public static extern unsafe void glUniform4ivARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] int* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform4ui (int location, uint v0, uint v1, uint v2, uint v3);
         [DllImport(DllName)]
@@ -5258,15 +5258,15 @@ namespace Sparrow.Graphics.OpenGL.Raw
         [DllImport(DllName)]
         public static extern unsafe void glUniform4ui64NV (int location, ulong x, ulong y, ulong z, ulong w);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform4ui64vARB (int location, int count, ulong* value);
+        public static extern unsafe void glUniform4ui64vARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] ulong* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform4ui64vNV (int location, int count, ulong* value);
+        public static extern unsafe void glUniform4ui64vNV (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] ulong* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniform4uiEXT (int location, uint v0, uint v1, uint v2, uint v3);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform4uiv (int location, int count, uint* value);
+        public static extern unsafe void glUniform4uiv (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] uint* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniform4uivEXT (int location, int count, uint* value);
+        public static extern unsafe void glUniform4uivEXT (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] uint* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniformBlockBinding (uint program, uint uniformBlockIndex, uint uniformBlockBinding);
         [DllImport(DllName)]
@@ -5276,9 +5276,9 @@ namespace Sparrow.Graphics.OpenGL.Raw
         [DllImport(DllName)]
         public static extern unsafe void glUniformHandleui64NV (int location, ulong value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniformHandleui64vARB (int location, int count, ulong* value);
+        public static extern unsafe void glUniformHandleui64vARB (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] ulong* value);
         [DllImport(DllName)]
-        public static extern unsafe void glUniformHandleui64vNV (int location, int count, ulong* value);
+        public static extern unsafe void glUniformHandleui64vNV (int location, int count, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex=1)] ulong* value);
         [DllImport(DllName)]
         public static extern unsafe void glUniformMatrix2dv (int location, int count, bool transpose, double* value);
         [DllImport(DllName)]
