@@ -1,0 +1,379 @@
+<opengl>
+  <proto name="CreateShader">
+    <entry>glCreateShader</entry>
+    <param name="type" type="GLenum" />
+  </proto>
+  <proto name="ShaderSource">
+    <entry>glShaderSource</entry>
+    <param name="shader" type="GLuint" />
+    <param name="count" type="GLsizei" />
+    <param name="string" type="GLchar" />
+    <param name="length" type="GLint" />
+  </proto>
+  <proto name="CompileShader">
+    <entry>glCompileShader</entry>
+    <param name="shader" type="GLuint" />
+  </proto>
+  <proto name="DeleteShader">
+    <entry>glDeleteShader</entry>
+    <param name="shader" type="GLuint" />
+  </proto>
+  <proto name="CreateProgram">
+    <entry>glCreateProgram</entry>
+  </proto>
+  <proto name="AttachShader">
+    <entry>glAttachShader</entry>
+    <param name="program" type="GLuint" />
+    <param name="shader" type="GLuint" />
+  </proto>
+  <proto name="DetachShader">
+    <entry>glDetachShader</entry>
+    <param name="program" type="GLuint" />
+    <param name="shader" type="GLuint" />
+  </proto>
+  <proto name="LinkProgram">
+    <entry>glLinkProgram</entry>
+    <param name="program" type="GLuint" />
+  </proto>
+  <proto name="UseProgram">
+    <entry>glUseProgram</entry>
+    <param name="program" type="GLuint" />
+  </proto>
+  <proto name="DeleteProgram">
+    <entry>glDeleteProgram</entry>
+    <param name="program" type="GLuint" />
+  </proto>
+  <proto name="GetActiveAttrib">
+    <entry>glGetActiveAttrib</entry>
+    <param name="program" type="GLuint" />
+    <param name="index" type="GLuint" />
+    <param name="bufSize" type="GLsizei" />
+    <param name="length" type="GLsizei" />
+    <param name="size" type="GLint" />
+    <param name="type" type="GLenum" />
+    <param name="name" type="GLchar" />
+  </proto>
+  <proto name="GetAttribLocation">
+    <entry>glGetAttribLocation</entry>
+    <param name="program" type="GLuint" />
+    <param name="name" type="GLchar" />
+  </proto>
+  <proto name="BindAttribLocation">
+    <entry>glBindAttribLocation</entry>
+    <param name="program" type="GLuint" />
+    <param name="index" type="GLuint" />
+    <param name="name" type="GLchar" />
+  </proto>
+  <proto name="GetUniformLocation">
+    <entry>glGetUniformLocation</entry>
+    <param name="program" type="GLuint" />
+    <param name="name" type="GLchar" />
+  </proto>
+  <proto name="GetUniformBlockIndex">
+    <entry>glGetUniformBlockIndex</entry>
+    <param name="program" type="GLuint" />
+    <param name="uniformBlockName" type="GLchar" />
+  </proto>
+  <proto name="GetActiveUniformBlock">
+    <entry>glGetActiveUniformBlockiv</entry>
+    <param name="program" type="GLuint" />
+    <param name="uniformBlockIndex" type="GLuint" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="GetActiveUniforms">
+    <entry>glGetActiveUniformsiv</entry>
+    <param name="program" type="GLuint" />
+    <param name="uniformCount" type="GLsizei" />
+    <param name="uniformIndices" type="GLuint" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="Uniform1">
+    <entry>glUniform1f</entry>
+    <param name="location" type="GLint" />
+    <param name="v0" type="GLfloat" />
+  </proto>
+  <proto name="Uniform1">
+    <entry>glUniform1fv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="value" type="GLfloat" />
+  </proto>
+  <proto name="Uniform1">
+    <entry>glUniform1i</entry>
+    <param name="location" type="GLint" />
+    <param name="v0" type="GLint" />
+  </proto>
+  <proto name="Uniform1">
+    <entry>glUniform1iv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="value" type="GLint" />
+  </proto>
+  <proto name="Uniform1">
+    <entry>glUniform1ui</entry>
+    <param name="location" type="GLint" />
+    <param name="v0" type="GLuint" />
+  </proto>
+  <proto name="Uniform1">
+    <entry>glUniform1uiv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="value" type="GLuint" />
+  </proto>
+  <proto name="Uniform2">
+    <entry>glUniform2f</entry>
+    <param name="location" type="GLint" />
+    <param name="v0" type="GLfloat" />
+    <param name="v1" type="GLfloat" />
+  </proto>
+  <proto name="Uniform2">
+    <entry>glUniform2fv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="value" type="GLfloat" />
+  </proto>
+  <proto name="Uniform2">
+    <entry>glUniform2i</entry>
+    <param name="location" type="GLint" />
+    <param name="v0" type="GLint" />
+    <param name="v1" type="GLint" />
+  </proto>
+  <proto name="Uniform2">
+    <entry>glUniform2iv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="value" type="GLint" />
+  </proto>
+  <proto name="Uniform2">
+    <entry>glUniform2ui</entry>
+    <param name="location" type="GLint" />
+    <param name="v0" type="GLuint" />
+    <param name="v1" type="GLuint" />
+  </proto>
+  <proto name="Uniform2">
+    <entry>glUniform2uiv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="value" type="GLuint" />
+  </proto>
+  <proto name="Uniform3">
+    <entry>glUniform3f</entry>
+    <param name="location" type="GLint" />
+    <param name="v0" type="GLfloat" />
+    <param name="v1" type="GLfloat" />
+    <param name="v2" type="GLfloat" />
+  </proto>
+  <proto name="Uniform3">
+    <entry>glUniform3fv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="value" type="GLfloat" />
+  </proto>
+  <proto name="Uniform3">
+    <entry>glUniform3i</entry>
+    <param name="location" type="GLint" />
+    <param name="v0" type="GLint" />
+    <param name="v1" type="GLint" />
+    <param name="v2" type="GLint" />
+  </proto>
+  <proto name="Uniform3">
+    <entry>glUniform3iv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="value" type="GLint" />
+  </proto>
+  <proto name="Uniform3">
+    <entry>glUniform3ui</entry>
+    <param name="location" type="GLint" />
+    <param name="v0" type="GLuint" />
+    <param name="v1" type="GLuint" />
+    <param name="v2" type="GLuint" />
+  </proto>
+  <proto name="Uniform3">
+    <entry>glUniform3uiv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="value" type="GLuint" />
+  </proto>
+  <proto name="Uniform4">
+    <entry>glUniform4f</entry>
+    <param name="location" type="GLint" />
+    <param name="v0" type="GLfloat" />
+    <param name="v1" type="GLfloat" />
+    <param name="v2" type="GLfloat" />
+    <param name="v3" type="GLfloat" />
+  </proto>
+  <proto name="Uniform4">
+    <entry>glUniform4fv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="value" type="GLfloat" />
+  </proto>
+  <proto name="Uniform4">
+    <entry>glUniform4i</entry>
+    <param name="location" type="GLint" />
+    <param name="v0" type="GLint" />
+    <param name="v1" type="GLint" />
+    <param name="v2" type="GLint" />
+    <param name="v3" type="GLint" />
+  </proto>
+  <proto name="Uniform4">
+    <entry>glUniform4iv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="value" type="GLint" />
+  </proto>
+  <proto name="Uniform4">
+    <entry>glUniform4ui</entry>
+    <param name="location" type="GLint" />
+    <param name="v0" type="GLuint" />
+    <param name="v1" type="GLuint" />
+    <param name="v2" type="GLuint" />
+    <param name="v3" type="GLuint" />
+  </proto>
+  <proto name="Uniform4">
+    <entry>glUniform4uiv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="value" type="GLuint" />
+  </proto>
+  <proto name="UniformMatrix2">
+    <entry>glUniformMatrix2fv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="transpose" type="GLboolean" />
+    <param name="value" type="GLfloat" />
+  </proto>
+  <proto name="UniformMatrix3">
+    <entry>glUniformMatrix3fv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="transpose" type="GLboolean" />
+    <param name="value" type="GLfloat" />
+  </proto>
+  <proto name="UniformMatrix4">
+    <entry>glUniformMatrix4fv</entry>
+    <param name="location" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="transpose" type="GLboolean" />
+    <param name="value" type="GLfloat" />
+  </proto>
+  <proto name="UniformBlockBinding">
+    <entry>glUniformBlockBinding</entry>
+    <param name="program" type="GLuint" />
+    <param name="uniformBlockIndex" type="GLuint" />
+    <param name="uniformBlockBinding" type="GLuint" />
+  </proto>
+  <proto name="TransformFeedbackVaryings">
+    <entry>glTransformFeedbackVaryings</entry>
+    <param name="program" type="GLuint" />
+    <param name="count" type="GLsizei" />
+    <param name="varyings" type="GLchar" />
+    <param name="bufferMode" type="GLenum" />
+  </proto>
+  <proto name="GetTransformFeedbackVarying">
+    <entry>glGetTransformFeedbackVarying</entry>
+    <param name="program" type="GLuint" />
+    <param name="index" type="GLuint" />
+    <param name="bufSize" type="GLsizei" />
+    <param name="length" type="GLsizei" />
+    <param name="size" type="GLsizei" />
+    <param name="type" type="GLenum" />
+    <param name="name" type="GLchar" />
+  </proto>
+  <proto name="ValidateProgram">
+    <entry>glValidateProgram</entry>
+    <param name="program" type="GLuint" />
+  </proto>
+  <proto name="GetProgram">
+    <entry>glGetProgramiv</entry>
+    <param name="program" type="GLuint" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="BindFragDataLocation">
+    <entry>glBindFragDataLocation</entry>
+    <param name="program" type="GLuint" />
+    <param name="color" type="GLuint" />
+    <param name="name" type="GLchar" />
+  </proto>
+  <proto name="GetFragDataLocation">
+    <entry>glGetFragDataLocation</entry>
+    <param name="program" type="GLuint" />
+    <param name="name" type="GLchar" />
+  </proto>
+  <proto name="IsShader">
+    <entry>glIsShader</entry>
+    <param name="shader" type="GLuint" />
+  </proto>
+  <proto name="GetShader">
+    <entry>glGetShaderiv</entry>
+    <param name="shader" type="GLuint" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="GetAttachedShaders">
+    <entry>glGetAttachedShaders</entry>
+    <param name="program" type="GLuint" />
+    <param name="maxCount" type="GLsizei" />
+    <param name="count" type="GLsizei" />
+    <param name="shaders" type="GLuint" />
+  </proto>
+  <proto name="GetShaderInfoLog">
+    <entry>glGetShaderInfoLog</entry>
+    <param name="shader" type="GLuint" />
+    <param name="bufSize" type="GLsizei" />
+    <param name="length" type="GLsizei" />
+    <param name="infoLog" type="GLchar" />
+  </proto>
+  <proto name="GetShaderSource">
+    <entry>glGetShaderSource</entry>
+    <param name="shader" type="GLuint" />
+    <param name="bufSize" type="GLsizei" />
+    <param name="length" type="GLsizei" />
+    <param name="source" type="GLchar" />
+  </proto>
+  <proto name="GetVertexAttribPointer">
+    <entry>glGetVertexAttribPointerv</entry>
+    <param name="index" type="GLuint" />
+    <param name="pname" type="GLenum" />
+    <param name="pointer" type="GLvoid" />
+  </proto>
+  <proto name="GetUniform">
+    <entry>glGetUniformfv</entry>
+    <param name="program" type="GLuint" />
+    <param name="location" type="GLint" />
+    <param name="params" type="GLfloat" />
+  </proto>
+  <proto name="GetUniform">
+    <entry>glGetUniformiv</entry>
+    <param name="program" type="GLuint" />
+    <param name="location" type="GLint" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="GetUniform">
+    <entry>glGetUniformuiv</entry>
+    <param name="program" type="GLuint" />
+    <param name="location" type="GLint" />
+    <param name="params" type="GLuint" />
+  </proto>
+  <proto name="IsProgram">
+    <entry>glIsProgram</entry>
+    <param name="program" type="GLuint" />
+  </proto>
+  <proto name="GetProgram">
+    <entry>glGetProgramiv</entry>
+    <param name="program" type="GLuint" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="GetProgramInfoLog">
+    <entry>glGetProgramInfoLog</entry>
+    <param name="program" type="GLuint" />
+    <param name="bufSize" type="GLsizei" />
+    <param name="length" type="GLsizei" />
+    <param name="infoLog" type="GLchar" />
+  </proto>
+</opengl>

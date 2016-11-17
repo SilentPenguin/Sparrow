@@ -1,11 +1,44 @@
 using System.Runtime.InteropServices;
 using System;
 using System.Linq;
+using System.IO;
 
 namespace Sparrow.Graphics.OpenGL
 {
     public partial class Gl
     {
+        public static unsafe void BindBuffer(uint target, uint buffer) { Raw.glBindBuffer(target, buffer); }
+
+        public static void BufferData(uint target, byte[] data, uint usage) { BufferData(target, data.Length, data, usage); }
+        public static unsafe void BufferData(uint target, int size, byte[] data, uint usage) { fixed(void* p = data) Raw.glBufferData(target, &size, p, usage); }
+        public static void BufferData<T>(uint target, T[] data, uint usage) where T : struct { BufferData<T>(target, data.Length, data, usage); }
+        public static unsafe void BufferData<T>(uint target, int size, T[] data, uint usage) where T : struct
+        {
+            var marshalSize = Marshal.SizeOf<T>();
+            var ptr = Marshal.AllocHGlobal(size * marshalSize);
+
+            for (int i = 0; i < size; i++)
+                Marshal.StructureToPtr(data[i], ptr + i * marshalSize, true);
+
+            size *= marshalSize;
+            
+            Raw.glBufferData(target, &size, ptr.ToPointer(), usage);
+            Marshal.FreeHGlobal(ptr);
+        }
+
+        public static unsafe void CreateBuffers(int n, uint[] buffers) { fixed(uint* p = buffers) Raw.glCreateBuffers(n, p); }
+
+        public static unsafe void GenBuffers(int n, uint[] buffers) { fixed(uint* p = buffers) Raw.glGenBuffers(n, p); }
+
+        public static unsafe void GetUniform(uint program, int location, float[] v) { fixed(float* p = v) Raw.glGetUniformfv(program, location, p); }
+        public static unsafe void GetUniform(uint program, int location, double[] v) { fixed(double* p = v) Raw.glGetUniformdv(program, location, p); }
+        public static unsafe void GetUniform(uint program, int location, int[] v) { fixed(int* p = v) Raw.glGetUniformiv(program, location, p); }
+        public static unsafe void GetUniform(uint program, int location, uint[] v) { fixed(uint* p = &v[0]) Raw.glGetUniformuiv(program, location, p); }
+        public static unsafe void GetUniform(uint program, int location, int count, float[] v) { fixed(float* p = &v[0]) Raw.glGetnUniformfv(program, location, count, p); }
+        public static unsafe void GetUniform(uint program, int location, int count, double[] v) { fixed(double* p = &v[0]) Raw.glGetnUniformdv(program, location, count, p); }
+        public static unsafe void GetUniform(uint program, int location, int count, int[] v) { fixed(int* p = &v[0]) Raw.glGetnUniformiv(program, location, count, p); }
+        public static unsafe void GetUniform(uint program, int location, int count, uint[] v) { fixed(uint* p = &v[0]) Raw.glGetnUniformuiv(program, location, count, p); }
+
         public static void Uniform1(int location, float v0) { Raw.glUniform1f(location, v0); }
         public static void Uniform1(int location, double v0) { Raw.glUniform1d(location, v0); }
         public static void Uniform1(int location, int v0) { Raw.glUniform1i(location, v0); }
@@ -66,7 +99,7 @@ namespace Sparrow.Graphics.OpenGL
         public static void Uniform(int location, double[] v) { Uniform(location, v.Length, v); }
         public static void Uniform(int location, int[] v) { Uniform(location, v.Length, v); }
         public static void Uniform(int location, uint[] v) { Uniform(location, v.Length, v); }
-        public static void UniformMatrix(int location, float[,] v) { Uniform(location, v.Length, v); }
+        public static void UniformMatrix(int location, float[,] v) { UniformMatrix(location, v.Length, v); }
         public static void Uniform(int location, int count, float[] v)
         {
             if (count == 1) Uniform1(location, count, v);
