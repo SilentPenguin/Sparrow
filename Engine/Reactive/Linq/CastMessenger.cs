@@ -1,5 +1,3 @@
-using System;
-
 namespace Sparrow.Reactive.Linq
 {
     public class CastMessenger<TSource, TResult> : Messenger<TSource, TResult> where TSource : TResult

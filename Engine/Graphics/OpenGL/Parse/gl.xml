@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opengl>
+    <enum name="AccumOp">
+        <const name="Accum" value="0x0100"/>
+        <const name="Load" value="0x0101"/>
+        <const name="Return" value="0x0102"/>
+        <const name="Mult" value="0x0103"/>
+        <const name="Add" value="0x0104"/>
+    </enum>
+    <enum name="DrawingMode">
+        <const name="Points" value="0x0000"/>
+        <const name="Lines" value="0x0001"/>
+        <const name="LineLoop" value="0x0002"/>
+        <const name="LineStrip" value="0x0003"/>
+        <const name="Triangles" value="0x0004"/>
+        <const name="TriangleStrip" value="0x0005"/>
+        <const name="TriangleFan" value="0x0005"/>
+        <const name="Quads" value="0x0007"/>
+        <const name="QuadStrip" value="0x0008"/>
+        <const name="Polygon" value="0x0009"/>
+    </enum>
+    <enum name="TextureUnit">
+        <const name="Texture0" value="0x84C0"/>
+        <const name="Texture1" value="0x84C1"/>
+        <const name="Texture2" value="0x84C2"/>
+        <const name="Texture3" value="0x84C3"/>
+        <const name="Texture4" value="0x84C4"/>
+        <const name="Texture5" value="0x84C5"/>
+        <const name="Texture6" value="0x84C6"/>
+        <const name="Texture7" value="0x84C7"/>
+        <const name="Texture8" value="0x84C8"/>
+        <const name="Texture9" value="0x84C9"/>
+        <const name="Texture10" value="0x84CA"/>
+        <const name="Texture11" value="0x84CB"/>
+        <const name="Texture12" value="0x84CC"/>
+        <const name="Texture13" value="0x84CD"/>
+        <const name="Texture14" value="0x84CE"/>
+        <const name="Texture15" value="0x84CF"/>
+        <const name="Texture16" value="0x84D0"/>
+        <const name="Texture17" value="0x84D1"/>
+        <const name="Texture18" value="0x84D2"/>
+        <const name="Texture19" value="0x84D3"/>
+        <const name="Texture20" value="0x84D4"/>
+        <const name="Texture21" value="0x84D5"/>
+        <const name="Texture22" value="0x84D6"/>
+        <const name="Texture23" value="0x84D7"/>
+        <const name="Texture24" value="0x84D8"/>
+        <const name="Texture25" value="0x84D9"/>
+        <const name="Texture26" value="0x84DA"/>
+        <const name="Texture27" value="0x84DB"/>
+        <const name="Texture28" value="0x84DC"/>
+        <const name="Texture29" value="0x84DD"/>
+        <const name="Texture30" value="0x84DE"/>
+        <const name="Texture31" value="0x84DF"/>
+    </enum>
+    <proto name="Accum">
+        <entry>Accum</entry>
+        <param type="AccumOp" name="op" dir="in"/>
+        <param type="float" name="value" dir="in"/>
+    </proto>
+    <proto name="ActiveShaderProgram">
+        <entry>ActiveShaderProgram</entry>
+        <param type="uint" name="pipeline"/>
+        <param type="uint" name="program"/>
+    </proto>
+    <proto name="ActiveTexture">
+        <entry>ActiveTexture</entry>
+        <param type="TextureUnit" name="texture"/>
+    </proto>
+    <proto name="AlphaFunc">
+        <entry>AlphaFunc</entry>
+        <param type="uint" name="func"/>
+        <param type="float" name="ref"/>
+    </proto>
+    <proto name="Begin">
+        <entry>Begin</entry>
+        <param type="DrawingMode" name="mode"/>
+    </proto>
+    <proto name="End">
+        <entry>End</entry>
+    </proto>
+    <proto name="Uniform">
+        <entry>Uniform1f</entry>
+        <entry>Uniform2f</entry>
+        <entry>Uniform3f</entry>
+        <entry>Uniform4f</entry>
+        <entry>Uniform1d</entry>
+        <entry>Uniform2d</entry>
+        <entry>Uniform3d</entry>
+        <entry>Uniform4d</entry>
+        <entry>Uniform1i</entry>
+        <entry>Uniform2i</entry>
+        <entry>Uniform3i</entry>
+        <entry>Uniform4i</entry>
+        <entry>Uniform1ui</entry>
+        <entry>Uniform2ui</entry>
+        <entry>Uniform3ui</entry>
+        <entry>Uniform4ui</entry>
+        <param type="int" name="location"/>
+        <param type="float" name="x" entry="Uniform1f Uniform2f Uniform3f Uniform4f"/>
+        <param type="float" name="y" entry="Uniform2f Uniform3f Uniform4f"/>
+        <param type="float" name="z" entry="Uniform3f Uniform4f"/>
+        <param type="float" name="w" entry="Uniform4f"/>
+        <param type="double" name="x" entry="Uniform1d Uniform2d Uniform3d Uniform4d"/>
+        <param type="double" name="y" entry="Uniform2d Uniform3d Uniform4d"/>
+        <param type="double" name="z" entry="Uniform3d Uniform4d"/>
+        <param type="double" name="w" entry="Uniform4d"/>
+        <param type="int" name="x" entry="Uniform1i Uniform2i Uniform3i Uniform4i"/>
+        <param type="int" name="y" entry="Uniform2i Uniform3i Uniform4i"/>
+        <param type="int" name="z" entry="Uniform3i Uniform4i"/>
+        <param type="int" name="w" entry="Uniform4i"/>
+        <param type="uint" name="x" entry="Uniform1ui Uniform2ui Uniform3ui Uniform4ui"/>
+        <param type="uint" name="y" entry="Uniform2ui Uniform3ui Uniform4ui"/>
+        <param type="uint" name="z" entry="Uniform3ui Uniform4ui"/>
+        <param type="uint" name="w" entry="Uniform4ui"/>
+    </proto>
+    <proto>
+        <entry name="Uniform1">Uniform1fv</entry>
+        <entry name="Uniform2">Uniform2fv</entry>
+        <entry name="Uniform3">Uniform3fv</entry>
+        <entry name="Uniform4">Uniform4fv</entry>
+        <entry name="Uniform1">Uniform1dv</entry>
+        <entry name="Uniform2">Uniform2dv</entry>
+        <entry name="Uniform3">Uniform3dv</entry>
+        <entry name="Uniform4">Uniform4dv</entry>
+        <entry name="Uniform1">Uniform1iv</entry>
+        <entry name="Uniform2">Uniform2iv</entry>
+        <entry name="Uniform3">Uniform3iv</entry>
+        <entry name="Uniform4">Uniform4iv</entry>
+        <entry name="Uniform1">Uniform1uiv</entry>
+        <entry name="Uniform2">Uniform2uiv</entry>
+        <entry name="Uniform3">Uniform3uiv</entry>
+        <entry name="Uniform4">Uniform4uiv</entry>
+        <param type="int" name="location"/>
+        <param type="int" name="count"/>
+        <param type="float[]" name="v" entry="Uniform1fv Uniform2fv Uniform3fv Uniform4fv"/>
+        <param type="double[]" name="v" entry="Uniform1dv Uniform2dv Uniform3dv Uniform4dv"/>
+        <param type="int[]" name="v" entry="Uniform1iv Uniform2iv Uniform3iv Uniform4iv"/>
+        <param type="uint[]" name="v" entry="Uniform1uiv Uniform2uiv Uniform3uiv Uniform4uiv"/>
+    </proto>
+    <proto>
+        <entry name="UniformMatrix2">UniformMatrix2fv</entry>
+        <entry name="UniformMatrix3">UniformMatrix3fv</entry>
+        <entry name="UniformMatrix4">UniformMatrix4fv</entry>
+        <entry name="UniformMatrix2x3">UniformMatrix2x3fv</entry>
+        <entry name="UniformMatrix2x4">UniformMatrix2x4fv</entry>
+        <entry name="UniformMatrix3x2">UniformMatrix3x2fv</entry>
+        <entry name="UniformMatrix3x4">UniformMatrix3x4fv</entry>
+        <entry name="UniformMatrix4x2">UniformMatrix4x2fv</entry>
+        <entry name="UniformMatrix4x3">UniformMatrix4x3fv</entry>
+        <param type="int" name="location"/>
+        <param type="int" name="count"/>
+        <param type="bool" name="transpose"/>
+        <param type="float[]" name="value"/>
+    </proto>
+</opengl>
