@@ -1,5 +1,3 @@
-using System;
-
 namespace Sparrow.Reactive.Linq
 {
     public class TakeMessenger<T> : Messenger<T, T>

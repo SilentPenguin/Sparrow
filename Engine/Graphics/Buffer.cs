@@ -1,21 +1,35 @@
 using Sparrow.Graphics.OpenGL;
-using System.Runtime.InteropServices;
 
 namespace Sparrow.Graphics
 {
     public class Buffer<T> where T : struct
     {
-        public Buffer()
+        public Buffer(uint target = Raw.GL_ARRAY_BUFFER, uint usage = Raw.GL_DYNAMIC_DRAW)
         {
             var buffers = new uint[1];
-            //target = Gl.glCreateBuffers(1, buffers);
+            Gl.CreateBuffers(1, buffers);
+            this.buffer = buffers[0];
+            this.target = target;
+            this.usage = usage;
         }
 
-        public uint target;
+        public uint buffer;
+        private uint target;
+        private uint usage;
 
         public void Bind()
         {
+            Gl.BindBuffer(target, buffer);
+        }
 
+        public void Unbind()
+        {
+            Gl.BindBuffer(target, 0);
+        }
+
+        public void Upload(T[] data)
+        {
+            Gl.BufferData<T>(target, data, usage);
         }
     }
 }

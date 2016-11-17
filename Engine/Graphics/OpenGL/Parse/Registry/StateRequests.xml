@@ -1,0 +1,62 @@
+<opengl>
+  <proto name="GetBoolean">
+    <entry>glGetBooleanv</entry>
+    <param name="pname" type="GLenum" />
+    <param name="data" type="GLboolean" />
+  </proto>
+  <proto name="GetBoolean">
+    <entry>glGetBooleani_v</entry>
+    <param name="target" type="GLenum" />
+    <param name="index" type="GLuint" />
+    <param name="data" type="GLboolean" />
+  </proto>
+  <proto name="GetInteger">
+    <entry>glGetInteger64v</entry>
+    <param name="pname" type="GLenum" />
+    <param name="data" type="GLint64" />
+  </proto>
+  <proto name="GetInteger">
+    <entry>glGetIntegerv</entry>
+    <param name="pname" type="GLenum" />
+    <param name="data" type="GLint" />
+  </proto>
+  <proto name="GetInteger">
+    <entry>glGetIntegeri_v</entry>
+    <param name="target" type="GLenum" />
+    <param name="index" type="GLuint" />
+    <param name="data" type="GLint" />
+  </proto>
+  <proto name="GetFloat">
+    <entry>glGetFloatv</entry>
+    <param name="pname" type="GLenum" />
+    <param name="data" type="GLfloat" />
+  </proto>
+  <proto name="GetDouble">
+    <entry>glGetDoublev</entry>
+    <param name="pname" type="GLenum" />
+    <param name="data" type="GLdouble" />
+  </proto>
+  <proto name="IsEnabled">
+    <entry>glIsEnabled</entry>
+    <param name="cap" type="GLenum" />
+  </proto>
+  <proto name="IsEnabled">
+    <entry>glIsEnabledi</entry>
+    <param name="target" type="GLenum" />
+    <param name="index" type="GLuint" />
+  </proto>
+  <proto name="GetPointer">
+    <entry>glGetPointerv</entry>
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLvoid" />
+  </proto>
+  <proto name="GetString">
+    <entry>glGetString</entry>
+    <param name="name" type="GLenum" />
+  </proto>
+  <proto name="GetString">
+    <entry>glGetStringi</entry>
+    <param name="name" type="GLenum" />
+    <param name="index" type="GLuint" />
+  </proto>
+</opengl>
