@@ -3,85 +3,73 @@ using System.Text;
 
 namespace Sparrow.Numerics
 {
-    public struct Matrix
+    public class Matrix : Matrix<float>
     {
-        public Matrix(double[,] items) { this.items = items; }
-        private Matrix(int size) : this(size, size) {}
-        private Matrix(int width, int height) : this(new double[width,height]) {}
-        
-        private double[,] items;
+        public Matrix(float[,] items) : base(items) {}
+    }
 
-        public double this[int x, int y]
+    public partial class Matrix<T> where T : struct
+    {
+        public Matrix(T[,] items) { this.items = items; }
+
+        static Matrix()
         {
-            get { return items[x, y]; }
-            private set { items[x, y] = value; }
+            if (typeof(T) == typeof(float))
+                math = new MathFloat() as Math<T>;
+            else if (typeof(T) == typeof(double))
+                math = new MathDouble() as Math<T>;
+            if (math == null)
+                throw new InvalidOperationException("Type " + typeof(T) + " is not supported by Vector.");
         }
+
+        private readonly T[,] items;
+        private static readonly Math<T> math;
+
+        public T this[int x, int y] { get { return items[x, y]; } }
 
         public int Width { get { return items.GetLength(0); } }
         public int Height { get { return items.GetLength(1); } }
+        
+        public Vector<T> Column(int x)
+        {
+            var result = new T[Height];
+            for (int i = Height; i-- != 0;)
+                result[i] = items[x, i];
+            return new Vector<T>(result);
+        }
 
-        public Matrix Transposition
+        public Vector<T> Row(int y)
+        {
+            var result = new T[Width];
+            for (int i = Width; i-- != 0;)
+                result[i] = items[i, y];
+            return new Vector<T>(result);
+        }
+
+        public Matrix<T> Transposed
         {
             get
             {
-                var result = new Matrix(Height, Width);
+                var result = new T[Height, Width];
                 for (int i = Width; i-- != 0;)
                     for (int j = Height; j-- != 0;)
                         result[j, i] = this[i, j];
-                return result;
+                return new Matrix<T>(result);
             }
         }
 
-        public Vector Column(int x)
-        {
-            var result = new double[Height];
-            for (int i = Height; i-- != 0;)
-                result[i] = this[x, i];
-            return new Vector(result);
-        }
-
-        public Vector Row(int y)
-        {
-            var result = new double[Width];
-            for (int i = Width; i-- != 0;)
-                result[i] = this[i, y];
-            return new Vector(result);
-        }
-
-        public Matrix Empty(int size) { return new Matrix(size); }
-        public Matrix Empty(int x, int y) { return new Matrix(x, y); }
-
-        public Matrix Identity(int size)
-        {
-            var result = new Matrix(size);
-            for (int i = size; i-- != 0;)
-                result[i,i] = 1;
-            return result;
-        }
-
-        public static Matrix operator * (Matrix m1, Matrix m2)
-        {
-            if (m1.Height != m2.Width) throw new Exception();
-            var result = new Matrix(m1.Width, m2.Height);
-            for(int i = result.Width; i-- != 0;)
-                for (int j = result.Height; i-- != 0;)
-                    result[i, j] = Vector.Dot(m1.Row(i), m2.Column(j));
-            return result;
-        }
-
-        public static Vector operator * (Matrix m, Vector v)
-        {
-            if (v.Count != m.Width) throw new Exception();
-            var result = new double[v.Count];
-            for (int i = result.Length; i-- != 0;)
-                result[i] = Vector.Dot(m.Row(i), v);
-            return new Vector(result);
-        }
+        public static Matrix<T> Identity(int size) { return math.Identity(size); }
+        public static Matrix<T> Empty(int size) { return math.Empty(size, size); }
+        public static Matrix<T> Empty(int width, int height) { return math.Empty(width, height); }
+        public static Matrix<T> operator * (Matrix<T> a, Matrix<T> b) { return math.Mul(a, b); }
+        public static Vector<T> operator * (Matrix<T> a, Vector<T> b) { return math.Mul(a, b); }
         
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("Matrix(");
+            sb.Append("Matrix<");
+            sb.Append(typeof(T));
+            sb.Append(">(");
             for(int i = 0; i < this.Width; i++)
             {
                 for (int j = 0; j < this.Height; j++)
