@@ -1,109 +1,74 @@
 using System;
-using System.Collections;
-using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Sparrow.Numerics
 {
-    public struct Vector : IEnumerable
+    public class Vector : Vector<float> {
+        public Vector(float x, float y) : base(x, y) {}
+        public Vector(float x, float y, float z) : base(x, y, z) {}
+        public Vector(float x, float y, float z, float w) : base(x, y, z, w) {}
+        public Vector(params float[] items) : base(items) {}
+    }
+
+    public partial class Vector<T> where T : struct
     {
-        public Vector(double x, double y) : this (new double[] {x, y}) {}
-        public Vector(double x, double y, double z) : this(new double[] {x, y, z}) {}
-        public Vector(double x, double y, double z, double w) : this(new double[] {x, y, z, w}) {}
-        public Vector(params double[] items) { this.items = items; }
-        private Vector(int size) : this(new double[size]) {}
-        
-        private double[] items;
+        public Vector(T x, T y) : this(new T[] {x, y}) {}
+        public Vector(T x, T y, T z) : this(new T[] {x, y, z}) {}
+        public Vector(T x, T y, T z, T w) : this(new T[] {x, y, z, w}) {}
+        public Vector(params T[] items) { this.items = items; }
 
-        public double x { get { return items[0]; } }
-        public double y { get { return items[1]; } }
-        public double z { get { return items[2]; } }
-        public double w { get { return items[3]; } }
-
-        public double this[int i]
+        static Vector()
         {
-            get { return items[i]; }
-            private set { items[i] = value; }
+            if (typeof(T) == typeof(float))
+                math = new MathFloat() as Math<T>;
+            else if (typeof(T) == typeof(double))
+                math = new MathDouble() as Math<T>;
+            if (math == null)
+                throw new InvalidOperationException("Type " + typeof(T) + " is not supported by Vector.");
         }
 
-        public int Count { get { return items.Length; } }
-        public Vector Unit { get { return 1 / Magnitude * this; } }
-        public double Magnitude { get { return Math.Sqrt(SqrMagnitude); } }
-        public double SqrMagnitude { get { return Vector.Dot(this, this); } }
+        private readonly T[] items;
+        private static readonly Math<T> math;
 
-        public Vector Resize(int size)
+        public T this[int i] { get { return items[i]; } }
+        public int Count { get { return items.Length; } }
+
+        public T x { get { return items[0]; } }
+        public T y { get { return items[1]; } }
+        public T z { get { return items[2]; } }
+        public T w { get { return items[3]; } }
+
+        public static Vector<T> operator +(Vector<T> a, Vector<T> b) { return math.Add(a, b); }
+        public static Vector<T> operator -(Vector<T> a, Vector<T> b) { return math.Sub(a, b); }
+        public static Vector<T> operator *(Vector<T> a, T b) { return math.Mul(a, b); }
+
+        public static T Dot(Vector<T> a, Vector<T> b) { return math.Dot(a, b); }
+        public static Vector<T> Cross(Vector<T> a, Vector<T> b) { return math.Cross(a, b); }
+
+        public Vector<T> Unit { get { return math.Unit(this); } }
+        public T Magnitude { get { return math.Magnitude(this); } }
+        public T SquareMagnitude { get { return math.SquareMagnitude(this); } }
+
+        public Vector<T> Resize(int size)
         {
             if (Count == size) return this;
-            var result = new Vector(size);
+            var result = new T[size];
             for (int i = Math.Min(size, Count); i-- != 0;)
                 result[i] = this[i];
-            return result;
+            return new Vector<T>(result);
         }
 
-        public IEnumerator GetEnumerator()
-        {
-            return items.GetEnumerator();
-        }
-
-        public static double Dot(Vector v1, Vector v2)
-        {
-            double result = 0;
-            for (int i = Math.Min(v1.Count, v2.Count); i-- != 0;)
-                result += v1[i] * v2[i];
-            return result;
-        }
-
-        public static Vector Cross(Vector v1, Vector v2)
-        {
-            return new Vector(
-                v1.y * v2.z - v1.z * v2.y,
-                v1.z * v2.x - v1.x * v2.z,
-                v1.x * v2.y - v1.y * v2.x
-            );
-        }
-
-        public static Vector Zeros(int size) { return new Vector(size); }
-        public static Vector Ones(int size) { return Action(new Vector(size), (i) => 1); }
-
-        // Vector Math Operators
-        public static Vector operator + (Vector v1, Vector v2) { return Binary(v1, v2, (a, b) => a + b); }
-        public static Vector operator - (Vector v1, Vector v2) { return Binary(v1, v2, (a, b) => a - b); }
-        public static Vector operator + (double s, Vector v) { return Unary(v, (vi) => vi); }
-        public static Vector operator - (double s, Vector v) { return Unary(v, (vi) => -vi); }
-        public static Vector operator * (double s, Vector v) { return Unary(v, (vi) => s * vi); }
-
-        // Perform a Unary operation on each element, using a function to transform one vector into another vector.
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static Vector Unary(Vector v, Func<double, double> func)
-        {
-            return Action(new Vector(v.Count), i => func(v[i]));
-        }
-
-        // Perform a Binary operation on each element, using a function to transform two vectors into another vector.
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static Vector Binary(Vector v1, Vector v2, Func<double, double, double> func)
-        {
-            if (v1.Count < v2.Count) v1 = v1.Resize(v2.Count);
-            else if (v2.Count < v1.Count) v2 = v2.Resize(v1.Count);
-            return Action(new Vector(v1.Count), i => func(v1[i], v2[i]));
-        }
-
-        // Perform an action on a vector
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static Vector Action(Vector v, Func<int, double> func)
-        {
-            for (int i = v.Count; i-- != 0;)
-                v[i] = func(i);
-            return v;
-        }
-
+        public static Vector<T> Zeros(int size) { return math.Zeros(size); }
+        public static Vector<T> Ones(int size) { return math.Ones(size); }
+        
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("Vector(");
-            for(var i = 0; i < items.Length; i++)
+            sb.Append("Vector<");
+            sb.Append(typeof(T));
+            sb.Append(">(");
+            for(int i = 0; i < this.Count; i++)
             {
-                if (i != 0) sb.Append(", ");
                 sb.Append(items[i]);
             }
             sb.Append(")");
