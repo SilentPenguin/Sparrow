@@ -52,7 +52,8 @@ namespace Sparrow.Numerics
 
             public override Vector<float> Cross(Vector<float> v1, Vector<float> v2)
             {
-                return new Vector<float>(
+                return new Vector<float>
+                (
                     v1.y * v2.z - v1.z * v2.y,
                     v1.z * v2.x - v1.x * v2.z,
                     v1.x * v2.y - v1.y * v2.x
@@ -125,7 +126,8 @@ namespace Sparrow.Numerics
 
             public override Vector<double> Cross(Vector<double> v1, Vector<double> v2)
             {
-                return new Vector<double>(
+                return new Vector<double>
+                (
                     v1.y * v2.z - v1.z * v2.y,
                     v1.z * v2.x - v1.x * v2.z,
                     v1.x * v2.y - v1.y * v2.x
