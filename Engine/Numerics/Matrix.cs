@@ -3,12 +3,7 @@ using System.Text;
 
 namespace Sparrow.Numerics
 {
-    public class Matrix : Matrix<float>
-    {
-        public Matrix(float[,] items) : base(items) {}
-    }
-
-    public partial class Matrix<T> where T : struct
+    public partial struct Matrix<T> where T : struct
     {
         public Matrix(T[,] items) { this.items = items; }
 
