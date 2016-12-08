@@ -3,12 +3,7 @@ using System.Text;
 
 namespace Sparrow.Numerics
 {
-    public class Quaternion : Quaternion<float>
-    {
-        public Quaternion(float r, float i, float j, float k) : base(r, i, j, k) {}
-    }
-
-    public partial class Quaternion<T> where T : struct
+    public partial struct Quaternion<T> where T : struct
     {
         public Quaternion(T r, T i, T j, T k) : this(new T[] {r, i, j, k}) {}
         private Quaternion(T[] items) { this.items = items; }

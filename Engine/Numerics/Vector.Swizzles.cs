@@ -1,6 +1,6 @@
 namespace Sparrow.Numerics
 {
-    public partial class Vector<T> where T : struct
+    public partial struct Vector<T> where T : struct
     {
         public Vector<T> xx { get { return new Vector<T>(x, x); } }
         public Vector<T> xy { get { return new Vector<T>(x, y); } }

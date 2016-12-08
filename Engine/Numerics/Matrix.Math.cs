@@ -2,7 +2,7 @@ using System;
 
 namespace Sparrow.Numerics
 {
-    public partial class Matrix<T> where T : struct
+    public partial struct Matrix<T> where T : struct
     {
         abstract class Math<S> where S : struct
         {
