@@ -1,9 +1,11 @@
 using System;
 using System.Text;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Sparrow.Numerics
 {
-    public partial struct Vector<T> where T : struct
+    public partial struct Vector<T> : IEnumerable<T> where T : struct
     {
         public Vector(T x, T y) : this(new T[] {x, y}) {}
         public Vector(T x, T y, T z) : this(new T[] {x, y, z}) {}
@@ -20,7 +22,7 @@ namespace Sparrow.Numerics
                 throw new InvalidOperationException("Type " + typeof(T) + " is not supported by Vector.");
         }
 
-        internal readonly T[] items;
+        private readonly T[] items;
         private static readonly Math<T> math;
 
         public T this[int i] { get { return items[i]; } }
@@ -52,6 +54,9 @@ namespace Sparrow.Numerics
                 result[i] = this[i];
             return new Vector<T>(result);
         }
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator() { return items.GetEnumerator() as IEnumerator<T>; }
+        IEnumerator IEnumerable.GetEnumerator() { return items.GetEnumerator(); }
         
         public override string ToString()
         {

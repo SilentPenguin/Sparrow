@@ -1,9 +1,11 @@
 using System;
 using System.Text;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Sparrow.Numerics
 {
-    public partial struct Quaternion<T> where T : struct
+    public partial struct Quaternion<T> : IEnumerable<T> where T : struct
     {
         public Quaternion(T r, T i, T j, T k) : this(new T[] {r, i, j, k}) {}
         private Quaternion(T[] items) { this.items = items; }
@@ -34,6 +36,9 @@ namespace Sparrow.Numerics
         public static Quaternion<T> operator * (Quaternion<T> a, Quaternion<T> b) { return math.Mul(a, b); }
         public static Quaternion<T> operator + (Quaternion<T> a, Quaternion<T> b) { return math.Add(a, b); }
 
+        IEnumerator<T> IEnumerable<T>.GetEnumerator() { return items.GetEnumerator() as IEnumerator<T>; }
+        IEnumerator IEnumerable.GetEnumerator() { return items.GetEnumerator(); }
+        
         public override string ToString()
         {
             var sb = new StringBuilder();
