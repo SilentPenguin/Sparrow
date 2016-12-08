@@ -44,6 +44,8 @@ namespace Sparrow.Numerics
 
         public static T Dot(Vector<T> a, Vector<T> b) { return math.Dot(a, b); }
         public static Vector<T> Cross(Vector<T> a, Vector<T> b) { return math.Cross(a, b); }
+        public static Vector<T> Zeros(int size) { return math.Zeros(size); }
+        public static Vector<T> Ones(int size) { return math.Ones(size); }
 
         public Vector<T> Unit { get { return math.Unit(this); } }
         public T Magnitude { get { return math.Magnitude(this); } }
@@ -57,9 +59,6 @@ namespace Sparrow.Numerics
                 result[i] = this[i];
             return new Vector<T>(result);
         }
-
-        public static Vector<T> Zeros(int size) { return math.Zeros(size); }
-        public static Vector<T> Ones(int size) { return math.Ones(size); }
         
         public override string ToString()
         {
