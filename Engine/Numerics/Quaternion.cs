@@ -3,53 +3,47 @@ using System.Text;
 
 namespace Sparrow.Numerics
 {
-    public struct Quaternion
+    public class Quaternion : Quaternion<float>
     {
-        public Quaternion(double r, double i, double j, double k) : this(new double[] {r, i, j, k}) {}
-        private Quaternion(double[] items) { this.items = items; }
+        public Quaternion(float r, float i, float j, float k) : base(r, i, j, k) {}
+    }
 
-        private double[] items;
+    public partial class Quaternion<T> where T : struct
+    {
+        public Quaternion(T r, T i, T j, T k) : this(new T[] {r, i, j, k}) {}
+        private Quaternion(T[] items) { this.items = items; }
 
-        public double r { get { return items[0]; } }
-        public double i { get { return items[1]; } }
-        public double j { get { return items[2]; } }
-        public double k { get { return items[3]; } }
-
-        public static Quaternion Identity { get { return new Quaternion(0, 0, 0, 0); } }
-        public Quaternion Conjugate { get { return new Quaternion(r, -i, -j, -k); } }
-        public Quaternion Normalised
+        static Quaternion()
         {
-            get
-            {
-                double n = Math.Sqrt(i * i + j * j + k * k + r * r);
-                return new Quaternion(r / n, i / n, j / n, k / n);
-            }
+            if (typeof(T) == typeof(float))
+                math = new MathFloat() as Math<T>;
+            else if (typeof(T) == typeof(double))
+                math = new MathDouble() as Math<T>;
+            if (math == null)
+                throw new InvalidOperationException("Type " + typeof(T) + " is not supported by Vector.");
         }
 
-        public static Quaternion operator * (Quaternion q, double s)
-        {
-            return new Quaternion(q.r * s, q.i * s, q.j * s, q.k * s);
-        }
+        private readonly T[] items;
+        private static readonly Math<T> math;
+        
+        public T r { get { return items[0]; } }
+        public T i { get { return items[1]; } }
+        public T j { get { return items[2]; } }
+        public T k { get { return items[3]; } }
 
-        public static Quaternion operator * (Quaternion q1, Quaternion q2)
-        {
-            return new Quaternion(
-                q1.r * q2.r - q1.i * q2.i - q1.j * q2.j - q1.k * q2.k,
-                q1.r * q2.i + q1.i * q2.r + q1.j * q2.k - q1.k * q2.j,
-                q1.r * q2.j + q1.j * q2.r + q1.k * q2.i - q1.i * q2.k,
-                q1.r * q2.k + q1.k * q2.r + q1.i * q2.j - q1.j * q2.i
-            );
-        }
-
-        public static Quaternion operator + (Quaternion q1, Quaternion q2)
-        {
-            return new Quaternion(q1.r + q2.r, q1.i + q2.i, q1.j + q2.j, q1.k + q2.k);
-        }
+        public static Quaternion<T> Identity { get { return math.Identity(); } }
+        public Quaternion<T> Conjugate { get { return math.Conjugate(this); } }
+        public Quaternion<T> Unit { get { return math.Unit(this); } }
+        public static Quaternion<T> operator * (Quaternion<T> a, T b) { return math.Mul(a, b); }
+        public static Quaternion<T> operator * (Quaternion<T> a, Quaternion<T> b) { return math.Mul(a, b); }
+        public static Quaternion<T> operator + (Quaternion<T> a, Quaternion<T> b) { return math.Add(a, b); }
 
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("Quaternion(");
+            sb.Append("Quaternion<");
+            sb.Append(typeof(T));
+            sb.Append(">(");
             for(var i = 0; i < items.Length; i++)
             {
                 if (i != 0) sb.Append(", ");
@@ -58,6 +52,5 @@ namespace Sparrow.Numerics
             sb.Append(")");
             return sb.ToString();
         }
-
     }
 }
