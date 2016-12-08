@@ -20,7 +20,7 @@ namespace Sparrow.Numerics
                 throw new InvalidOperationException("Type " + typeof(T) + " is not supported by Vector.");
         }
 
-        private readonly T[] items;
+        internal readonly T[] items;
         private static readonly Math<T> math;
 
         public T this[int i] { get { return items[i]; } }
@@ -31,14 +31,14 @@ namespace Sparrow.Numerics
         public T z { get { return items[2]; } }
         public T w { get { return items[3]; } }
 
-        public static Vector<T> operator +(Vector<T> a, Vector<T> b) { return math.Add(a, b); }
-        public static Vector<T> operator -(Vector<T> a, Vector<T> b) { return math.Sub(a, b); }
-        public static Vector<T> operator *(Vector<T> a, T b) { return math.Mul(a, b); }
-
         public static T Dot(Vector<T> a, Vector<T> b) { return math.Dot(a, b); }
         public static Vector<T> Cross(Vector<T> a, Vector<T> b) { return math.Cross(a, b); }
         public static Vector<T> Zeros(int size) { return math.Zeros(size); }
         public static Vector<T> Ones(int size) { return math.Ones(size); }
+        public static Vector<T> operator +(Vector<T> a, Vector<T> b) { return math.Add(a, b); }
+        public static Vector<T> operator -(Vector<T> a, Vector<T> b) { return math.Sub(a, b); }
+        public static Vector<T> operator *(Vector<T> a, T b) { return math.Mul(a, b); }
+        public static Vector<T> operator *(T a, Vector<T> b) { return math.Mul(b, a); }
 
         public Vector<T> Unit { get { return math.Unit(this); } }
         public T Magnitude { get { return math.Magnitude(this); } }
