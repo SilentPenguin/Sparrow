@@ -1,9 +1,11 @@
 using System;
 using System.Text;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Sparrow.Numerics
 {
-    public partial struct Matrix<T> where T : struct
+    public partial struct Matrix<T> : IEnumerable<T> where T : struct
     {
         public Matrix(T[,] items) { this.items = items; }
 
@@ -69,6 +71,9 @@ namespace Sparrow.Numerics
                     result[i, j] = items[i, j];
             return new Matrix<T>(result);
         }
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator() { return items.GetEnumerator() as IEnumerator<T>; }
+        IEnumerator IEnumerable.GetEnumerator() { return items.GetEnumerator(); }
 
         public override string ToString()
         {
