@@ -20,7 +20,7 @@ namespace Sparrow.Numerics
                 throw new InvalidOperationException("Type " + typeof(T) + " is not supported by Vector.");
         }
 
-        internal readonly T[] items;
+        private readonly T[] items;
         private static readonly Math<T> math;
         
         public T r { get { return items[0]; } }
