@@ -17,7 +17,7 @@ namespace Sparrow.Numerics
                 throw new InvalidOperationException("Type " + typeof(T) + " is not supported by Vector.");
         }
 
-        private readonly T[,] items;
+        internal readonly T[,] items;
         private static readonly Math<T> math;
 
         public T this[int x, int y] { get { return items[x, y]; } }
@@ -59,6 +59,17 @@ namespace Sparrow.Numerics
         public static Matrix<T> operator * (Matrix<T> a, Matrix<T> b) { return math.Mul(a, b); }
         public static Vector<T> operator * (Matrix<T> a, Vector<T> b) { return math.Mul(a, b); }
         
+        public Matrix<T> Resize(int size) { return Resize(size, size); }
+        public Matrix<T> Resize(int width, int height)
+        {
+            if (width == Width && height == Height) return this;
+            var result = new T[width, height];
+            for (var i = Math.Min(width, Width); i-- != 0;)
+                for (var j = Math.Min(height, Height); j-- != 0;)
+                    result[i, j] = items[i, j];
+            return new Matrix<T>(result);
+        }
+
         public override string ToString()
         {
             var sb = new StringBuilder();
