@@ -34,6 +34,7 @@ namespace Sparrow.Numerics
         public static Quaternion<T> Identity { get { return math.Identity(); } }
         public Quaternion<T> Conjugate { get { return math.Conjugate(this); } }
         public Quaternion<T> Unit { get { return math.Unit(this); } }
+        
         public static Quaternion<T> operator * (Quaternion<T> a, T b) { return math.Mul(a, b); }
         public static Quaternion<T> operator * (Quaternion<T> a, Quaternion<T> b) { return math.Mul(a, b); }
         public static Quaternion<T> operator + (Quaternion<T> a, Quaternion<T> b) { return math.Add(a, b); }
