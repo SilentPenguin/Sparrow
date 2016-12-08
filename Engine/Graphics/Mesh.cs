@@ -15,7 +15,7 @@ namespace Sparrow.Graphics
                 return Triangles
                     .SelectMany(t => t.Vertices)
                     .Distinct()
-                    .SelectMany(v => { v.Index = i++; return v.Position.items; })
+                    .SelectMany(v => { v.Index = i++; return v.Position; })
                     .ToArray();
             }
         }
