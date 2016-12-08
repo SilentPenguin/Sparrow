@@ -66,8 +66,5 @@ namespace Sparrow.Numerics
             sb.Append(")");
             return sb.ToString();
         }
-
-        public static implicit operator Vector<T>(T[] o) { return new Vector<T>(o); }
-        public static implicit operator T[](Vector<T> o) { return o.items; }
     }
 }
