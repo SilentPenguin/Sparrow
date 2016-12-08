@@ -3,14 +3,7 @@ using System.Text;
 
 namespace Sparrow.Numerics
 {
-    public class Vector : Vector<float> {
-        public Vector(float x, float y) : base(x, y) {}
-        public Vector(float x, float y, float z) : base(x, y, z) {}
-        public Vector(float x, float y, float z, float w) : base(x, y, z, w) {}
-        public Vector(params float[] items) : base(items) {}
-    }
-
-    public partial class Vector<T> where T : struct
+    public partial struct Vector<T> where T : struct
     {
         public Vector(T x, T y) : this(new T[] {x, y}) {}
         public Vector(T x, T y, T z) : this(new T[] {x, y, z}) {}
@@ -73,5 +66,8 @@ namespace Sparrow.Numerics
             sb.Append(")");
             return sb.ToString();
         }
+
+        public static implicit operator Vector<T>(T[] o) { return new Vector<T>(o); }
+        public static implicit operator T[](Vector<T> o) { return o.items; }
     }
 }

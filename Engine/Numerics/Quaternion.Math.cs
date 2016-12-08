@@ -1,6 +1,6 @@
 namespace Sparrow.Numerics
 {
-    public partial class Quaternion<T> where T : struct
+    public partial struct Quaternion<T> where T : struct
     {
         abstract class Math<S> where S : struct
         {

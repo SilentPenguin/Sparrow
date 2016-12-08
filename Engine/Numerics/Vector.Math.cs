@@ -1,6 +1,6 @@
 namespace Sparrow.Numerics
 {
-    public partial class Vector<T> where T : struct
+    public partial struct Vector<T> where T : struct
     {
         abstract class Math<S> where S : struct
         {
@@ -20,26 +20,26 @@ namespace Sparrow.Numerics
         {
             public override Vector<float> Add(Vector<float> a, Vector<float> b)
             {
-                var v = new Vector<float>(a.items);
-                for(int i = v.items.Length; i-- != 0;)
-                    v.items[i] += b.items[i];
-                return v;
+                var v = new float[a.Count];
+                for(int i = v.Length; i-- != 0;)
+                    v[i] = a[i] + b[i];
+                return new Vector<float>(v);
             }
 
             public override Vector<float> Sub(Vector<float> a, Vector<float> b)
             {
-                var v = new Vector<float>(a.items);
-                for(int i = v.items.Length; i-- != 0;)
-                    v.items[i] -= b.items[i];
-                return v;
+                var v = new float[a.Count];
+                for(int i = v.Length; i-- != 0;)
+                    v[i] = a[i] - b[i];
+                return new Vector<float>(v);
             }
             
             public override Vector<float> Mul(Vector<float> a, float b)
             {
-                var v = new Vector<float>(a.items);
-                for(int i = v.items.Length; i-- != 0;)
-                    v.items[i] *= b;
-                return v;
+                var v = new float[a.Count];
+                for(int i = v.Length; i-- != 0;)
+                    v[i] *= a[i] * b;
+                return new Vector<float>(v);
             }
         
             public override float Dot(Vector<float> a, Vector<float> b)
@@ -93,26 +93,26 @@ namespace Sparrow.Numerics
         {
             public override Vector<double> Add(Vector<double> a, Vector<double> b)
             {
-                var v = new Vector<double>(a.items);
-                for(int i = v.items.Length; i-- != 0;)
-                    v.items[i] += b.items[i];
-                return v;
+                var v = new double[a.Count];
+                for(int i = v.Length; i-- != 0;)
+                    v[i] = a[i] + b[i];
+                return new Vector<double>(v);
             }
 
             public override Vector<double> Sub(Vector<double> a, Vector<double> b)
             {
-                var v = new Vector<double>(a.items);
-                for(int i = v.items.Length; i-- != 0;)
-                    v.items[i] -= b.items[i];
-                return v;
+                var v = new double[a.Count];
+                for(int i = v.Length; i-- != 0;)
+                    v[i] = a[i] - b[i];
+                return new Vector<double>(v);
             }
             
             public override Vector<double> Mul(Vector<double> a, double b)
             {
-                var v = new Vector<double>(a.items);
-                for(int i = v.items.Length; i-- != 0;)
-                    v.items[i] *= b;
-                return v;
+                var v = new double[a.Count];
+                for(int i = v.Length; i-- != 0;)
+                    v[i] *= a[i] * b;
+                return new Vector<double>(v);
             }
         
             public override double Dot(Vector<double> a, Vector<double> b)
