@@ -1,126 +1,107 @@
 <opengl>
   <proto name="Material">
-    <return type="GLvoid" />
     <entry>glMaterialf</entry>
     <param name="face" type="GLenum" />
     <param name="pname" type="GLenum" />
     <param name="param" type="GLfloat" />
   </proto>
   <proto name="Material">
-    <return type="GLvoid" />
     <entry>glMaterialfv</entry>
     <param name="face" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLfloat" />
+    <param name="params" type="GLfloat*" />
   </proto>
   <proto name="Material">
-    <return type="GLvoid" />
     <entry>glMateriali</entry>
     <param name="face" type="GLenum" />
     <param name="pname" type="GLenum" />
     <param name="param" type="GLint" />
   </proto>
   <proto name="Material">
-    <return type="GLvoid" />
     <entry>glMaterialiv</entry>
     <param name="face" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLint" />
+    <param name="params" type="GLint*" />
   </proto>
   <proto name="Light">
-    <return type="GLvoid" />
     <entry>glLightf</entry>
     <param name="light" type="GLenum" />
     <param name="pname" type="GLenum" />
     <param name="param" type="GLfloat" />
   </proto>
   <proto name="Light">
-    <return type="GLvoid" />
     <entry>glLightfv</entry>
     <param name="light" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLfloat" />
+    <param name="params" type="GLfloat*" />
   </proto>
   <proto name="Light">
-    <return type="GLvoid" />
     <entry>glLighti</entry>
     <param name="light" type="GLenum" />
     <param name="pname" type="GLenum" />
     <param name="param" type="GLint" />
   </proto>
   <proto name="Light">
-    <return type="GLvoid" />
     <entry>glLightiv</entry>
     <param name="light" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLint" />
+    <param name="params" type="GLint*" />
   </proto>
   <proto name="LightModel">
-    <return type="GLvoid" />
     <entry>glLightModelf</entry>
     <param name="pname" type="GLenum" />
     <param name="param" type="GLfloat" />
   </proto>
   <proto name="LightModel">
-    <return type="GLvoid" />
     <entry>glLightModelfv</entry>
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLfloat" />
+    <param name="params" type="GLfloat*" />
   </proto>
   <proto name="LightModel">
-    <return type="GLvoid" />
     <entry>glLightModeli</entry>
     <param name="pname" type="GLenum" />
     <param name="param" type="GLint" />
   </proto>
   <proto name="LightModel">
-    <return type="GLvoid" />
     <entry>glLightModeliv</entry>
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLint" />
+    <param name="params" type="GLint*" />
   </proto>
   <proto name="ColorMaterial">
-    <return type="GLvoid" />
     <entry>glColorMaterial</entry>
     <param name="face" type="GLenum" />
     <param name="mode" type="GLenum" />
   </proto>
   <proto name="ProvokingVertex">
-    <return type="GLvoid" />
     <entry>glProvokingVertex</entry>
     <param name="mode" type="GLenum" />
   </proto>
   <proto name="ShadeModel">
-    <return type="GLvoid" />
     <entry>glShadeModel</entry>
     <param name="mode" type="GLenum" />
   </proto>
   <proto name="GetLight">
-    <return type="GLvoid" />
     <entry>glGetLightfv</entry>
     <param name="light" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLfloat" />
+    <param name="params" type="GLfloat*" />
   </proto>
   <proto name="GetLight">
-    <return type="GLvoid" />
     <entry>glGetLightiv</entry>
     <param name="light" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLint" />
+    <param name="params" type="GLint*" />
   </proto>
   <proto name="GetMaterial">
-    <return type="GLvoid" />
     <entry>glGetMaterialfv</entry>
     <param name="face" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLfloat" />
+    <param name="params" type="GLfloat*" />
   </proto>
   <proto name="GetMaterial">
-    <return type="GLvoid" />
     <entry>glGetMaterialiv</entry>
     <param name="face" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLint" />
+    <param name="params" type="GLint*" />
   </proto>
 </opengl>

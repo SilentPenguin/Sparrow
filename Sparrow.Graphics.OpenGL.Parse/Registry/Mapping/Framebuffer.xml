@@ -1,42 +1,35 @@
 <opengl>
   <proto name="BindFramebuffer">
-    <return type="GLvoid" />
     <entry>glBindFramebuffer</entry>
     <param name="target" type="GLenum" />
     <param name="framebuffer" type="GLuint" />
   </proto>
   <proto name="DeleteFramebuffers">
-    <return type="GLvoid" />
     <entry>glDeleteFramebuffers</entry>
     <param name="n" type="GLsizei" />
-    <param name="framebuffers" type="GLuint" />
+    <param name="framebuffers" type="GLuint*" />
   </proto>
   <proto name="GenFramebuffers">
-    <return type="GLvoid" />
     <entry>glGenFramebuffers</entry>
     <param name="n" type="GLsizei" />
-    <param name="framebuffers" type="GLuint" />
+    <param name="framebuffers" type="GLuint*" />
   </proto>
   <proto name="BindRenderbuffer">
-    <return type="GLvoid" />
     <entry>glBindRenderbuffer</entry>
     <param name="target" type="GLenum" />
     <param name="renderbuffer" type="GLuint" />
   </proto>
   <proto name="DeleteRenderbuffers">
-    <return type="GLvoid" />
     <entry>glDeleteRenderbuffers</entry>
     <param name="n" type="GLsizei" />
-    <param name="renderbuffers" type="GLuint" />
+    <param name="renderbuffers" type="GLuint*" />
   </proto>
   <proto name="GenRenderbuffers">
-    <return type="GLvoid" />
     <entry>glGenRenderbuffers</entry>
     <param name="n" type="GLsizei" />
-    <param name="renderbuffers" type="GLuint" />
+    <param name="renderbuffers" type="GLuint*" />
   </proto>
   <proto name="RenderbufferStorage">
-    <return type="GLvoid" />
     <entry>glRenderbufferStorage</entry>
     <param name="target" type="GLenum" />
     <param name="internalformat" type="GLenum" />
@@ -44,7 +37,6 @@
     <param name="height" type="GLsizei" />
   </proto>
   <proto name="RenderbufferStorageMultisample">
-    <return type="GLvoid" />
     <entry>glRenderbufferStorageMultisample</entry>
     <param name="target" type="GLenum" />
     <param name="samples" type="GLsizei" />
@@ -53,7 +45,6 @@
     <param name="height" type="GLsizei" />
   </proto>
   <proto name="FramebufferRenderbuffer">
-    <return type="GLvoid" />
     <entry>glFramebufferRenderbuffer</entry>
     <param name="target" type="GLenum" />
     <param name="attachment" type="GLenum" />
@@ -61,7 +52,6 @@
     <param name="renderbuffer" type="GLuint" />
   </proto>
   <proto name="FramebufferTexture">
-    <return type="GLvoid" />
     <entry>glFramebufferTexture</entry>
     <param name="target" type="GLenum" />
     <param name="attachment" type="GLenum" />
@@ -69,7 +59,6 @@
     <param name="level" type="GLint" />
   </proto>
   <proto name="FramebufferTexture1D">
-    <return type="GLvoid" />
     <entry>glFramebufferTexture1D</entry>
     <param name="target" type="GLenum" />
     <param name="attachment" type="GLenum" />
@@ -78,7 +67,6 @@
     <param name="level" type="GLint" />
   </proto>
   <proto name="FramebufferTexture2D">
-    <return type="GLvoid" />
     <entry>glFramebufferTexture2D</entry>
     <param name="target" type="GLenum" />
     <param name="attachment" type="GLenum" />
@@ -87,7 +75,6 @@
     <param name="level" type="GLint" />
   </proto>
   <proto name="FramebufferTexture3D">
-    <return type="GLvoid" />
     <entry>glFramebufferTexture3D</entry>
     <param name="target" type="GLenum" />
     <param name="attachment" type="GLenum" />
@@ -97,7 +84,6 @@
     <param name="zoffset" type="GLint" />
   </proto>
   <proto name="FramebufferTextureLayer">
-    <return type="GLvoid" />
     <entry>glFramebufferTextureLayer</entry>
     <param name="target" type="GLenum" />
     <param name="attachment" type="GLenum" />
@@ -116,12 +102,11 @@
     <param name="framebuffer" type="GLuint" />
   </proto>
   <proto name="GetFramebufferAttachmentParameter">
-    <return type="GLvoid" />
     <entry>glGetFramebufferAttachmentParameteriv</entry>
     <param name="target" type="GLenum" />
     <param name="attachment" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLint" />
+    <param name="params" type="GLint*" />
   </proto>
   <proto name="IsRenderbuffer">
     <return type="GLboolean" />
@@ -129,10 +114,9 @@
     <param name="renderbuffer" type="GLuint" />
   </proto>
   <proto name="GetRenderbufferParameter">
-    <return type="GLvoid" />
     <entry>glGetRenderbufferParameteriv</entry>
     <param name="target" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLint" />
+    <param name="params" type="GLint*" />
   </proto>
 </opengl>

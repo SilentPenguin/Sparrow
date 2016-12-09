@@ -1,117 +1,96 @@
 <opengl>
   <proto name="BeginConditionalRender">
-    <return type="GLvoid" />
     <entry>glBeginConditionalRender</entry>
     <param name="id" type="GLuint" />
     <param name="mode" type="GLenum" />
   </proto>
   <proto name="EndConditionalRender">
-    <return type="GLvoid" />
     <entry>glEndConditionalRender</entry>
   </proto>
   <proto name="BeginTransformFeedback">
-    <return type="GLvoid" />
     <entry>glBeginTransformFeedback</entry>
     <param name="primitiveMode" type="GLenum" />
   </proto>
   <proto name="EndTransformFeedback">
-    <return type="GLvoid" />
     <entry>glEndTransformFeedback</entry>
   </proto>
   <proto name="RasterPos2">
-    <return type="GLvoid" />
     <entry>glRasterPos2d</entry>
     <param name="x" type="GLdouble" />
     <param name="y" type="GLdouble" />
   </proto>
   <proto name="RasterPos2">
-    <return type="GLvoid" />
     <entry>glRasterPos2dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="RasterPos2">
-    <return type="GLvoid" />
     <entry>glRasterPos2f</entry>
     <param name="x" type="GLfloat" />
     <param name="y" type="GLfloat" />
   </proto>
   <proto name="RasterPos2">
-    <return type="GLvoid" />
     <entry>glRasterPos2fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="RasterPos2">
-    <return type="GLvoid" />
     <entry>glRasterPos2i</entry>
     <param name="x" type="GLint" />
     <param name="y" type="GLint" />
   </proto>
   <proto name="RasterPos2">
-    <return type="GLvoid" />
     <entry>glRasterPos2iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="RasterPos2">
-    <return type="GLvoid" />
     <entry>glRasterPos2s</entry>
     <param name="x" type="GLshort" />
     <param name="y" type="GLshort" />
   </proto>
   <proto name="RasterPos2">
-    <return type="GLvoid" />
     <entry>glRasterPos2sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="RasterPos3">
-    <return type="GLvoid" />
     <entry>glRasterPos3d</entry>
     <param name="x" type="GLdouble" />
     <param name="y" type="GLdouble" />
     <param name="z" type="GLdouble" />
   </proto>
   <proto name="RasterPos3">
-    <return type="GLvoid" />
     <entry>glRasterPos3dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="RasterPos3">
-    <return type="GLvoid" />
     <entry>glRasterPos3f</entry>
     <param name="x" type="GLfloat" />
     <param name="y" type="GLfloat" />
     <param name="z" type="GLfloat" />
   </proto>
   <proto name="RasterPos3">
-    <return type="GLvoid" />
     <entry>glRasterPos3fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="RasterPos3">
-    <return type="GLvoid" />
     <entry>glRasterPos3i</entry>
     <param name="x" type="GLint" />
     <param name="y" type="GLint" />
     <param name="z" type="GLint" />
   </proto>
   <proto name="RasterPos3">
-    <return type="GLvoid" />
     <entry>glRasterPos3iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="RasterPos3">
-    <return type="GLvoid" />
     <entry>glRasterPos3s</entry>
     <param name="x" type="GLshort" />
     <param name="y" type="GLshort" />
     <param name="z" type="GLshort" />
   </proto>
   <proto name="RasterPos3">
-    <return type="GLvoid" />
     <entry>glRasterPos3sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="RasterPos4">
-    <return type="GLvoid" />
     <entry>glRasterPos4d</entry>
     <param name="x" type="GLdouble" />
     <param name="y" type="GLdouble" />
@@ -119,12 +98,10 @@
     <param name="w" type="GLdouble" />
   </proto>
   <proto name="RasterPos4">
-    <return type="GLvoid" />
     <entry>glRasterPos4dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="RasterPos4">
-    <return type="GLvoid" />
     <entry>glRasterPos4f</entry>
     <param name="x" type="GLfloat" />
     <param name="y" type="GLfloat" />
@@ -132,12 +109,10 @@
     <param name="w" type="GLfloat" />
   </proto>
   <proto name="RasterPos4">
-    <return type="GLvoid" />
     <entry>glRasterPos4fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="RasterPos4">
-    <return type="GLvoid" />
     <entry>glRasterPos4i</entry>
     <param name="x" type="GLint" />
     <param name="y" type="GLint" />
@@ -145,12 +120,10 @@
     <param name="w" type="GLint" />
   </proto>
   <proto name="RasterPos4">
-    <return type="GLvoid" />
     <entry>glRasterPos4iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="RasterPos4">
-    <return type="GLvoid" />
     <entry>glRasterPos4s</entry>
     <param name="x" type="GLshort" />
     <param name="y" type="GLshort" />
@@ -158,124 +131,103 @@
     <param name="w" type="GLshort" />
   </proto>
   <proto name="RasterPos4">
-    <return type="GLvoid" />
     <entry>glRasterPos4sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="WindowPos2">
-    <return type="GLvoid" />
     <entry>glWindowPos2d</entry>
     <param name="x" type="GLdouble" />
     <param name="y" type="GLdouble" />
   </proto>
   <proto name="WindowPos2">
-    <return type="GLvoid" />
     <entry>glWindowPos2dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="WindowPos2">
-    <return type="GLvoid" />
     <entry>glWindowPos2f</entry>
     <param name="x" type="GLfloat" />
     <param name="y" type="GLfloat" />
   </proto>
   <proto name="WindowPos2">
-    <return type="GLvoid" />
     <entry>glWindowPos2fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="WindowPos2">
-    <return type="GLvoid" />
     <entry>glWindowPos2i</entry>
     <param name="x" type="GLint" />
     <param name="y" type="GLint" />
   </proto>
   <proto name="WindowPos2">
-    <return type="GLvoid" />
     <entry>glWindowPos2iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="WindowPos2">
-    <return type="GLvoid" />
     <entry>glWindowPos2s</entry>
     <param name="x" type="GLshort" />
     <param name="y" type="GLshort" />
   </proto>
   <proto name="WindowPos2">
-    <return type="GLvoid" />
     <entry>glWindowPos2sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="WindowPos3">
-    <return type="GLvoid" />
     <entry>glWindowPos3d</entry>
     <param name="x" type="GLdouble" />
     <param name="y" type="GLdouble" />
     <param name="z" type="GLdouble" />
   </proto>
   <proto name="WindowPos3">
-    <return type="GLvoid" />
     <entry>glWindowPos3dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="WindowPos3">
-    <return type="GLvoid" />
     <entry>glWindowPos3f</entry>
     <param name="x" type="GLfloat" />
     <param name="y" type="GLfloat" />
     <param name="z" type="GLfloat" />
   </proto>
   <proto name="WindowPos3">
-    <return type="GLvoid" />
     <entry>glWindowPos3fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="WindowPos3">
-    <return type="GLvoid" />
     <entry>glWindowPos3i</entry>
     <param name="x" type="GLint" />
     <param name="y" type="GLint" />
     <param name="z" type="GLint" />
   </proto>
   <proto name="WindowPos3">
-    <return type="GLvoid" />
     <entry>glWindowPos3iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="WindowPos3">
-    <return type="GLvoid" />
     <entry>glWindowPos3s</entry>
     <param name="x" type="GLshort" />
     <param name="y" type="GLshort" />
     <param name="z" type="GLshort" />
   </proto>
   <proto name="WindowPos3">
-    <return type="GLvoid" />
     <entry>glWindowPos3sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="BeginQuery">
-    <return type="GLvoid" />
     <entry>glBeginQuery</entry>
     <param name="target" type="GLenum" />
     <param name="id" type="GLuint" />
   </proto>
   <proto name="EndQuery">
-    <return type="GLvoid" />
     <entry>glEndQuery</entry>
     <param name="target" type="GLenum" />
   </proto>
   <proto name="GenQueries">
-    <return type="GLvoid" />
     <entry>glGenQueries</entry>
     <param name="n" type="GLsizei" />
-    <param name="ids" type="GLuint" />
+    <param name="ids" type="GLuint*" />
   </proto>
   <proto name="DeleteQueries">
-    <return type="GLvoid" />
     <entry>glDeleteQueries</entry>
     <param name="n" type="GLsizei" />
-    <param name="ids" type="GLuint" />
+    <param name="ids" type="GLuint*" />
   </proto>
   <proto name="IsQuery">
     <return type="GLboolean" />
@@ -283,24 +235,21 @@
     <param name="id" type="GLuint" />
   </proto>
   <proto name="GetQuery">
-    <return type="GLvoid" />
     <entry>glGetQueryiv</entry>
     <param name="target" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLint" />
+    <param name="params" type="GLint*" />
   </proto>
   <proto name="GetQueryObject">
-    <return type="GLvoid" />
     <entry>glGetQueryObjectiv</entry>
     <param name="id" type="GLuint" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLint" />
+    <param name="params" type="GLint*" />
   </proto>
   <proto name="GetQueryObject">
-    <return type="GLvoid" />
     <entry>glGetQueryObjectuiv</entry>
     <param name="id" type="GLuint" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLuint" />
+    <param name="params" type="GLuint*" />
   </proto>
 </opengl>

@@ -1,5 +1,5 @@
 <map>
-    <group name="Gl">
+    <group name="Misc">
         <method>(Enable)i?</method>
         <method>(Disable)i?</method>
         <method>(GetError)</method>
