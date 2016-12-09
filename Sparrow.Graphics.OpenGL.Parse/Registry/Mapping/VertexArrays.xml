@@ -1,5 +1,6 @@
 <opengl>
   <proto name="VertexPointer">
+    <return type="GLvoid" />
     <entry>glVertexPointer</entry>
     <param name="size" type="GLint" />
     <param name="type" type="GLenum" />
@@ -7,12 +8,14 @@
     <param name="pointer" type="GLvoid" />
   </proto>
   <proto name="NormalPointer">
+    <return type="GLvoid" />
     <entry>glNormalPointer</entry>
     <param name="type" type="GLenum" />
     <param name="stride" type="GLsizei" />
     <param name="pointer" type="GLvoid" />
   </proto>
   <proto name="ColorPointer">
+    <return type="GLvoid" />
     <entry>glColorPointer</entry>
     <param name="size" type="GLint" />
     <param name="type" type="GLenum" />
@@ -20,23 +23,27 @@
     <param name="pointer" type="GLvoid" />
   </proto>
   <proto name="IndexPointer">
+    <return type="GLvoid" />
     <entry>glIndexPointer</entry>
     <param name="type" type="GLenum" />
     <param name="stride" type="GLsizei" />
     <param name="pointer" type="GLvoid" />
   </proto>
   <proto name="EdgeFlagPointer">
+    <return type="GLvoid" />
     <entry>glEdgeFlagPointer</entry>
     <param name="stride" type="GLsizei" />
     <param name="pointer" type="GLvoid" />
   </proto>
   <proto name="FogCoordPointer">
+    <return type="GLvoid" />
     <entry>glFogCoordPointer</entry>
     <param name="type" type="GLenum" />
     <param name="stride" type="GLsizei" />
     <param name="pointer" type="GLvoid" />
   </proto>
   <proto name="VertexAttribPointer">
+    <return type="GLvoid" />
     <entry>glVertexAttribPointer</entry>
     <param name="index" type="GLuint" />
     <param name="size" type="GLint" />
@@ -46,6 +53,7 @@
     <param name="pointer" type="GLvoid" />
   </proto>
   <proto name="VertexAttribIPointer">
+    <return type="GLvoid" />
     <entry>glVertexAttribIPointer</entry>
     <param name="index" type="GLuint" />
     <param name="size" type="GLint" />
@@ -54,36 +62,44 @@
     <param name="pointer" type="GLvoid" />
   </proto>
   <proto name="EnableClientState">
+    <return type="GLvoid" />
     <entry>glEnableClientState</entry>
     <param name="array" type="GLenum" />
   </proto>
   <proto name="DisableClientState">
+    <return type="GLvoid" />
     <entry>glDisableClientState</entry>
     <param name="array" type="GLenum" />
   </proto>
   <proto name="EnableVertexAttribArray">
+    <return type="GLvoid" />
     <entry>glEnableVertexAttribArray</entry>
     <param name="index" type="GLuint" />
   </proto>
   <proto name="DisableVertexAttribArray">
+    <return type="GLvoid" />
     <entry>glDisableVertexAttribArray</entry>
     <param name="index" type="GLuint" />
   </proto>
   <proto name="ClientActiveTexture">
+    <return type="GLvoid" />
     <entry>glClientActiveTexture</entry>
     <param name="texture" type="GLenum" />
   </proto>
   <proto name="ArrayElement">
+    <return type="GLvoid" />
     <entry>glArrayElement</entry>
     <param name="i" type="GLint" />
   </proto>
   <proto name="DrawArrays">
+    <return type="GLvoid" />
     <entry>glDrawArrays</entry>
     <param name="mode" type="GLenum" />
     <param name="first" type="GLint" />
     <param name="count" type="GLsizei" />
   </proto>
   <proto name="MultiDrawArrays">
+    <return type="GLvoid" />
     <entry>glMultiDrawArrays</entry>
     <param name="mode" type="GLenum" />
     <param name="first" type="GLint" />
@@ -91,6 +107,7 @@
     <param name="drawcount" type="GLsizei" />
   </proto>
   <proto name="DrawElements">
+    <return type="GLvoid" />
     <entry>glDrawElements</entry>
     <param name="mode" type="GLenum" />
     <param name="count" type="GLsizei" />
@@ -98,6 +115,7 @@
     <param name="indices" type="GLvoid" />
   </proto>
   <proto name="MultiDrawElements">
+    <return type="GLvoid" />
     <entry>glMultiDrawElements</entry>
     <param name="mode" type="GLenum" />
     <param name="count" type="GLsizei" />
@@ -106,6 +124,7 @@
     <param name="drawcount" type="GLsizei" />
   </proto>
   <proto name="DrawRangeElements">
+    <return type="GLvoid" />
     <entry>glDrawRangeElements</entry>
     <param name="mode" type="GLenum" />
     <param name="start" type="GLuint" />
@@ -115,6 +134,7 @@
     <param name="indices" type="GLvoid" />
   </proto>
   <proto name="DrawArraysInstanced">
+    <return type="GLvoid" />
     <entry>glDrawArraysInstanced</entry>
     <param name="mode" type="GLenum" />
     <param name="first" type="GLint" />
@@ -122,6 +142,7 @@
     <param name="instancecount" type="GLsizei" />
   </proto>
   <proto name="DrawElementsInstanced">
+    <return type="GLvoid" />
     <entry>glDrawElementsInstanced</entry>
     <param name="mode" type="GLenum" />
     <param name="count" type="GLsizei" />
@@ -130,6 +151,7 @@
     <param name="instancecount" type="GLsizei" />
   </proto>
   <proto name="DrawElementsBaseVertex">
+    <return type="GLvoid" />
     <entry>glDrawElementsBaseVertex</entry>
     <param name="mode" type="GLenum" />
     <param name="count" type="GLsizei" />
@@ -138,6 +160,7 @@
     <param name="basevertex" type="GLint" />
   </proto>
   <proto name="DrawRangeElementsBaseVertex">
+    <return type="GLvoid" />
     <entry>glDrawRangeElementsBaseVertex</entry>
     <param name="mode" type="GLenum" />
     <param name="start" type="GLuint" />
@@ -148,6 +171,7 @@
     <param name="basevertex" type="GLint" />
   </proto>
   <proto name="DrawElementsInstancedBaseVertex">
+    <return type="GLvoid" />
     <entry>glDrawElementsInstancedBaseVertex</entry>
     <param name="mode" type="GLenum" />
     <param name="count" type="GLsizei" />
@@ -157,6 +181,7 @@
     <param name="basevertex" type="GLint" />
   </proto>
   <proto name="MultiDrawElementsBaseVertex">
+    <return type="GLvoid" />
     <entry>glMultiDrawElementsBaseVertex</entry>
     <param name="mode" type="GLenum" />
     <param name="count" type="GLsizei" />
@@ -166,6 +191,7 @@
     <param name="basevertex" type="GLint" />
   </proto>
   <proto name="InterleavedArrays">
+    <return type="GLvoid" />
     <entry>glInterleavedArrays</entry>
     <param name="format" type="GLenum" />
     <param name="stride" type="GLsizei" />
