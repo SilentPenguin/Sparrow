@@ -3,117 +3,117 @@ using System.Runtime.InteropServices;
 public static partial class Gl
 {
     [DllImport(DllName, EntryPoint = "glGetMultisamplefv")]
-    public static extern unsafe GLvoid GetMultisample(GLenum pname, GLuint index, GLfloat* val);
+    public static extern unsafe void GetMultisample(uint pname, uint index, float* val);
     [DllImport(DllName, EntryPoint = "glPointSize")]
-    public static extern unsafe GLvoid PointSize(GLfloat size);
+    public static extern unsafe void PointSize(float size);
     [DllImport(DllName, EntryPoint = "glPointParameterf")]
-    public static extern unsafe GLvoid PointParameter(GLenum pname, GLfloat param);
+    public static extern unsafe void PointParameter(uint pname, float param);
     [DllImport(DllName, EntryPoint = "glPointParameterfv")]
-    public static extern unsafe GLvoid PointParameter(GLenum pname, GLfloat* @params);
+    public static extern unsafe void PointParameter(uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glPointParameteri")]
-    public static extern unsafe GLvoid PointParameter(GLenum pname, GLint param);
+    public static extern unsafe void PointParameter(uint pname, int param);
     [DllImport(DllName, EntryPoint = "glPointParameteriv")]
-    public static extern unsafe GLvoid PointParameter(GLenum pname, GLint* @params);
+    public static extern unsafe void PointParameter(uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glLineWidth")]
-    public static extern unsafe GLvoid LineWidth(GLfloat width);
+    public static extern unsafe void LineWidth(float width);
     [DllImport(DllName, EntryPoint = "glLineStipple")]
-    public static extern unsafe GLvoid LineStipple(GLint factor, GLushort pattern);
+    public static extern unsafe void LineStipple(int factor, ushort pattern);
     [DllImport(DllName, EntryPoint = "glGetPolygonStipple")]
-    public static extern unsafe GLvoid GetPolygonStipple(GLubyte* mask);
+    public static extern unsafe void GetPolygonStipple(byte* mask);
     [DllImport(DllName, EntryPoint = "glFrontFace")]
-    public static extern unsafe GLvoid FrontFace(GLenum mode);
+    public static extern unsafe void FrontFace(uint mode);
     [DllImport(DllName, EntryPoint = "glCullFace")]
-    public static extern unsafe GLvoid CullFace(GLenum mode);
+    public static extern unsafe void CullFace(uint mode);
     [DllImport(DllName, EntryPoint = "glPolygonMode")]
-    public static extern unsafe GLvoid PolygonMode(GLenum face, GLenum mode);
+    public static extern unsafe void PolygonMode(uint face, uint mode);
     [DllImport(DllName, EntryPoint = "glPolygonOffset")]
-    public static extern unsafe GLvoid PolygonOffset(GLfloat factor, GLfloat units);
+    public static extern unsafe void PolygonOffset(float factor, float units);
     [DllImport(DllName, EntryPoint = "glPixelStoref")]
-    public static extern unsafe GLvoid PixelStore(GLenum pname, GLfloat param);
+    public static extern unsafe void PixelStore(uint pname, float param);
     [DllImport(DllName, EntryPoint = "glPixelStorei")]
-    public static extern unsafe GLvoid PixelStore(GLenum pname, GLint param);
+    public static extern unsafe void PixelStore(uint pname, int param);
     [DllImport(DllName, EntryPoint = "glPixelMapfv")]
-    public static extern unsafe GLvoid PixelMap(GLenum map, GLsizei mapsize, GLfloat* values);
+    public static extern unsafe void PixelMap(uint map, int mapsize, float* values);
     [DllImport(DllName, EntryPoint = "glPixelMapuiv")]
-    public static extern unsafe GLvoid PixelMap(GLenum map, GLsizei mapsize, GLuint* values);
+    public static extern unsafe void PixelMap(uint map, int mapsize, uint* values);
     [DllImport(DllName, EntryPoint = "glPixelMapusv")]
-    public static extern unsafe GLvoid PixelMap(GLenum map, GLsizei mapsize, GLushort* values);
+    public static extern unsafe void PixelMap(uint map, int mapsize, ushort* values);
     [DllImport(DllName, EntryPoint = "glGetPixelMapfv")]
-    public static extern unsafe GLvoid GetPixelMap(GLenum map, GLfloat* values);
+    public static extern unsafe void GetPixelMap(uint map, float* values);
     [DllImport(DllName, EntryPoint = "glGetPixelMapuiv")]
-    public static extern unsafe GLvoid GetPixelMap(GLenum map, GLuint* values);
+    public static extern unsafe void GetPixelMap(uint map, uint* values);
     [DllImport(DllName, EntryPoint = "glGetPixelMapusv")]
-    public static extern unsafe GLvoid GetPixelMap(GLenum map, GLushort* values);
+    public static extern unsafe void GetPixelMap(uint map, ushort* values);
     [DllImport(DllName, EntryPoint = "glColorTable")]
-    public static extern unsafe GLvoid ColorTable(GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, GLvoid* table);
+    public static extern unsafe void ColorTable(uint target, uint internalformat, int width, uint format, uint type, void* table);
     [DllImport(DllName, EntryPoint = "glColorTableParameterfv")]
-    public static extern unsafe GLvoid ColorTableParameter(GLenum target, GLenum pname, GLfloat* @params);
+    public static extern unsafe void ColorTableParameter(uint target, uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glColorTableParameteriv")]
-    public static extern unsafe GLvoid ColorTableParameter(GLenum target, GLenum pname, GLint* @params);
+    public static extern unsafe void ColorTableParameter(uint target, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glCopyColorTable")]
-    public static extern unsafe GLvoid CopyColorTable(GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
+    public static extern unsafe void CopyColorTable(uint target, uint internalformat, int x, int y, int width);
     [DllImport(DllName, EntryPoint = "glColorSubTable")]
-    public static extern unsafe GLvoid ColorSubTable(GLenum target, GLsizei start, GLsizei count, GLenum format, GLenum type, GLvoid* data);
+    public static extern unsafe void ColorSubTable(uint target, int start, int count, uint format, uint type, void* data);
     [DllImport(DllName, EntryPoint = "glCopyColorSubTable")]
-    public static extern unsafe GLvoid CopyColorSubTable(GLenum target, GLsizei start, GLint x, GLint y, GLsizei width);
+    public static extern unsafe void CopyColorSubTable(uint target, int start, int x, int y, int width);
     [DllImport(DllName, EntryPoint = "glGetColorTable")]
-    public static extern unsafe GLvoid GetColorTable(GLenum target, GLenum format, GLenum type, GLvoid* table);
+    public static extern unsafe void GetColorTable(uint target, uint format, uint type, void* table);
     [DllImport(DllName, EntryPoint = "glGetColorTableParameterfv")]
-    public static extern unsafe GLvoid GetColorTableParameter(GLenum target, GLenum pname, GLfloat* @params);
+    public static extern unsafe void GetColorTableParameter(uint target, uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glGetColorTableParameteriv")]
-    public static extern unsafe GLvoid GetColorTableParameter(GLenum target, GLenum pname, GLint* @params);
+    public static extern unsafe void GetColorTableParameter(uint target, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glConvolutionFilter1D")]
-    public static extern unsafe GLvoid ConvolutionFilter1D(GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, GLvoid* image);
+    public static extern unsafe void ConvolutionFilter1D(uint target, uint internalformat, int width, uint format, uint type, void* image);
     [DllImport(DllName, EntryPoint = "glConvolutionFilter2D")]
-    public static extern unsafe GLvoid ConvolutionFilter2D(GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, GLvoid* image);
+    public static extern unsafe void ConvolutionFilter2D(uint target, uint internalformat, int width, int height, uint format, uint type, void* image);
     [DllImport(DllName, EntryPoint = "glConvolutionParameterf")]
-    public static extern unsafe GLvoid ConvolutionParameter(GLenum target, GLenum pname, GLfloat @params);
+    public static extern unsafe void ConvolutionParameter(uint target, uint pname, float @params);
     [DllImport(DllName, EntryPoint = "glConvolutionParameterfv")]
-    public static extern unsafe GLvoid ConvolutionParameter(GLenum target, GLenum pname, GLfloat* @params);
+    public static extern unsafe void ConvolutionParameter(uint target, uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glConvolutionParameteri")]
-    public static extern unsafe GLvoid ConvolutionParameter(GLenum target, GLenum pname, GLint @params);
+    public static extern unsafe void ConvolutionParameter(uint target, uint pname, int @params);
     [DllImport(DllName, EntryPoint = "glConvolutionParameteriv")]
-    public static extern unsafe GLvoid ConvolutionParameter(GLenum target, GLenum pname, GLint* @params);
+    public static extern unsafe void ConvolutionParameter(uint target, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glSeparableFilter2D")]
-    public static extern unsafe GLvoid SeparableFilter2D(GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, GLvoid* row, GLvoid* column);
+    public static extern unsafe void SeparableFilter2D(uint target, uint internalformat, int width, int height, uint format, uint type, void* row, void* column);
     [DllImport(DllName, EntryPoint = "glCopyConvolutionFilter1D")]
-    public static extern unsafe GLvoid CopyConvolutionFilter1D(GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
+    public static extern unsafe void CopyConvolutionFilter1D(uint target, uint internalformat, int x, int y, int width);
     [DllImport(DllName, EntryPoint = "glCopyConvolutionFilter2D")]
-    public static extern unsafe GLvoid CopyConvolutionFilter2D(GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height);
+    public static extern unsafe void CopyConvolutionFilter2D(uint target, uint internalformat, int x, int y, int width, int height);
     [DllImport(DllName, EntryPoint = "glGetConvolutionFilter")]
-    public static extern unsafe GLvoid GetConvolutionFilter(GLenum target, GLenum format, GLenum type, GLvoid* image);
+    public static extern unsafe void GetConvolutionFilter(uint target, uint format, uint type, void* image);
     [DllImport(DllName, EntryPoint = "glGetSeparableFilter")]
-    public static extern unsafe GLvoid GetSeparableFilter(GLenum target, GLenum format, GLenum type, GLvoid* row, GLvoid* column, GLvoid* span);
+    public static extern unsafe void GetSeparableFilter(uint target, uint format, uint type, void* row, void* column, void* span);
     [DllImport(DllName, EntryPoint = "glGetConvolutionParameterfv")]
-    public static extern unsafe GLvoid GetConvolutionParameter(GLenum target, GLenum pname, GLfloat* @params);
+    public static extern unsafe void GetConvolutionParameter(uint target, uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glGetConvolutionParameteriv")]
-    public static extern unsafe GLvoid GetConvolutionParameter(GLenum target, GLenum pname, GLint* @params);
+    public static extern unsafe void GetConvolutionParameter(uint target, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glHistogram")]
-    public static extern unsafe GLvoid Histogram(GLenum target, GLsizei width, GLenum internalformat, GLboolean sink);
+    public static extern unsafe void Histogram(uint target, int width, uint internalformat, bool sink);
     [DllImport(DllName, EntryPoint = "glGetHistogram")]
-    public static extern unsafe GLvoid GetHistogram(GLenum target, GLboolean reset, GLenum format, GLenum type, GLvoid* values);
+    public static extern unsafe void GetHistogram(uint target, bool reset, uint format, uint type, void* values);
     [DllImport(DllName, EntryPoint = "glResetHistogram")]
-    public static extern unsafe GLvoid ResetHistogram(GLenum target);
+    public static extern unsafe void ResetHistogram(uint target);
     [DllImport(DllName, EntryPoint = "glGetHistogramParameterfv")]
-    public static extern unsafe GLvoid GetHistogramParameter(GLenum target, GLenum pname, GLfloat* @params);
+    public static extern unsafe void GetHistogramParameter(uint target, uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glGetHistogramParameteriv")]
-    public static extern unsafe GLvoid GetHistogramParameter(GLenum target, GLenum pname, GLint* @params);
+    public static extern unsafe void GetHistogramParameter(uint target, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glMinmax")]
-    public static extern unsafe GLvoid Minmax(GLenum target, GLenum internalformat, GLboolean sink);
+    public static extern unsafe void Minmax(uint target, uint internalformat, bool sink);
     [DllImport(DllName, EntryPoint = "glGetMinmax")]
-    public static extern unsafe GLvoid GetMinmax(GLenum target, GLboolean reset, GLenum format, GLenum type, GLvoid* values);
+    public static extern unsafe void GetMinmax(uint target, bool reset, uint format, uint type, void* values);
     [DllImport(DllName, EntryPoint = "glResetMinmax")]
-    public static extern unsafe GLvoid ResetMinmax(GLenum target);
+    public static extern unsafe void ResetMinmax(uint target);
     [DllImport(DllName, EntryPoint = "glGetMinmaxParameterfv")]
-    public static extern unsafe GLvoid GetMinmaxParameter(GLenum target, GLenum pname, GLfloat* @params);
+    public static extern unsafe void GetMinmaxParameter(uint target, uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glGetMinmaxParameteriv")]
-    public static extern unsafe GLvoid GetMinmaxParameter(GLenum target, GLenum pname, GLint* @params);
+    public static extern unsafe void GetMinmaxParameter(uint target, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glDrawPixels")]
-    public static extern unsafe GLvoid DrawPixels(GLsizei width, GLsizei height, GLenum format, GLenum type, GLvoid* pixels);
+    public static extern unsafe void DrawPixels(int width, int height, uint format, uint type, void* pixels);
     [DllImport(DllName, EntryPoint = "glClampColor")]
-    public static extern unsafe GLvoid ClampColor(GLenum target, GLenum clamp);
+    public static extern unsafe void ClampColor(uint target, uint clamp);
     [DllImport(DllName, EntryPoint = "glPixelZoom")]
-    public static extern unsafe GLvoid PixelZoom(GLfloat xfactor, GLfloat yfactor);
+    public static extern unsafe void PixelZoom(float xfactor, float yfactor);
     [DllImport(DllName, EntryPoint = "glBitmap")]
-    public static extern unsafe GLvoid Bitmap(GLsizei width, GLsizei height, GLfloat xorig, GLfloat yorig, GLfloat xmove, GLfloat ymove, GLubyte* bitmap);
+    public static extern unsafe void Bitmap(int width, int height, float xorig, float yorig, float xmove, float ymove, byte* bitmap);
 }

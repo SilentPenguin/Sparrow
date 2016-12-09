@@ -3,81 +3,81 @@ using System.Runtime.InteropServices;
 public static partial class Gl
 {
     [DllImport(DllName, EntryPoint = "glMap1d")]
-    public static extern unsafe GLvoid Map1(GLenum target, GLdouble u1, GLdouble u2, GLint stride, GLint order, GLdouble* points);
+    public static extern unsafe void Map1(uint target, double u1, double u2, int stride, int order, double* points);
     [DllImport(DllName, EntryPoint = "glMap1f")]
-    public static extern unsafe GLvoid Map1(GLenum target, GLfloat u1, GLfloat u2, GLint stride, GLint order, GLfloat* points);
+    public static extern unsafe void Map1(uint target, float u1, float u2, int stride, int order, float* points);
     [DllImport(DllName, EntryPoint = "glMap2d")]
-    public static extern unsafe GLvoid Map2(GLenum target, GLdouble u1, GLdouble u2, GLint ustride, GLint uorder, GLdouble v1, GLdouble v2, GLint vstride, GLint vorder, GLdouble* points);
+    public static extern unsafe void Map2(uint target, double u1, double u2, int ustride, int uorder, double v1, double v2, int vstride, int vorder, double* points);
     [DllImport(DllName, EntryPoint = "glMap2f")]
-    public static extern unsafe GLvoid Map2(GLenum target, GLfloat u1, GLfloat u2, GLint ustride, GLint uorder, GLfloat v1, GLfloat v2, GLint vstride, GLint vorder, GLfloat* points);
+    public static extern unsafe void Map2(uint target, float u1, float u2, int ustride, int uorder, float v1, float v2, int vstride, int vorder, float* points);
     [DllImport(DllName, EntryPoint = "glEvalCoord1d")]
-    public static extern unsafe GLvoid EvalCoord1(GLdouble u);
+    public static extern unsafe void EvalCoord1(double u);
     [DllImport(DllName, EntryPoint = "glEvalCoord1dv")]
-    public static extern unsafe GLvoid EvalCoord1(GLdouble* u);
+    public static extern unsafe void EvalCoord1(double* u);
     [DllImport(DllName, EntryPoint = "glEvalCoord1f")]
-    public static extern unsafe GLvoid EvalCoord1(GLfloat u);
+    public static extern unsafe void EvalCoord1(float u);
     [DllImport(DllName, EntryPoint = "glEvalCoord1fv")]
-    public static extern unsafe GLvoid EvalCoord1(GLfloat* u);
+    public static extern unsafe void EvalCoord1(float* u);
     [DllImport(DllName, EntryPoint = "glEvalCoord2d")]
-    public static extern unsafe GLvoid EvalCoord2(GLdouble u, GLdouble v);
+    public static extern unsafe void EvalCoord2(double u, double v);
     [DllImport(DllName, EntryPoint = "glEvalCoord2dv")]
-    public static extern unsafe GLvoid EvalCoord2(GLdouble* u);
+    public static extern unsafe void EvalCoord2(double* u);
     [DllImport(DllName, EntryPoint = "glEvalCoord2f")]
-    public static extern unsafe GLvoid EvalCoord2(GLfloat u, GLfloat v);
+    public static extern unsafe void EvalCoord2(float u, float v);
     [DllImport(DllName, EntryPoint = "glEvalCoord2fv")]
-    public static extern unsafe GLvoid EvalCoord2(GLfloat* u);
+    public static extern unsafe void EvalCoord2(float* u);
     [DllImport(DllName, EntryPoint = "glMapGrid1d")]
-    public static extern unsafe GLvoid MapGrid1(GLint un, GLdouble u1, GLdouble u2);
+    public static extern unsafe void MapGrid1(int un, double u1, double u2);
     [DllImport(DllName, EntryPoint = "glMapGrid1f")]
-    public static extern unsafe GLvoid MapGrid1(GLint un, GLfloat u1, GLfloat u2);
+    public static extern unsafe void MapGrid1(int un, float u1, float u2);
     [DllImport(DllName, EntryPoint = "glMapGrid2d")]
-    public static extern unsafe GLvoid MapGrid2(GLint un, GLdouble u1, GLdouble u2, GLint vn, GLdouble v1, GLdouble v2);
+    public static extern unsafe void MapGrid2(int un, double u1, double u2, int vn, double v1, double v2);
     [DllImport(DllName, EntryPoint = "glMapGrid2f")]
-    public static extern unsafe GLvoid MapGrid2(GLint un, GLfloat u1, GLfloat u2, GLint vn, GLfloat v1, GLfloat v2);
+    public static extern unsafe void MapGrid2(int un, float u1, float u2, int vn, float v1, float v2);
     [DllImport(DllName, EntryPoint = "glEvalMesh1")]
-    public static extern unsafe GLvoid EvalMesh1(GLenum mode, GLint i1, GLint i2);
+    public static extern unsafe void EvalMesh1(uint mode, int i1, int i2);
     [DllImport(DllName, EntryPoint = "glEvalMesh2")]
-    public static extern unsafe GLvoid EvalMesh2(GLenum mode, GLint i1, GLint i2, GLint j1, GLint j2);
+    public static extern unsafe void EvalMesh2(uint mode, int i1, int i2, int j1, int j2);
     [DllImport(DllName, EntryPoint = "glEvalPoint1")]
-    public static extern unsafe GLvoid EvalPoint1(GLint i);
+    public static extern unsafe void EvalPoint1(int i);
     [DllImport(DllName, EntryPoint = "glEvalPoint2")]
-    public static extern unsafe GLvoid EvalPoint2(GLint i, GLint j);
+    public static extern unsafe void EvalPoint2(int i, int j);
     [DllImport(DllName, EntryPoint = "glGetMapdv")]
-    public static extern unsafe GLvoid GetMap(GLenum target, GLenum query, GLdouble* v);
+    public static extern unsafe void GetMap(uint target, uint query, double* v);
     [DllImport(DllName, EntryPoint = "glGetMapfv")]
-    public static extern unsafe GLvoid GetMap(GLenum target, GLenum query, GLfloat* v);
+    public static extern unsafe void GetMap(uint target, uint query, float* v);
     [DllImport(DllName, EntryPoint = "glGetMapiv")]
-    public static extern unsafe GLvoid GetMap(GLenum target, GLenum query, GLint* v);
+    public static extern unsafe void GetMap(uint target, uint query, int* v);
     [DllImport(DllName, EntryPoint = "glInitNames")]
-    public static extern unsafe GLvoid InitNames();
+    public static extern unsafe void InitNames();
     [DllImport(DllName, EntryPoint = "glPopName")]
-    public static extern unsafe GLvoid PopName();
+    public static extern unsafe void PopName();
     [DllImport(DllName, EntryPoint = "glPushName")]
-    public static extern unsafe GLvoid PushName(GLuint name);
+    public static extern unsafe void PushName(uint name);
     [DllImport(DllName, EntryPoint = "glLoadName")]
-    public static extern unsafe GLvoid LoadName(GLuint name);
+    public static extern unsafe void LoadName(uint name);
     [DllImport(DllName, EntryPoint = "glRenderMode")]
-    public static extern unsafe GLvoid RenderMode(GLenum mode);
+    public static extern unsafe void RenderMode(uint mode);
     [DllImport(DllName, EntryPoint = "glSelectBuffer")]
-    public static extern unsafe GLvoid SelectBuffer(GLsizei size, GLuint* buffer);
+    public static extern unsafe void SelectBuffer(int size, uint* buffer);
     [DllImport(DllName, EntryPoint = "glFeedbackBuffer")]
-    public static extern unsafe GLvoid FeedbackBuffer(GLsizei size, GLenum type, GLfloat* buffer);
+    public static extern unsafe void FeedbackBuffer(int size, uint type, float* buffer);
     [DllImport(DllName, EntryPoint = "glPassThrough")]
-    public static extern unsafe GLvoid PassThrough(GLfloat token);
+    public static extern unsafe void PassThrough(float token);
     [DllImport(DllName, EntryPoint = "glNewList")]
-    public static extern unsafe GLvoid NewList(GLuint list, GLenum mode);
+    public static extern unsafe void NewList(uint list, uint mode);
     [DllImport(DllName, EntryPoint = "glEndList")]
-    public static extern unsafe GLvoid EndList();
+    public static extern unsafe void EndList();
     [DllImport(DllName, EntryPoint = "glCallList")]
-    public static extern unsafe GLvoid CallList(GLuint list);
+    public static extern unsafe void CallList(uint list);
     [DllImport(DllName, EntryPoint = "glCallLists")]
-    public static extern unsafe GLvoid CallLists(GLsizei n, GLenum type, GLvoid* lists);
+    public static extern unsafe void CallLists(int n, uint type, void* lists);
     [DllImport(DllName, EntryPoint = "glListBase")]
-    public static extern unsafe GLvoid ListBase(GLuint @base);
+    public static extern unsafe void ListBase(uint @base);
     [DllImport(DllName, EntryPoint = "glGenLists")]
-    public static extern unsafe GLvoid GenLists(GLsizei range);
+    public static extern unsafe void GenLists(int range);
     [DllImport(DllName, EntryPoint = "glIsList")]
-    public static extern unsafe GLvoid IsList(GLuint list);
+    public static extern unsafe void IsList(uint list);
     [DllImport(DllName, EntryPoint = "glDeleteLists")]
-    public static extern unsafe GLvoid DeleteLists(GLuint list, GLsizei range);
+    public static extern unsafe void DeleteLists(uint list, int range);
 }

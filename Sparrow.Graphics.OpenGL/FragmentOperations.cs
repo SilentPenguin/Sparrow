@@ -3,73 +3,73 @@ using System.Runtime.InteropServices;
 public static partial class Gl
 {
     [DllImport(DllName, EntryPoint = "glScissor")]
-    public static extern unsafe GLvoid Scissor(GLint x, GLint y, GLsizei width, GLsizei height);
+    public static extern unsafe void Scissor(int x, int y, int width, int height);
     [DllImport(DllName, EntryPoint = "glSampleCoverage")]
-    public static extern unsafe GLvoid SampleCoverage(GLfloat value, GLboolean invert);
+    public static extern unsafe void SampleCoverage(float value, bool invert);
     [DllImport(DllName, EntryPoint = "glSampleMaski")]
-    public static extern unsafe GLvoid SampleMask(GLuint maskNumber, GLbitfield mask);
+    public static extern unsafe void SampleMask(uint maskNumber, uint mask);
     [DllImport(DllName, EntryPoint = "glAlphaFunc")]
-    public static extern unsafe GLvoid AlphaFunc(GLenum func, GLfloat @ref);
+    public static extern unsafe void AlphaFunc(uint func, float @ref);
     [DllImport(DllName, EntryPoint = "glStencilFunc")]
-    public static extern unsafe GLvoid StencilFunc(GLenum func, GLint @ref, GLuint mask);
+    public static extern unsafe void StencilFunc(uint func, int @ref, uint mask);
     [DllImport(DllName, EntryPoint = "glStencilFuncSeparate")]
-    public static extern unsafe GLvoid StencilFuncSeparate(GLenum face, GLenum func, GLint @ref, GLuint mask);
+    public static extern unsafe void StencilFuncSeparate(uint face, uint func, int @ref, uint mask);
     [DllImport(DllName, EntryPoint = "glStencilOp")]
-    public static extern unsafe GLvoid StencilOp(GLenum fail, GLenum zfail, GLenum zpass);
+    public static extern unsafe void StencilOp(uint fail, uint zfail, uint zpass);
     [DllImport(DllName, EntryPoint = "glStencilOpSeparate")]
-    public static extern unsafe GLvoid StencilOpSeparate(GLenum face, GLenum sfail, GLenum dpfail, GLenum dppass);
+    public static extern unsafe void StencilOpSeparate(uint face, uint sfail, uint dpfail, uint dppass);
     [DllImport(DllName, EntryPoint = "glDepthFunc")]
-    public static extern unsafe GLvoid DepthFunc(GLenum func);
+    public static extern unsafe void DepthFunc(uint func);
     [DllImport(DllName, EntryPoint = "glBeginQuery")]
-    public static extern unsafe GLvoid BeginQuery(GLenum target, GLuint id);
+    public static extern unsafe void BeginQuery(uint target, uint id);
     [DllImport(DllName, EntryPoint = "glEndQuery")]
-    public static extern unsafe GLvoid EndQuery(GLenum target);
+    public static extern unsafe void EndQuery(uint target);
     [DllImport(DllName, EntryPoint = "glBlendEquation")]
-    public static extern unsafe GLvoid BlendEquation(GLenum mode);
+    public static extern unsafe void BlendEquation(uint mode);
     [DllImport(DllName, EntryPoint = "glBlendEquationSeparate")]
-    public static extern unsafe GLvoid BlendEquationSeparate(GLenum modeRGB, GLenum modeAlpha);
+    public static extern unsafe void BlendEquationSeparate(uint modeRGB, uint modeAlpha);
     [DllImport(DllName, EntryPoint = "glBlendFunc")]
-    public static extern unsafe GLvoid BlendFunc(GLenum sfactor, GLenum dfactor);
+    public static extern unsafe void BlendFunc(uint sfactor, uint dfactor);
     [DllImport(DllName, EntryPoint = "glBlendFuncSeparate")]
-    public static extern unsafe GLvoid BlendFuncSeparate(GLenum sfactorRGB, GLenum dfactorRGB, GLenum sfactorAlpha, GLenum dfactorAlpha);
+    public static extern unsafe void BlendFuncSeparate(uint sfactorRGB, uint dfactorRGB, uint sfactorAlpha, uint dfactorAlpha);
     [DllImport(DllName, EntryPoint = "glBlendColor")]
-    public static extern unsafe GLvoid BlendColor(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
+    public static extern unsafe void BlendColor(float red, float green, float blue, float alpha);
     [DllImport(DllName, EntryPoint = "glLogicOp")]
-    public static extern unsafe GLvoid LogicOp(GLenum opcode);
+    public static extern unsafe void LogicOp(uint opcode);
     [DllImport(DllName, EntryPoint = "glDrawBuffer")]
-    public static extern unsafe GLvoid DrawBuffer(GLenum buf);
+    public static extern unsafe void DrawBuffer(uint buf);
     [DllImport(DllName, EntryPoint = "glDrawBuffers")]
-    public static extern unsafe GLvoid DrawBuffers(GLsizei n, GLenum* bufs);
+    public static extern unsafe void DrawBuffers(int n, uint* bufs);
     [DllImport(DllName, EntryPoint = "glIndexMask")]
-    public static extern unsafe GLvoid IndexMask(GLuint mask);
+    public static extern unsafe void IndexMask(uint mask);
     [DllImport(DllName, EntryPoint = "glColorMask")]
-    public static extern unsafe GLvoid ColorMask(GLboolean red, GLboolean green, GLboolean blue, GLboolean alpha);
+    public static extern unsafe void ColorMask(bool red, bool green, bool blue, bool alpha);
     [DllImport(DllName, EntryPoint = "glColorMaski")]
-    public static extern unsafe GLvoid ColorMask(GLuint index, GLboolean r, GLboolean g, GLboolean b, GLboolean a);
+    public static extern unsafe void ColorMask(uint index, bool r, bool g, bool b, bool a);
     [DllImport(DllName, EntryPoint = "glDepthMask")]
-    public static extern unsafe GLvoid DepthMask(GLboolean flag);
+    public static extern unsafe void DepthMask(bool flag);
     [DllImport(DllName, EntryPoint = "glStencilMask")]
-    public static extern unsafe GLvoid StencilMask(GLuint mask);
+    public static extern unsafe void StencilMask(uint mask);
     [DllImport(DllName, EntryPoint = "glStencilMaskSeparate")]
-    public static extern unsafe GLvoid StencilMaskSeparate(GLenum face, GLuint mask);
+    public static extern unsafe void StencilMaskSeparate(uint face, uint mask);
     [DllImport(DllName, EntryPoint = "glClear")]
-    public static extern unsafe GLvoid Clear(GLbitfield mask);
+    public static extern unsafe void Clear(uint mask);
     [DllImport(DllName, EntryPoint = "glClearColor")]
-    public static extern unsafe GLvoid ClearColor(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
+    public static extern unsafe void ClearColor(float red, float green, float blue, float alpha);
     [DllImport(DllName, EntryPoint = "glClearDepth")]
-    public static extern unsafe GLvoid ClearDepth(GLdouble depth);
+    public static extern unsafe void ClearDepth(double depth);
     [DllImport(DllName, EntryPoint = "glClearStencil")]
-    public static extern unsafe GLvoid ClearStencil(GLint s);
+    public static extern unsafe void ClearStencil(int s);
     [DllImport(DllName, EntryPoint = "glClearAccum")]
-    public static extern unsafe GLvoid ClearAccum(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
+    public static extern unsafe void ClearAccum(float red, float green, float blue, float alpha);
     [DllImport(DllName, EntryPoint = "glClearBufferfv")]
-    public static extern unsafe GLvoid ClearBuffer(GLenum buffer, GLint drawbuffer, GLfloat* value);
+    public static extern unsafe void ClearBuffer(uint buffer, int drawbuffer, float* value);
     [DllImport(DllName, EntryPoint = "glClearBufferiv")]
-    public static extern unsafe GLvoid ClearBuffer(GLenum buffer, GLint drawbuffer, GLint* value);
+    public static extern unsafe void ClearBuffer(uint buffer, int drawbuffer, int* value);
     [DllImport(DllName, EntryPoint = "glClearBufferuiv")]
-    public static extern unsafe GLvoid ClearBuffer(GLenum buffer, GLint drawbuffer, GLuint* value);
+    public static extern unsafe void ClearBuffer(uint buffer, int drawbuffer, uint* value);
     [DllImport(DllName, EntryPoint = "glClearBufferfi")]
-    public static extern unsafe GLvoid ClearBuffer(GLenum buffer, GLint drawbuffer, GLfloat depth, GLint stencil);
+    public static extern unsafe void ClearBuffer(uint buffer, int drawbuffer, float depth, int stencil);
     [DllImport(DllName, EntryPoint = "glAccum")]
-    public static extern unsafe GLvoid Accum(GLenum op, GLfloat value);
+    public static extern unsafe void Accum(uint op, float value);
 }
