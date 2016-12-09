@@ -70,7 +70,7 @@ namespace Sparrow.Graphics.OpenGL.Parse
                             Syntax.Parameter(Syntax.ParseToken(p.sanitizedName))
                             .WithType(Syntax.ParseTypeName(p.type))));
                     var pl = Syntax.ParameterList(Syntax.ParseToken("("), sl, Syntax.ParseToken(")"));
-                    var aal = Syntax.ParseAttributeArgumentList("(DllName)");
+                    var aal = Syntax.ParseAttributeArgumentList("(DllName, EntryPoint=\"" + proto.entry.callsite + "\")");
                     var al = Syntax.AttributeList()
                         .AddAttributes(Syntax.Attribute(Syntax.ParseName("DllImport"), aal));
 
