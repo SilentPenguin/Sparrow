@@ -1,23 +1,28 @@
 <opengl>
   <proto name="Enable">
+    <return type="GLvoid" />
     <entry>glEnable</entry>
     <param name="cap" type="GLenum" />
   </proto>
   <proto name="Enable">
+    <return type="GLvoid" />
     <entry>glEnablei</entry>
     <param name="target" type="GLenum" />
     <param name="index" type="GLuint" />
   </proto>
   <proto name="Disable">
+    <return type="GLvoid" />
     <entry>glDisable</entry>
     <param name="cap" type="GLenum" />
   </proto>
   <proto name="Disable">
+    <return type="GLvoid" />
     <entry>glDisablei</entry>
     <param name="target" type="GLenum" />
     <param name="index" type="GLuint" />
   </proto>
   <proto name="GetError">
+    <return type="GLenum" />
     <entry>glGetError</entry>
   </proto>
 </opengl>
