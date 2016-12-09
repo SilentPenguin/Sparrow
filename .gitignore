@@ -251,4 +251,5 @@ paket-files/
 .idea/
 *.sln.iml
 
-Engine/Graphics/OpenGL/Registry
+Sparrow.Graphics.OpenGL.Parse/Registry/Api
+Sparrow.Graphics.OpenGL.Parse/Registry/Man

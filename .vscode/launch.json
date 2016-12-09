@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp1.0/GameEngine.dll",
+            "program": "${workspaceRoot}/Sparrow.Graphics.OpenGL.Parse/bin/Debug/netcoreapp1.0/Sparrow.Graphics.OpenGL.Parse.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "externalConsole": false,
