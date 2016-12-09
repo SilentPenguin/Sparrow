@@ -94,7 +94,7 @@ public class Param : XElement
     public Param() : base("param") {}
     public Param(XElement e) : base(e) {}
 
-    private readonly string[] keywords = new string[]{
+    public static readonly string[] keywords = new string[]{
         "abstract", "as", "base", "bool",
         "break", "byte", "case", "catch",
         "char", "checked", "class", "const",
@@ -117,6 +117,50 @@ public class Param : XElement
         "void", "volatile", "while"
     };
 
+    public static readonly Dictionary<string, string> typemap = new Dictionary<string, string>
+            {
+                { "GLenum", "uint" },
+                { "GLboolean", "bool" },
+                { "GLbitfield", "uint" },
+                { "GLbyte", "sbyte" },
+                { "GLshort", "short" },
+                { "GLint", "int" },
+                { "GLclampx", "int" },
+                { "GLubyte", "byte"},
+                { "GLushort", "ushort" },
+                { "GLuint", "uint" },
+                { "GLsizei", "int" },
+                { "GLfloat", "float" },
+                { "GLclampf", "float" },
+                { "GLdouble", "double" },
+                { "GLclampd", "double" },
+                { "GLeglImageOES", "void*" },
+                { "GLchar", "char" },
+                { "GLcharARB", "char" },
+                { "GLhandleARB", "void*" },
+                { "GLhalf", "short" },
+                { "GLhalfARB", "short" },
+                { "GLfixed", "int" },
+                { "GLintptr", "int*" },
+                { "GLintptrARB", "int*" },
+                { "GLsizeiptr", "int*" },
+                { "GLsizeiptrARB", "int*" },
+                { "GLint64", "long" },
+                { "GLuint64", "ulong" },
+                { "GLint64EXT", "long" },
+                { "GLuint64EXT", "ulong" },
+                { "GLhalfNV", "ushort" },
+                { "GLvdpauSurfaceNV", "int*" },
+                { "GLsync", "void*" },
+                { @"struct _cl_event", "void*" },
+                { @"struct _cl_context", "void*" },
+                { "GLDEBUGPROC", "GLDEBUGPROC" },
+                { "GLDEBUGPROCARB", "GLDEBUGPROC" },
+                { "GLDEBUGPROCKHR", "GLDEBUGPROC" },
+                { "GLDEBUGPROCAMD", "GLDEBUGPROC" },
+                { "GLvoid", "void" },
+            };
+
     public string name
     {
         get { return Attribute("name").Value; }
@@ -126,6 +170,14 @@ public class Param : XElement
     public string sanitizedName
     {
         get { return keywords.Contains(name) ? ("@" + name) : name; }
+    }
+
+    public string sanitizedType
+    {
+        get {
+            var rawType = type.Replace("*", "");
+            return type.Replace(rawType, typemap[rawType]);
+        }
     }
 
     public string type
@@ -145,6 +197,14 @@ public class Return : XElement
     {
         get { return Attribute("type")?.Value ?? "void"; }
         set { SetAttributeValue("type", value); }
+    }
+
+    public string sanitizedType
+    {
+        get {
+            var rawType = type.Replace("*", "");
+            return type.Replace(rawType, Param.typemap[rawType]);
+        }
     }
 }
 

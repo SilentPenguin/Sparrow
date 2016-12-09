@@ -64,11 +64,11 @@ namespace Sparrow.Graphics.OpenGL.Parse
 
                 foreach(var proto in api.protos)
                 {
-                    var rt = Syntax.ParseTypeName(proto.@return.type);
+                    var rt = Syntax.ParseTypeName(proto.@return.sanitizedType);
                     var sl = Syntax.SeparatedList(
                         proto.@params.Select(p =>
                             Syntax.Parameter(Syntax.ParseToken(p.sanitizedName))
-                            .WithType(Syntax.ParseTypeName(p.type))));
+                            .WithType(Syntax.ParseTypeName(p.sanitizedType))));
                     var pl = Syntax.ParameterList(Syntax.ParseToken("("), sl, Syntax.ParseToken(")"));
                     var aal = Syntax.ParseAttributeArgumentList("(DllName, EntryPoint=\"" + proto.entry.callsite + "\")");
                     var al = Syntax.AttributeList()

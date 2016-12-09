@@ -3,103 +3,103 @@ using System.Runtime.InteropServices;
 public static partial class Gl
 {
     [DllImport(DllName, EntryPoint = "glActiveTexture")]
-    public static extern unsafe GLvoid ActiveTexture(GLenum texture);
+    public static extern unsafe void ActiveTexture(uint texture);
     [DllImport(DllName, EntryPoint = "glTexImage1D")]
-    public static extern unsafe GLvoid TexImage1D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, GLvoid* pixels);
+    public static extern unsafe void TexImage1D(uint target, int level, int internalformat, int width, int border, uint format, uint type, void* pixels);
     [DllImport(DllName, EntryPoint = "glTexImage2D")]
-    public static extern unsafe GLvoid TexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, GLvoid* pixels);
+    public static extern unsafe void TexImage2D(uint target, int level, int internalformat, int width, int height, int border, uint format, uint type, void* pixels);
     [DllImport(DllName, EntryPoint = "glTexImage3D")]
-    public static extern unsafe GLvoid TexImage3D(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, GLvoid* pixels);
+    public static extern unsafe void TexImage3D(uint target, int level, int internalformat, int width, int height, int depth, int border, uint format, uint type, void* pixels);
     [DllImport(DllName, EntryPoint = "glCopyTexImage1D")]
-    public static extern unsafe GLvoid CopyTexImage1D(GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLint border);
+    public static extern unsafe void CopyTexImage1D(uint target, int level, uint internalformat, int x, int y, int width, int border);
     [DllImport(DllName, EntryPoint = "glCopyTexImage2D")]
-    public static extern unsafe GLvoid CopyTexImage2D(GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border);
+    public static extern unsafe void CopyTexImage2D(uint target, int level, uint internalformat, int x, int y, int width, int height, int border);
     [DllImport(DllName, EntryPoint = "glTexSubImage1D")]
-    public static extern unsafe GLvoid TexSubImage1D(GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, GLvoid* pixels);
+    public static extern unsafe void TexSubImage1D(uint target, int level, int xoffset, int width, uint format, uint type, void* pixels);
     [DllImport(DllName, EntryPoint = "glTexSubImage2D")]
-    public static extern unsafe GLvoid TexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, GLvoid* pixels);
+    public static extern unsafe void TexSubImage2D(uint target, int level, int xoffset, int yoffset, int width, int height, uint format, uint type, void* pixels);
     [DllImport(DllName, EntryPoint = "glTexSubImage3D")]
-    public static extern unsafe GLvoid TexSubImage3D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, GLvoid* pixels);
+    public static extern unsafe void TexSubImage3D(uint target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint format, uint type, void* pixels);
     [DllImport(DllName, EntryPoint = "glCopyTexSubImage1D")]
-    public static extern unsafe GLvoid CopyTexSubImage1D(GLenum target, GLint level, GLint xoffset, GLint x, GLint y, GLsizei width);
+    public static extern unsafe void CopyTexSubImage1D(uint target, int level, int xoffset, int x, int y, int width);
     [DllImport(DllName, EntryPoint = "glCopyTexSubImage2D")]
-    public static extern unsafe GLvoid CopyTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
+    public static extern unsafe void CopyTexSubImage2D(uint target, int level, int xoffset, int yoffset, int x, int y, int width, int height);
     [DllImport(DllName, EntryPoint = "glCopyTexSubImage3D")]
-    public static extern unsafe GLvoid CopyTexSubImage3D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLint x, GLint y, GLsizei width, GLsizei height);
+    public static extern unsafe void CopyTexSubImage3D(uint target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height);
     [DllImport(DllName, EntryPoint = "glCompressedTexImage1D")]
-    public static extern unsafe GLvoid CompressedTexImage1D(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLint border, GLsizei imageSize, GLvoid* data);
+    public static extern unsafe void CompressedTexImage1D(uint target, int level, uint internalformat, int width, int border, int imageSize, void* data);
     [DllImport(DllName, EntryPoint = "glCompressedTexImage2D")]
-    public static extern unsafe GLvoid CompressedTexImage2D(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLint border, GLsizei imageSize, GLvoid* data);
+    public static extern unsafe void CompressedTexImage2D(uint target, int level, uint internalformat, int width, int height, int border, int imageSize, void* data);
     [DllImport(DllName, EntryPoint = "glCompressedTexImage3D")]
-    public static extern unsafe GLvoid CompressedTexImage3D(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLsizei imageSize, GLvoid* data);
+    public static extern unsafe void CompressedTexImage3D(uint target, int level, uint internalformat, int width, int height, int depth, int border, int imageSize, void* data);
     [DllImport(DllName, EntryPoint = "glCompressedTexSubImage1D")]
-    public static extern unsafe GLvoid CompressedTexSubImage1D(GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLsizei imageSize, GLvoid* data);
+    public static extern unsafe void CompressedTexSubImage1D(uint target, int level, int xoffset, int width, uint format, int imageSize, void* data);
     [DllImport(DllName, EntryPoint = "glCompressedTexSubImage2D")]
-    public static extern unsafe GLvoid CompressedTexSubImage2D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLsizei imageSize, GLvoid* data);
+    public static extern unsafe void CompressedTexSubImage2D(uint target, int level, int xoffset, int yoffset, int width, int height, uint format, int imageSize, void* data);
     [DllImport(DllName, EntryPoint = "glCompressedTexSubImage3D")]
-    public static extern unsafe GLvoid CompressedTexSubImage3D(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLsizei imageSize, GLvoid* data);
+    public static extern unsafe void CompressedTexSubImage3D(uint target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint format, int imageSize, void* data);
     [DllImport(DllName, EntryPoint = "glTexImage2DMultisample")]
-    public static extern unsafe GLvoid TexImage2DMultisample(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLboolean fixedsamplelocations);
+    public static extern unsafe void TexImage2DMultisample(uint target, int samples, uint internalformat, int width, int height, bool fixedsamplelocations);
     [DllImport(DllName, EntryPoint = "glTexImage3DMultisample")]
-    public static extern unsafe GLvoid TexImage3DMultisample(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedsamplelocations);
+    public static extern unsafe void TexImage3DMultisample(uint target, int samples, uint internalformat, int width, int height, int depth, bool fixedsamplelocations);
     [DllImport(DllName, EntryPoint = "glTexBuffer")]
-    public static extern unsafe GLvoid TexBuffer(GLenum target, GLenum internalformat, GLuint buffer);
+    public static extern unsafe void TexBuffer(uint target, uint internalformat, uint buffer);
     [DllImport(DllName, EntryPoint = "glTexParameterf")]
-    public static extern unsafe GLvoid TexParameter(GLenum target, GLenum pname, GLfloat param);
+    public static extern unsafe void TexParameter(uint target, uint pname, float param);
     [DllImport(DllName, EntryPoint = "glTexParameterfv")]
-    public static extern unsafe GLvoid TexParameter(GLenum target, GLenum pname, GLfloat* @params);
+    public static extern unsafe void TexParameter(uint target, uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glTexParameteri")]
-    public static extern unsafe GLvoid TexParameter(GLenum target, GLenum pname, GLint param);
+    public static extern unsafe void TexParameter(uint target, uint pname, int param);
     [DllImport(DllName, EntryPoint = "glTexParameteriv")]
-    public static extern unsafe GLvoid TexParameter(GLenum target, GLenum pname, GLint* @params);
+    public static extern unsafe void TexParameter(uint target, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glTexParameterIiv")]
-    public static extern unsafe GLvoid TexParameterI(GLenum target, GLenum pname, GLint* @params);
+    public static extern unsafe void TexParameterI(uint target, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glTexParameterIuiv")]
-    public static extern unsafe GLvoid TexParameterI(GLenum target, GLenum pname, GLuint* @params);
+    public static extern unsafe void TexParameterI(uint target, uint pname, uint* @params);
     [DllImport(DllName, EntryPoint = "glGenerateMipmap")]
-    public static extern unsafe GLvoid GenerateMipmap(GLenum target);
+    public static extern unsafe void GenerateMipmap(uint target);
     [DllImport(DllName, EntryPoint = "glBindTexture")]
-    public static extern unsafe GLvoid BindTexture(GLenum target, GLuint texture);
+    public static extern unsafe void BindTexture(uint target, uint texture);
     [DllImport(DllName, EntryPoint = "glGenTextures")]
-    public static extern unsafe GLvoid GenTextures(GLsizei n, GLuint* textures);
+    public static extern unsafe void GenTextures(int n, uint* textures);
     [DllImport(DllName, EntryPoint = "glAreTexturesResident")]
-    public static extern unsafe GLvoid AreTexturesResident(GLsizei n, GLuint* textures, GLboolean* residences);
+    public static extern unsafe void AreTexturesResident(int n, uint* textures, bool* residences);
     [DllImport(DllName, EntryPoint = "glPrioritizeTextures")]
-    public static extern unsafe GLvoid PrioritizeTextures(GLsizei n, GLuint* textures, GLfloat* priorities);
+    public static extern unsafe void PrioritizeTextures(int n, uint* textures, float* priorities);
     [DllImport(DllName, EntryPoint = "glTexEnvf")]
-    public static extern unsafe GLvoid TexEnv(GLenum target, GLenum pname, GLfloat param);
+    public static extern unsafe void TexEnv(uint target, uint pname, float param);
     [DllImport(DllName, EntryPoint = "glTexEnvfv")]
-    public static extern unsafe GLvoid TexEnv(GLenum target, GLenum pname, GLfloat* @params);
+    public static extern unsafe void TexEnv(uint target, uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glTexEnvi")]
-    public static extern unsafe GLvoid TexEnv(GLenum target, GLenum pname, GLint param);
+    public static extern unsafe void TexEnv(uint target, uint pname, int param);
     [DllImport(DllName, EntryPoint = "glTexEnviv")]
-    public static extern unsafe GLvoid TexEnv(GLenum target, GLenum pname, GLint* @params);
+    public static extern unsafe void TexEnv(uint target, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glGetTexEnvfv")]
-    public static extern unsafe GLvoid GetTexEnv(GLenum target, GLenum pname, GLfloat* @params);
+    public static extern unsafe void GetTexEnv(uint target, uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glGetTexEnviv")]
-    public static extern unsafe GLvoid GetTexEnv(GLenum target, GLenum pname, GLint* @params);
+    public static extern unsafe void GetTexEnv(uint target, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glGetTexGendv")]
-    public static extern unsafe GLvoid GetTexGen(GLenum coord, GLenum pname, GLdouble* @params);
+    public static extern unsafe void GetTexGen(uint coord, uint pname, double* @params);
     [DllImport(DllName, EntryPoint = "glGetTexGenfv")]
-    public static extern unsafe GLvoid GetTexGen(GLenum coord, GLenum pname, GLfloat* @params);
+    public static extern unsafe void GetTexGen(uint coord, uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glGetTexGeniv")]
-    public static extern unsafe GLvoid GetTexGen(GLenum coord, GLenum pname, GLint* @params);
+    public static extern unsafe void GetTexGen(uint coord, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glGetTexParameterfv")]
-    public static extern unsafe GLvoid GetTexParameter(GLenum target, GLenum pname, GLfloat* @params);
+    public static extern unsafe void GetTexParameter(uint target, uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glGetTexParameteriv")]
-    public static extern unsafe GLvoid GetTexParameter(GLenum target, GLenum pname, GLint* @params);
+    public static extern unsafe void GetTexParameter(uint target, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glGetTexParameterIiv")]
-    public static extern unsafe GLvoid GetTexParameterI(GLenum target, GLenum pname, GLint* @params);
+    public static extern unsafe void GetTexParameterI(uint target, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glGetTexParameterIuiv")]
-    public static extern unsafe GLvoid GetTexParameterI(GLenum target, GLenum pname, GLuint* @params);
+    public static extern unsafe void GetTexParameterI(uint target, uint pname, uint* @params);
     [DllImport(DllName, EntryPoint = "glGetTexLevelParameterfv")]
-    public static extern unsafe GLvoid GetTexLevelParameter(GLenum target, GLint level, GLenum pname, GLfloat* @params);
+    public static extern unsafe void GetTexLevelParameter(uint target, int level, uint pname, float* @params);
     [DllImport(DllName, EntryPoint = "glGetTexLevelParameteriv")]
-    public static extern unsafe GLvoid GetTexLevelParameter(GLenum target, GLint level, GLenum pname, GLint* @params);
+    public static extern unsafe void GetTexLevelParameter(uint target, int level, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glGetTexImage")]
-    public static extern unsafe GLvoid GetTexImage(GLenum target, GLint level, GLenum format, GLenum type, GLvoid* pixels);
+    public static extern unsafe void GetTexImage(uint target, int level, uint format, uint type, void* pixels);
     [DllImport(DllName, EntryPoint = "glGetCompressedTexImage")]
-    public static extern unsafe GLvoid GetCompressedTexImage(GLenum target, GLint level, GLvoid* img);
+    public static extern unsafe void GetCompressedTexImage(uint target, int level, void* img);
     [DllImport(DllName, EntryPoint = "glIsTexture")]
-    public static extern unsafe GLvoid IsTexture(GLuint texture);
+    public static extern unsafe void IsTexture(uint texture);
 }
