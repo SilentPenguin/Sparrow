@@ -1,0 +1,359 @@
+<opengl>
+  <proto name="GetMultisample">
+    <entry>glGetMultisamplefv</entry>
+    <param name="pname" type="GLenum" />
+    <param name="index" type="GLuint" />
+    <param name="val" type="GLfloat" />
+  </proto>
+  <proto name="PointSize">
+    <entry>glPointSize</entry>
+    <param name="size" type="GLfloat" />
+  </proto>
+  <proto name="PointParameter">
+    <entry>glPointParameterf</entry>
+    <param name="pname" type="GLenum" />
+    <param name="param" type="GLfloat" />
+  </proto>
+  <proto name="PointParameter">
+    <entry>glPointParameterfv</entry>
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLfloat" />
+  </proto>
+  <proto name="PointParameter">
+    <entry>glPointParameteri</entry>
+    <param name="pname" type="GLenum" />
+    <param name="param" type="GLint" />
+  </proto>
+  <proto name="PointParameter">
+    <entry>glPointParameteriv</entry>
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="LineWidth">
+    <entry>glLineWidth</entry>
+    <param name="width" type="GLfloat" />
+  </proto>
+  <proto name="LineStipple">
+    <entry>glLineStipple</entry>
+    <param name="factor" type="GLint" />
+    <param name="pattern" type="GLushort" />
+  </proto>
+  <proto name="GetPolygonStipple">
+    <entry>glGetPolygonStipple</entry>
+    <param name="mask" type="GLubyte" />
+  </proto>
+  <proto name="FrontFace">
+    <entry>glFrontFace</entry>
+    <param name="mode" type="GLenum" />
+  </proto>
+  <proto name="CullFace">
+    <entry>glCullFace</entry>
+    <param name="mode" type="GLenum" />
+  </proto>
+  <proto name="PolygonMode">
+    <entry>glPolygonMode</entry>
+    <param name="face" type="GLenum" />
+    <param name="mode" type="GLenum" />
+  </proto>
+  <proto name="PolygonOffset">
+    <entry>glPolygonOffset</entry>
+    <param name="factor" type="GLfloat" />
+    <param name="units" type="GLfloat" />
+  </proto>
+  <proto name="PixelStore">
+    <entry>glPixelStoref</entry>
+    <param name="pname" type="GLenum" />
+    <param name="param" type="GLfloat" />
+  </proto>
+  <proto name="PixelStore">
+    <entry>glPixelStorei</entry>
+    <param name="pname" type="GLenum" />
+    <param name="param" type="GLint" />
+  </proto>
+  <proto name="PixelMap">
+    <entry>glPixelMapfv</entry>
+    <param name="map" type="GLenum" />
+    <param name="mapsize" type="GLsizei" />
+    <param name="values" type="GLfloat" />
+  </proto>
+  <proto name="PixelMap">
+    <entry>glPixelMapuiv</entry>
+    <param name="map" type="GLenum" />
+    <param name="mapsize" type="GLsizei" />
+    <param name="values" type="GLuint" />
+  </proto>
+  <proto name="PixelMap">
+    <entry>glPixelMapusv</entry>
+    <param name="map" type="GLenum" />
+    <param name="mapsize" type="GLsizei" />
+    <param name="values" type="GLushort" />
+  </proto>
+  <proto name="GetPixelMap">
+    <entry>glGetPixelMapfv</entry>
+    <param name="map" type="GLenum" />
+    <param name="values" type="GLfloat" />
+  </proto>
+  <proto name="GetPixelMap">
+    <entry>glGetPixelMapuiv</entry>
+    <param name="map" type="GLenum" />
+    <param name="values" type="GLuint" />
+  </proto>
+  <proto name="GetPixelMap">
+    <entry>glGetPixelMapusv</entry>
+    <param name="map" type="GLenum" />
+    <param name="values" type="GLushort" />
+  </proto>
+  <proto name="ColorTable">
+    <entry>glColorTable</entry>
+    <param name="target" type="GLenum" />
+    <param name="internalformat" type="GLenum" />
+    <param name="width" type="GLsizei" />
+    <param name="format" type="GLenum" />
+    <param name="type" type="GLenum" />
+    <param name="table" type="GLvoid" />
+  </proto>
+  <proto name="ColorTableParameter">
+    <entry>glColorTableParameterfv</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLfloat" />
+  </proto>
+  <proto name="ColorTableParameter">
+    <entry>glColorTableParameteriv</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="CopyColorTable">
+    <entry>glCopyColorTable</entry>
+    <param name="target" type="GLenum" />
+    <param name="internalformat" type="GLenum" />
+    <param name="x" type="GLint" />
+    <param name="y" type="GLint" />
+    <param name="width" type="GLsizei" />
+  </proto>
+  <proto name="ColorSubTable">
+    <entry>glColorSubTable</entry>
+    <param name="target" type="GLenum" />
+    <param name="start" type="GLsizei" />
+    <param name="count" type="GLsizei" />
+    <param name="format" type="GLenum" />
+    <param name="type" type="GLenum" />
+    <param name="data" type="GLvoid" />
+  </proto>
+  <proto name="CopyColorSubTable">
+    <entry>glCopyColorSubTable</entry>
+    <param name="target" type="GLenum" />
+    <param name="start" type="GLsizei" />
+    <param name="x" type="GLint" />
+    <param name="y" type="GLint" />
+    <param name="width" type="GLsizei" />
+  </proto>
+  <proto name="GetColorTable">
+    <entry>glGetColorTable</entry>
+    <param name="target" type="GLenum" />
+    <param name="format" type="GLenum" />
+    <param name="type" type="GLenum" />
+    <param name="table" type="GLvoid" />
+  </proto>
+  <proto name="GetColorTableParameter">
+    <entry>glGetColorTableParameterfv</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLfloat" />
+  </proto>
+  <proto name="GetColorTableParameter">
+    <entry>glGetColorTableParameteriv</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="ConvolutionFilter1D">
+    <entry>glConvolutionFilter1D</entry>
+    <param name="target" type="GLenum" />
+    <param name="internalformat" type="GLenum" />
+    <param name="width" type="GLsizei" />
+    <param name="format" type="GLenum" />
+    <param name="type" type="GLenum" />
+    <param name="image" type="GLvoid" />
+  </proto>
+  <proto name="ConvolutionFilter2D">
+    <entry>glConvolutionFilter2D</entry>
+    <param name="target" type="GLenum" />
+    <param name="internalformat" type="GLenum" />
+    <param name="width" type="GLsizei" />
+    <param name="height" type="GLsizei" />
+    <param name="format" type="GLenum" />
+    <param name="type" type="GLenum" />
+    <param name="image" type="GLvoid" />
+  </proto>
+  <proto name="ConvolutionParameter">
+    <entry>glConvolutionParameterf</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLfloat" />
+  </proto>
+  <proto name="ConvolutionParameter">
+    <entry>glConvolutionParameterfv</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLfloat" />
+  </proto>
+  <proto name="ConvolutionParameter">
+    <entry>glConvolutionParameteri</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="ConvolutionParameter">
+    <entry>glConvolutionParameteriv</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="SeparableFilter2D">
+    <entry>glSeparableFilter2D</entry>
+    <param name="target" type="GLenum" />
+    <param name="internalformat" type="GLenum" />
+    <param name="width" type="GLsizei" />
+    <param name="height" type="GLsizei" />
+    <param name="format" type="GLenum" />
+    <param name="type" type="GLenum" />
+    <param name="row" type="GLvoid" />
+    <param name="column" type="GLvoid" />
+  </proto>
+  <proto name="CopyConvolutionFilter1D">
+    <entry>glCopyConvolutionFilter1D</entry>
+    <param name="target" type="GLenum" />
+    <param name="internalformat" type="GLenum" />
+    <param name="x" type="GLint" />
+    <param name="y" type="GLint" />
+    <param name="width" type="GLsizei" />
+  </proto>
+  <proto name="CopyConvolutionFilter2D">
+    <entry>glCopyConvolutionFilter2D</entry>
+    <param name="target" type="GLenum" />
+    <param name="internalformat" type="GLenum" />
+    <param name="x" type="GLint" />
+    <param name="y" type="GLint" />
+    <param name="width" type="GLsizei" />
+    <param name="height" type="GLsizei" />
+  </proto>
+  <proto name="GetConvolutionFilter">
+    <entry>glGetConvolutionFilter</entry>
+    <param name="target" type="GLenum" />
+    <param name="format" type="GLenum" />
+    <param name="type" type="GLenum" />
+    <param name="image" type="GLvoid" />
+  </proto>
+  <proto name="GetSeparableFilter">
+    <entry>glGetSeparableFilter</entry>
+    <param name="target" type="GLenum" />
+    <param name="format" type="GLenum" />
+    <param name="type" type="GLenum" />
+    <param name="row" type="GLvoid" />
+    <param name="column" type="GLvoid" />
+    <param name="span" type="GLvoid" />
+  </proto>
+  <proto name="GetConvolutionParameter">
+    <entry>glGetConvolutionParameterfv</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLfloat" />
+  </proto>
+  <proto name="GetConvolutionParameter">
+    <entry>glGetConvolutionParameteriv</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="Histogram">
+    <entry>glHistogram</entry>
+    <param name="target" type="GLenum" />
+    <param name="width" type="GLsizei" />
+    <param name="internalformat" type="GLenum" />
+    <param name="sink" type="GLboolean" />
+  </proto>
+  <proto name="GetHistogram">
+    <entry>glGetHistogram</entry>
+    <param name="target" type="GLenum" />
+    <param name="reset" type="GLboolean" />
+    <param name="format" type="GLenum" />
+    <param name="type" type="GLenum" />
+    <param name="values" type="GLvoid" />
+  </proto>
+  <proto name="ResetHistogram">
+    <entry>glResetHistogram</entry>
+    <param name="target" type="GLenum" />
+  </proto>
+  <proto name="GetHistogramParameter">
+    <entry>glGetHistogramParameterfv</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLfloat" />
+  </proto>
+  <proto name="GetHistogramParameter">
+    <entry>glGetHistogramParameteriv</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="Minmax">
+    <entry>glMinmax</entry>
+    <param name="target" type="GLenum" />
+    <param name="internalformat" type="GLenum" />
+    <param name="sink" type="GLboolean" />
+  </proto>
+  <proto name="GetMinmax">
+    <entry>glGetMinmax</entry>
+    <param name="target" type="GLenum" />
+    <param name="reset" type="GLboolean" />
+    <param name="format" type="GLenum" />
+    <param name="type" type="GLenum" />
+    <param name="values" type="GLvoid" />
+  </proto>
+  <proto name="ResetMinmax">
+    <entry>glResetMinmax</entry>
+    <param name="target" type="GLenum" />
+  </proto>
+  <proto name="GetMinmaxParameter">
+    <entry>glGetMinmaxParameterfv</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLfloat" />
+  </proto>
+  <proto name="GetMinmaxParameter">
+    <entry>glGetMinmaxParameteriv</entry>
+    <param name="target" type="GLenum" />
+    <param name="pname" type="GLenum" />
+    <param name="params" type="GLint" />
+  </proto>
+  <proto name="DrawPixels">
+    <entry>glDrawPixels</entry>
+    <param name="width" type="GLsizei" />
+    <param name="height" type="GLsizei" />
+    <param name="format" type="GLenum" />
+    <param name="type" type="GLenum" />
+    <param name="pixels" type="GLvoid" />
+  </proto>
+  <proto name="ClampColor">
+    <entry>glClampColor</entry>
+    <param name="target" type="GLenum" />
+    <param name="clamp" type="GLenum" />
+  </proto>
+  <proto name="PixelZoom">
+    <entry>glPixelZoom</entry>
+    <param name="xfactor" type="GLfloat" />
+    <param name="yfactor" type="GLfloat" />
+  </proto>
+  <proto name="Bitmap">
+    <entry>glBitmap</entry>
+    <param name="width" type="GLsizei" />
+    <param name="height" type="GLsizei" />
+    <param name="xorig" type="GLfloat" />
+    <param name="yorig" type="GLfloat" />
+    <param name="xmove" type="GLfloat" />
+    <param name="ymove" type="GLfloat" />
+    <param name="bitmap" type="GLubyte" />
+  </proto>
+</opengl>

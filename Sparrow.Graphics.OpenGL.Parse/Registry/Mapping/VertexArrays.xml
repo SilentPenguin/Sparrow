@@ -1,0 +1,174 @@
+<opengl>
+  <proto name="VertexPointer">
+    <entry>glVertexPointer</entry>
+    <param name="size" type="GLint" />
+    <param name="type" type="GLenum" />
+    <param name="stride" type="GLsizei" />
+    <param name="pointer" type="GLvoid" />
+  </proto>
+  <proto name="NormalPointer">
+    <entry>glNormalPointer</entry>
+    <param name="type" type="GLenum" />
+    <param name="stride" type="GLsizei" />
+    <param name="pointer" type="GLvoid" />
+  </proto>
+  <proto name="ColorPointer">
+    <entry>glColorPointer</entry>
+    <param name="size" type="GLint" />
+    <param name="type" type="GLenum" />
+    <param name="stride" type="GLsizei" />
+    <param name="pointer" type="GLvoid" />
+  </proto>
+  <proto name="IndexPointer">
+    <entry>glIndexPointer</entry>
+    <param name="type" type="GLenum" />
+    <param name="stride" type="GLsizei" />
+    <param name="pointer" type="GLvoid" />
+  </proto>
+  <proto name="EdgeFlagPointer">
+    <entry>glEdgeFlagPointer</entry>
+    <param name="stride" type="GLsizei" />
+    <param name="pointer" type="GLvoid" />
+  </proto>
+  <proto name="FogCoordPointer">
+    <entry>glFogCoordPointer</entry>
+    <param name="type" type="GLenum" />
+    <param name="stride" type="GLsizei" />
+    <param name="pointer" type="GLvoid" />
+  </proto>
+  <proto name="VertexAttribPointer">
+    <entry>glVertexAttribPointer</entry>
+    <param name="index" type="GLuint" />
+    <param name="size" type="GLint" />
+    <param name="type" type="GLenum" />
+    <param name="normalized" type="GLboolean" />
+    <param name="stride" type="GLsizei" />
+    <param name="pointer" type="GLvoid" />
+  </proto>
+  <proto name="VertexAttribIPointer">
+    <entry>glVertexAttribIPointer</entry>
+    <param name="index" type="GLuint" />
+    <param name="size" type="GLint" />
+    <param name="type" type="GLenum" />
+    <param name="stride" type="GLsizei" />
+    <param name="pointer" type="GLvoid" />
+  </proto>
+  <proto name="EnableClientState">
+    <entry>glEnableClientState</entry>
+    <param name="array" type="GLenum" />
+  </proto>
+  <proto name="DisableClientState">
+    <entry>glDisableClientState</entry>
+    <param name="array" type="GLenum" />
+  </proto>
+  <proto name="EnableVertexAttribArray">
+    <entry>glEnableVertexAttribArray</entry>
+    <param name="index" type="GLuint" />
+  </proto>
+  <proto name="DisableVertexAttribArray">
+    <entry>glDisableVertexAttribArray</entry>
+    <param name="index" type="GLuint" />
+  </proto>
+  <proto name="ClientActiveTexture">
+    <entry>glClientActiveTexture</entry>
+    <param name="texture" type="GLenum" />
+  </proto>
+  <proto name="ArrayElement">
+    <entry>glArrayElement</entry>
+    <param name="i" type="GLint" />
+  </proto>
+  <proto name="DrawArrays">
+    <entry>glDrawArrays</entry>
+    <param name="mode" type="GLenum" />
+    <param name="first" type="GLint" />
+    <param name="count" type="GLsizei" />
+  </proto>
+  <proto name="MultiDrawArrays">
+    <entry>glMultiDrawArrays</entry>
+    <param name="mode" type="GLenum" />
+    <param name="first" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="drawcount" type="GLsizei" />
+  </proto>
+  <proto name="DrawElements">
+    <entry>glDrawElements</entry>
+    <param name="mode" type="GLenum" />
+    <param name="count" type="GLsizei" />
+    <param name="type" type="GLenum" />
+    <param name="indices" type="GLvoid" />
+  </proto>
+  <proto name="MultiDrawElements">
+    <entry>glMultiDrawElements</entry>
+    <param name="mode" type="GLenum" />
+    <param name="count" type="GLsizei" />
+    <param name="type" type="GLenum" />
+    <param name="indices" type="GLvoid" />
+    <param name="drawcount" type="GLsizei" />
+  </proto>
+  <proto name="DrawRangeElements">
+    <entry>glDrawRangeElements</entry>
+    <param name="mode" type="GLenum" />
+    <param name="start" type="GLuint" />
+    <param name="end" type="GLuint" />
+    <param name="count" type="GLsizei" />
+    <param name="type" type="GLenum" />
+    <param name="indices" type="GLvoid" />
+  </proto>
+  <proto name="DrawArraysInstanced">
+    <entry>glDrawArraysInstanced</entry>
+    <param name="mode" type="GLenum" />
+    <param name="first" type="GLint" />
+    <param name="count" type="GLsizei" />
+    <param name="instancecount" type="GLsizei" />
+  </proto>
+  <proto name="DrawElementsInstanced">
+    <entry>glDrawElementsInstanced</entry>
+    <param name="mode" type="GLenum" />
+    <param name="count" type="GLsizei" />
+    <param name="type" type="GLenum" />
+    <param name="indices" type="GLvoid" />
+    <param name="instancecount" type="GLsizei" />
+  </proto>
+  <proto name="DrawElementsBaseVertex">
+    <entry>glDrawElementsBaseVertex</entry>
+    <param name="mode" type="GLenum" />
+    <param name="count" type="GLsizei" />
+    <param name="type" type="GLenum" />
+    <param name="indices" type="GLvoid" />
+    <param name="basevertex" type="GLint" />
+  </proto>
+  <proto name="DrawRangeElementsBaseVertex">
+    <entry>glDrawRangeElementsBaseVertex</entry>
+    <param name="mode" type="GLenum" />
+    <param name="start" type="GLuint" />
+    <param name="end" type="GLuint" />
+    <param name="count" type="GLsizei" />
+    <param name="type" type="GLenum" />
+    <param name="indices" type="GLvoid" />
+    <param name="basevertex" type="GLint" />
+  </proto>
+  <proto name="DrawElementsInstancedBaseVertex">
+    <entry>glDrawElementsInstancedBaseVertex</entry>
+    <param name="mode" type="GLenum" />
+    <param name="count" type="GLsizei" />
+    <param name="type" type="GLenum" />
+    <param name="indices" type="GLvoid" />
+    <param name="instancecount" type="GLsizei" />
+    <param name="basevertex" type="GLint" />
+  </proto>
+  <proto name="MultiDrawElementsBaseVertex">
+    <entry>glMultiDrawElementsBaseVertex</entry>
+    <param name="mode" type="GLenum" />
+    <param name="count" type="GLsizei" />
+    <param name="type" type="GLenum" />
+    <param name="indices" type="GLvoid" />
+    <param name="drawcount" type="GLsizei" />
+    <param name="basevertex" type="GLint" />
+  </proto>
+  <proto name="InterleavedArrays">
+    <entry>glInterleavedArrays</entry>
+    <param name="format" type="GLenum" />
+    <param name="stride" type="GLsizei" />
+    <param name="pointer" type="GLvoid" />
+  </proto>
+</opengl>
