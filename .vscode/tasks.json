@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/project.json"
+                "${workspaceRoot}/Sparrow.Graphics.OpenGL.Parse/project.json"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
