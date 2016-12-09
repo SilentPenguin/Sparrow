@@ -1,60 +1,72 @@
 <opengl>
   <proto name="GetBoolean">
+    <return type="GLvoid" />
     <entry>glGetBooleanv</entry>
     <param name="pname" type="GLenum" />
     <param name="data" type="GLboolean" />
   </proto>
   <proto name="GetBoolean">
+    <return type="GLvoid" />
     <entry>glGetBooleani_v</entry>
     <param name="target" type="GLenum" />
     <param name="index" type="GLuint" />
     <param name="data" type="GLboolean" />
   </proto>
   <proto name="GetInteger">
+    <return type="GLvoid" />
     <entry>glGetInteger64v</entry>
     <param name="pname" type="GLenum" />
     <param name="data" type="GLint64" />
   </proto>
   <proto name="GetInteger">
+    <return type="GLvoid" />
     <entry>glGetIntegerv</entry>
     <param name="pname" type="GLenum" />
     <param name="data" type="GLint" />
   </proto>
   <proto name="GetInteger">
+    <return type="GLvoid" />
     <entry>glGetIntegeri_v</entry>
     <param name="target" type="GLenum" />
     <param name="index" type="GLuint" />
     <param name="data" type="GLint" />
   </proto>
   <proto name="GetFloat">
+    <return type="GLvoid" />
     <entry>glGetFloatv</entry>
     <param name="pname" type="GLenum" />
     <param name="data" type="GLfloat" />
   </proto>
   <proto name="GetDouble">
+    <return type="GLvoid" />
     <entry>glGetDoublev</entry>
     <param name="pname" type="GLenum" />
     <param name="data" type="GLdouble" />
   </proto>
   <proto name="IsEnabled">
+    <return type="GLboolean" />
     <entry>glIsEnabled</entry>
     <param name="cap" type="GLenum" />
   </proto>
   <proto name="IsEnabled">
+    <return type="GLboolean" />
     <entry>glIsEnabledi</entry>
     <param name="target" type="GLenum" />
     <param name="index" type="GLuint" />
   </proto>
   <proto name="GetPointer">
+    <return type="GLvoid" />
     <entry>glGetPointerv</entry>
     <param name="pname" type="GLenum" />
     <param name="params" type="GLvoid" />
   </proto>
   <proto name="GetString">
+    <return type="GLubyte" />
     <entry>glGetString</entry>
     <param name="name" type="GLenum" />
   </proto>
   <proto name="GetString">
+    <return type="GLubyte" />
     <entry>glGetStringi</entry>
     <param name="name" type="GLenum" />
     <param name="index" type="GLuint" />

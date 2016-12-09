@@ -27,6 +27,7 @@ namespace Sparrow.Graphics.OpenGL.Parse
                     commands
                         .Where(e => m.IsMatch(e.Element("proto").Element("name").Value))
                         .Select( e => new Proto(){
+                            @return = new Return { type = e.Element("proto").Element("ptype")?.Value ?? "GLvoid" }, 
                             name = m.Match(e.Element("proto").Element("name").Value).Groups[1].Value,
                             entry = new Entry () { callsite = e.Element("proto").Element("name").Value },
                             @params = e.Descendants("param").Select(p => new Param() { name = p.Element("name").Value, type = p.Element("ptype")?.Value ?? "GLvoid" })
