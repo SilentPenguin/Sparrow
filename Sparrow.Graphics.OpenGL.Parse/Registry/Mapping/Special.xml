@@ -1,26 +1,23 @@
 <opengl>
   <proto name="Map1">
-    <return type="GLvoid" />
     <entry>glMap1d</entry>
     <param name="target" type="GLenum" />
     <param name="u1" type="GLdouble" />
     <param name="u2" type="GLdouble" />
     <param name="stride" type="GLint" />
     <param name="order" type="GLint" />
-    <param name="points" type="GLdouble" />
+    <param name="points" type="GLdouble*" />
   </proto>
   <proto name="Map1">
-    <return type="GLvoid" />
     <entry>glMap1f</entry>
     <param name="target" type="GLenum" />
     <param name="u1" type="GLfloat" />
     <param name="u2" type="GLfloat" />
     <param name="stride" type="GLint" />
     <param name="order" type="GLint" />
-    <param name="points" type="GLfloat" />
+    <param name="points" type="GLfloat*" />
   </proto>
   <proto name="Map2">
-    <return type="GLvoid" />
     <entry>glMap2d</entry>
     <param name="target" type="GLenum" />
     <param name="u1" type="GLdouble" />
@@ -31,10 +28,9 @@
     <param name="v2" type="GLdouble" />
     <param name="vstride" type="GLint" />
     <param name="vorder" type="GLint" />
-    <param name="points" type="GLdouble" />
+    <param name="points" type="GLdouble*" />
   </proto>
   <proto name="Map2">
-    <return type="GLvoid" />
     <entry>glMap2f</entry>
     <param name="target" type="GLenum" />
     <param name="u1" type="GLfloat" />
@@ -45,66 +41,55 @@
     <param name="v2" type="GLfloat" />
     <param name="vstride" type="GLint" />
     <param name="vorder" type="GLint" />
-    <param name="points" type="GLfloat" />
+    <param name="points" type="GLfloat*" />
   </proto>
   <proto name="EvalCoord1">
-    <return type="GLvoid" />
     <entry>glEvalCoord1d</entry>
     <param name="u" type="GLdouble" />
   </proto>
   <proto name="EvalCoord1">
-    <return type="GLvoid" />
     <entry>glEvalCoord1dv</entry>
-    <param name="u" type="GLdouble" />
+    <param name="u" type="GLdouble*" />
   </proto>
   <proto name="EvalCoord1">
-    <return type="GLvoid" />
     <entry>glEvalCoord1f</entry>
     <param name="u" type="GLfloat" />
   </proto>
   <proto name="EvalCoord1">
-    <return type="GLvoid" />
     <entry>glEvalCoord1fv</entry>
-    <param name="u" type="GLfloat" />
+    <param name="u" type="GLfloat*" />
   </proto>
   <proto name="EvalCoord2">
-    <return type="GLvoid" />
     <entry>glEvalCoord2d</entry>
     <param name="u" type="GLdouble" />
     <param name="v" type="GLdouble" />
   </proto>
   <proto name="EvalCoord2">
-    <return type="GLvoid" />
     <entry>glEvalCoord2dv</entry>
-    <param name="u" type="GLdouble" />
+    <param name="u" type="GLdouble*" />
   </proto>
   <proto name="EvalCoord2">
-    <return type="GLvoid" />
     <entry>glEvalCoord2f</entry>
     <param name="u" type="GLfloat" />
     <param name="v" type="GLfloat" />
   </proto>
   <proto name="EvalCoord2">
-    <return type="GLvoid" />
     <entry>glEvalCoord2fv</entry>
-    <param name="u" type="GLfloat" />
+    <param name="u" type="GLfloat*" />
   </proto>
   <proto name="MapGrid1">
-    <return type="GLvoid" />
     <entry>glMapGrid1d</entry>
     <param name="un" type="GLint" />
     <param name="u1" type="GLdouble" />
     <param name="u2" type="GLdouble" />
   </proto>
   <proto name="MapGrid1">
-    <return type="GLvoid" />
     <entry>glMapGrid1f</entry>
     <param name="un" type="GLint" />
     <param name="u1" type="GLfloat" />
     <param name="u2" type="GLfloat" />
   </proto>
   <proto name="MapGrid2">
-    <return type="GLvoid" />
     <entry>glMapGrid2d</entry>
     <param name="un" type="GLint" />
     <param name="u1" type="GLdouble" />
@@ -114,7 +99,6 @@
     <param name="v2" type="GLdouble" />
   </proto>
   <proto name="MapGrid2">
-    <return type="GLvoid" />
     <entry>glMapGrid2f</entry>
     <param name="un" type="GLint" />
     <param name="u1" type="GLfloat" />
@@ -124,14 +108,12 @@
     <param name="v2" type="GLfloat" />
   </proto>
   <proto name="EvalMesh1">
-    <return type="GLvoid" />
     <entry>glEvalMesh1</entry>
     <param name="mode" type="GLenum" />
     <param name="i1" type="GLint" />
     <param name="i2" type="GLint" />
   </proto>
   <proto name="EvalMesh2">
-    <return type="GLvoid" />
     <entry>glEvalMesh2</entry>
     <param name="mode" type="GLenum" />
     <param name="i1" type="GLint" />
@@ -140,52 +122,43 @@
     <param name="j2" type="GLint" />
   </proto>
   <proto name="EvalPoint1">
-    <return type="GLvoid" />
     <entry>glEvalPoint1</entry>
     <param name="i" type="GLint" />
   </proto>
   <proto name="EvalPoint2">
-    <return type="GLvoid" />
     <entry>glEvalPoint2</entry>
     <param name="i" type="GLint" />
     <param name="j" type="GLint" />
   </proto>
   <proto name="GetMap">
-    <return type="GLvoid" />
     <entry>glGetMapdv</entry>
     <param name="target" type="GLenum" />
     <param name="query" type="GLenum" />
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="GetMap">
-    <return type="GLvoid" />
     <entry>glGetMapfv</entry>
     <param name="target" type="GLenum" />
     <param name="query" type="GLenum" />
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="GetMap">
-    <return type="GLvoid" />
     <entry>glGetMapiv</entry>
     <param name="target" type="GLenum" />
     <param name="query" type="GLenum" />
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="InitNames">
-    <return type="GLvoid" />
     <entry>glInitNames</entry>
   </proto>
   <proto name="PopName">
-    <return type="GLvoid" />
     <entry>glPopName</entry>
   </proto>
   <proto name="PushName">
-    <return type="GLvoid" />
     <entry>glPushName</entry>
     <param name="name" type="GLuint" />
   </proto>
   <proto name="LoadName">
-    <return type="GLvoid" />
     <entry>glLoadName</entry>
     <param name="name" type="GLuint" />
   </proto>
@@ -195,47 +168,39 @@
     <param name="mode" type="GLenum" />
   </proto>
   <proto name="SelectBuffer">
-    <return type="GLvoid" />
     <entry>glSelectBuffer</entry>
     <param name="size" type="GLsizei" />
-    <param name="buffer" type="GLuint" />
+    <param name="buffer" type="GLuint*" />
   </proto>
   <proto name="FeedbackBuffer">
-    <return type="GLvoid" />
     <entry>glFeedbackBuffer</entry>
     <param name="size" type="GLsizei" />
     <param name="type" type="GLenum" />
-    <param name="buffer" type="GLfloat" />
+    <param name="buffer" type="GLfloat*" />
   </proto>
   <proto name="PassThrough">
-    <return type="GLvoid" />
     <entry>glPassThrough</entry>
     <param name="token" type="GLfloat" />
   </proto>
   <proto name="NewList">
-    <return type="GLvoid" />
     <entry>glNewList</entry>
     <param name="list" type="GLuint" />
     <param name="mode" type="GLenum" />
   </proto>
   <proto name="EndList">
-    <return type="GLvoid" />
     <entry>glEndList</entry>
   </proto>
   <proto name="CallList">
-    <return type="GLvoid" />
     <entry>glCallList</entry>
     <param name="list" type="GLuint" />
   </proto>
   <proto name="CallLists">
-    <return type="GLvoid" />
     <entry>glCallLists</entry>
     <param name="n" type="GLsizei" />
     <param name="type" type="GLenum" />
-    <param name="lists" type="GLvoid" />
+    <param name="lists" type="GLvoid*" />
   </proto>
   <proto name="ListBase">
-    <return type="GLvoid" />
     <entry>glListBase</entry>
     <param name="base" type="GLuint" />
   </proto>
@@ -250,7 +215,6 @@
     <param name="list" type="GLuint" />
   </proto>
   <proto name="DeleteLists">
-    <return type="GLvoid" />
     <entry>glDeleteLists</entry>
     <param name="list" type="GLuint" />
     <param name="range" type="GLsizei" />

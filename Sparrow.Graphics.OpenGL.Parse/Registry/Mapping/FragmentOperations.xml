@@ -1,6 +1,5 @@
 <opengl>
   <proto name="Scissor">
-    <return type="GLvoid" />
     <entry>glScissor</entry>
     <param name="x" type="GLint" />
     <param name="y" type="GLint" />
@@ -8,32 +7,27 @@
     <param name="height" type="GLsizei" />
   </proto>
   <proto name="SampleCoverage">
-    <return type="GLvoid" />
     <entry>glSampleCoverage</entry>
     <param name="value" type="GLfloat" />
     <param name="invert" type="GLboolean" />
   </proto>
   <proto name="SampleMask">
-    <return type="GLvoid" />
     <entry>glSampleMaski</entry>
     <param name="maskNumber" type="GLuint" />
     <param name="mask" type="GLbitfield" />
   </proto>
   <proto name="AlphaFunc">
-    <return type="GLvoid" />
     <entry>glAlphaFunc</entry>
     <param name="func" type="GLenum" />
     <param name="ref" type="GLfloat" />
   </proto>
   <proto name="StencilFunc">
-    <return type="GLvoid" />
     <entry>glStencilFunc</entry>
     <param name="func" type="GLenum" />
     <param name="ref" type="GLint" />
     <param name="mask" type="GLuint" />
   </proto>
   <proto name="StencilFuncSeparate">
-    <return type="GLvoid" />
     <entry>glStencilFuncSeparate</entry>
     <param name="face" type="GLenum" />
     <param name="func" type="GLenum" />
@@ -41,14 +35,12 @@
     <param name="mask" type="GLuint" />
   </proto>
   <proto name="StencilOp">
-    <return type="GLvoid" />
     <entry>glStencilOp</entry>
     <param name="fail" type="GLenum" />
     <param name="zfail" type="GLenum" />
     <param name="zpass" type="GLenum" />
   </proto>
   <proto name="StencilOpSeparate">
-    <return type="GLvoid" />
     <entry>glStencilOpSeparate</entry>
     <param name="face" type="GLenum" />
     <param name="sfail" type="GLenum" />
@@ -56,40 +48,33 @@
     <param name="dppass" type="GLenum" />
   </proto>
   <proto name="DepthFunc">
-    <return type="GLvoid" />
     <entry>glDepthFunc</entry>
     <param name="func" type="GLenum" />
   </proto>
   <proto name="BeginQuery">
-    <return type="GLvoid" />
     <entry>glBeginQuery</entry>
     <param name="target" type="GLenum" />
     <param name="id" type="GLuint" />
   </proto>
   <proto name="EndQuery">
-    <return type="GLvoid" />
     <entry>glEndQuery</entry>
     <param name="target" type="GLenum" />
   </proto>
   <proto name="BlendEquation">
-    <return type="GLvoid" />
     <entry>glBlendEquation</entry>
     <param name="mode" type="GLenum" />
   </proto>
   <proto name="BlendEquationSeparate">
-    <return type="GLvoid" />
     <entry>glBlendEquationSeparate</entry>
     <param name="modeRGB" type="GLenum" />
     <param name="modeAlpha" type="GLenum" />
   </proto>
   <proto name="BlendFunc">
-    <return type="GLvoid" />
     <entry>glBlendFunc</entry>
     <param name="sfactor" type="GLenum" />
     <param name="dfactor" type="GLenum" />
   </proto>
   <proto name="BlendFuncSeparate">
-    <return type="GLvoid" />
     <entry>glBlendFuncSeparate</entry>
     <param name="sfactorRGB" type="GLenum" />
     <param name="dfactorRGB" type="GLenum" />
@@ -97,7 +82,6 @@
     <param name="dfactorAlpha" type="GLenum" />
   </proto>
   <proto name="BlendColor">
-    <return type="GLvoid" />
     <entry>glBlendColor</entry>
     <param name="red" type="GLfloat" />
     <param name="green" type="GLfloat" />
@@ -105,28 +89,23 @@
     <param name="alpha" type="GLfloat" />
   </proto>
   <proto name="LogicOp">
-    <return type="GLvoid" />
     <entry>glLogicOp</entry>
     <param name="opcode" type="GLenum" />
   </proto>
   <proto name="DrawBuffer">
-    <return type="GLvoid" />
     <entry>glDrawBuffer</entry>
     <param name="buf" type="GLenum" />
   </proto>
   <proto name="DrawBuffers">
-    <return type="GLvoid" />
     <entry>glDrawBuffers</entry>
     <param name="n" type="GLsizei" />
-    <param name="bufs" type="GLenum" />
+    <param name="bufs" type="GLenum*" />
   </proto>
   <proto name="IndexMask">
-    <return type="GLvoid" />
     <entry>glIndexMask</entry>
     <param name="mask" type="GLuint" />
   </proto>
   <proto name="ColorMask">
-    <return type="GLvoid" />
     <entry>glColorMask</entry>
     <param name="red" type="GLboolean" />
     <param name="green" type="GLboolean" />
@@ -134,7 +113,6 @@
     <param name="alpha" type="GLboolean" />
   </proto>
   <proto name="ColorMask">
-    <return type="GLvoid" />
     <entry>glColorMaski</entry>
     <param name="index" type="GLuint" />
     <param name="r" type="GLboolean" />
@@ -143,28 +121,23 @@
     <param name="a" type="GLboolean" />
   </proto>
   <proto name="DepthMask">
-    <return type="GLvoid" />
     <entry>glDepthMask</entry>
     <param name="flag" type="GLboolean" />
   </proto>
   <proto name="StencilMask">
-    <return type="GLvoid" />
     <entry>glStencilMask</entry>
     <param name="mask" type="GLuint" />
   </proto>
   <proto name="StencilMaskSeparate">
-    <return type="GLvoid" />
     <entry>glStencilMaskSeparate</entry>
     <param name="face" type="GLenum" />
     <param name="mask" type="GLuint" />
   </proto>
   <proto name="Clear">
-    <return type="GLvoid" />
     <entry>glClear</entry>
     <param name="mask" type="GLbitfield" />
   </proto>
   <proto name="ClearColor">
-    <return type="GLvoid" />
     <entry>glClearColor</entry>
     <param name="red" type="GLfloat" />
     <param name="green" type="GLfloat" />
@@ -172,17 +145,14 @@
     <param name="alpha" type="GLfloat" />
   </proto>
   <proto name="ClearDepth">
-    <return type="GLvoid" />
     <entry>glClearDepth</entry>
     <param name="depth" type="GLdouble" />
   </proto>
   <proto name="ClearStencil">
-    <return type="GLvoid" />
     <entry>glClearStencil</entry>
     <param name="s" type="GLint" />
   </proto>
   <proto name="ClearAccum">
-    <return type="GLvoid" />
     <entry>glClearAccum</entry>
     <param name="red" type="GLfloat" />
     <param name="green" type="GLfloat" />
@@ -190,28 +160,24 @@
     <param name="alpha" type="GLfloat" />
   </proto>
   <proto name="ClearBuffer">
-    <return type="GLvoid" />
     <entry>glClearBufferfv</entry>
     <param name="buffer" type="GLenum" />
     <param name="drawbuffer" type="GLint" />
-    <param name="value" type="GLfloat" />
+    <param name="value" type="GLfloat*" />
   </proto>
   <proto name="ClearBuffer">
-    <return type="GLvoid" />
     <entry>glClearBufferiv</entry>
     <param name="buffer" type="GLenum" />
     <param name="drawbuffer" type="GLint" />
-    <param name="value" type="GLint" />
+    <param name="value" type="GLint*" />
   </proto>
   <proto name="ClearBuffer">
-    <return type="GLvoid" />
     <entry>glClearBufferuiv</entry>
     <param name="buffer" type="GLenum" />
     <param name="drawbuffer" type="GLint" />
-    <param name="value" type="GLuint" />
+    <param name="value" type="GLuint*" />
   </proto>
   <proto name="ClearBuffer">
-    <return type="GLvoid" />
     <entry>glClearBufferfi</entry>
     <param name="buffer" type="GLenum" />
     <param name="drawbuffer" type="GLint" />
@@ -219,7 +185,6 @@
     <param name="stencil" type="GLint" />
   </proto>
   <proto name="Accum">
-    <return type="GLvoid" />
     <entry>glAccum</entry>
     <param name="op" type="GLenum" />
     <param name="value" type="GLfloat" />

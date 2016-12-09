@@ -1,10 +1,8 @@
 <opengl>
   <proto name="Flush">
-    <return type="GLvoid" />
     <entry>glFlush</entry>
   </proto>
   <proto name="Finish">
-    <return type="GLvoid" />
     <entry>glFinish</entry>
   </proto>
   <proto name="FenceSync">
@@ -14,7 +12,6 @@
     <param name="flags" type="GLbitfield" />
   </proto>
   <proto name="DeleteSync">
-    <return type="GLvoid" />
     <entry>glDeleteSync</entry>
     <param name="sync" type="GLsync" />
   </proto>
@@ -26,20 +23,18 @@
     <param name="timeout" type="GLuint64" />
   </proto>
   <proto name="WaitSync">
-    <return type="GLvoid" />
     <entry>glWaitSync</entry>
     <param name="sync" type="GLsync" />
     <param name="flags" type="GLbitfield" />
     <param name="timeout" type="GLuint64" />
   </proto>
   <proto name="GetSync">
-    <return type="GLvoid" />
     <entry>glGetSynciv</entry>
     <param name="sync" type="GLsync" />
     <param name="pname" type="GLenum" />
     <param name="bufSize" type="GLsizei" />
-    <param name="length" type="GLsizei" />
-    <param name="values" type="GLint" />
+    <param name="length" type="GLsizei*" />
+    <param name="values" type="GLint*" />
   </proto>
   <proto name="IsSync">
     <return type="GLboolean" />
