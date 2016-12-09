@@ -2,42 +2,42 @@ using System.Runtime.InteropServices;
 
 public static partial class Gl
 {
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glMaterialf")]
     public static extern unsafe GLvoid Material(GLenum face, GLenum pname, GLfloat param);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glMaterialfv")]
     public static extern unsafe GLvoid Material(GLenum face, GLenum pname, GLfloat* @params);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glMateriali")]
     public static extern unsafe GLvoid Material(GLenum face, GLenum pname, GLint param);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glMaterialiv")]
     public static extern unsafe GLvoid Material(GLenum face, GLenum pname, GLint* @params);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glLightf")]
     public static extern unsafe GLvoid Light(GLenum light, GLenum pname, GLfloat param);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glLightfv")]
     public static extern unsafe GLvoid Light(GLenum light, GLenum pname, GLfloat* @params);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glLighti")]
     public static extern unsafe GLvoid Light(GLenum light, GLenum pname, GLint param);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glLightiv")]
     public static extern unsafe GLvoid Light(GLenum light, GLenum pname, GLint* @params);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glLightModelf")]
     public static extern unsafe GLvoid LightModel(GLenum pname, GLfloat param);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glLightModelfv")]
     public static extern unsafe GLvoid LightModel(GLenum pname, GLfloat* @params);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glLightModeli")]
     public static extern unsafe GLvoid LightModel(GLenum pname, GLint param);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glLightModeliv")]
     public static extern unsafe GLvoid LightModel(GLenum pname, GLint* @params);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glColorMaterial")]
     public static extern unsafe GLvoid ColorMaterial(GLenum face, GLenum mode);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glProvokingVertex")]
     public static extern unsafe GLvoid ProvokingVertex(GLenum mode);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glShadeModel")]
     public static extern unsafe GLvoid ShadeModel(GLenum mode);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glGetLightfv")]
     public static extern unsafe GLvoid GetLight(GLenum light, GLenum pname, GLfloat* @params);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glGetLightiv")]
     public static extern unsafe GLvoid GetLight(GLenum light, GLenum pname, GLint* @params);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glGetMaterialfv")]
     public static extern unsafe GLvoid GetMaterial(GLenum face, GLenum pname, GLfloat* @params);
-    [DllImport(DllName)]
+    [DllImport(DllName, EntryPoint = "glGetMaterialiv")]
     public static extern unsafe GLvoid GetMaterial(GLenum face, GLenum pname, GLint* @params);
 }
