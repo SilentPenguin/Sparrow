@@ -1,30 +1,25 @@
 <opengl>
   <proto name="Fog">
-    <return type="GLvoid" />
     <entry>glFogf</entry>
     <param name="pname" type="GLenum" />
     <param name="param" type="GLfloat" />
   </proto>
   <proto name="Fog">
-    <return type="GLvoid" />
     <entry>glFogfv</entry>
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLfloat" />
+    <param name="params" type="GLfloat*" />
   </proto>
   <proto name="Fog">
-    <return type="GLvoid" />
     <entry>glFogi</entry>
     <param name="pname" type="GLenum" />
     <param name="param" type="GLint" />
   </proto>
   <proto name="Fog">
-    <return type="GLvoid" />
     <entry>glFogiv</entry>
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLint" />
+    <param name="params" type="GLint*" />
   </proto>
   <proto name="Hint">
-    <return type="GLvoid" />
     <entry>glHint</entry>
     <param name="target" type="GLenum" />
     <param name="mode" type="GLenum" />

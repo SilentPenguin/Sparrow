@@ -1,117 +1,96 @@
 <opengl>
   <proto name="Begin">
-    <return type="GLvoid" />
     <entry>glBegin</entry>
     <param name="mode" type="GLenum" />
   </proto>
   <proto name="End">
-    <return type="GLvoid" />
     <entry>glEnd</entry>
   </proto>
   <proto name="EdgeFlag">
-    <return type="GLvoid" />
     <entry>glEdgeFlag</entry>
     <param name="flag" type="GLboolean" />
   </proto>
   <proto name="EdgeFlag">
-    <return type="GLvoid" />
     <entry>glEdgeFlagv</entry>
-    <param name="flag" type="GLboolean" />
+    <param name="flag" type="GLboolean*" />
   </proto>
   <proto name="Vertex2">
-    <return type="GLvoid" />
     <entry>glVertex2d</entry>
     <param name="x" type="GLdouble" />
     <param name="y" type="GLdouble" />
   </proto>
   <proto name="Vertex2">
-    <return type="GLvoid" />
     <entry>glVertex2dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="Vertex2">
-    <return type="GLvoid" />
     <entry>glVertex2f</entry>
     <param name="x" type="GLfloat" />
     <param name="y" type="GLfloat" />
   </proto>
   <proto name="Vertex2">
-    <return type="GLvoid" />
     <entry>glVertex2fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="Vertex2">
-    <return type="GLvoid" />
     <entry>glVertex2i</entry>
     <param name="x" type="GLint" />
     <param name="y" type="GLint" />
   </proto>
   <proto name="Vertex2">
-    <return type="GLvoid" />
     <entry>glVertex2iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="Vertex2">
-    <return type="GLvoid" />
     <entry>glVertex2s</entry>
     <param name="x" type="GLshort" />
     <param name="y" type="GLshort" />
   </proto>
   <proto name="Vertex2">
-    <return type="GLvoid" />
     <entry>glVertex2sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="Vertex3">
-    <return type="GLvoid" />
     <entry>glVertex3d</entry>
     <param name="x" type="GLdouble" />
     <param name="y" type="GLdouble" />
     <param name="z" type="GLdouble" />
   </proto>
   <proto name="Vertex3">
-    <return type="GLvoid" />
     <entry>glVertex3dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="Vertex3">
-    <return type="GLvoid" />
     <entry>glVertex3f</entry>
     <param name="x" type="GLfloat" />
     <param name="y" type="GLfloat" />
     <param name="z" type="GLfloat" />
   </proto>
   <proto name="Vertex3">
-    <return type="GLvoid" />
     <entry>glVertex3fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="Vertex3">
-    <return type="GLvoid" />
     <entry>glVertex3i</entry>
     <param name="x" type="GLint" />
     <param name="y" type="GLint" />
     <param name="z" type="GLint" />
   </proto>
   <proto name="Vertex3">
-    <return type="GLvoid" />
     <entry>glVertex3iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="Vertex3">
-    <return type="GLvoid" />
     <entry>glVertex3s</entry>
     <param name="x" type="GLshort" />
     <param name="y" type="GLshort" />
     <param name="z" type="GLshort" />
   </proto>
   <proto name="Vertex3">
-    <return type="GLvoid" />
     <entry>glVertex3sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="Vertex4">
-    <return type="GLvoid" />
     <entry>glVertex4d</entry>
     <param name="x" type="GLdouble" />
     <param name="y" type="GLdouble" />
@@ -119,12 +98,10 @@
     <param name="w" type="GLdouble" />
   </proto>
   <proto name="Vertex4">
-    <return type="GLvoid" />
     <entry>glVertex4dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="Vertex4">
-    <return type="GLvoid" />
     <entry>glVertex4f</entry>
     <param name="x" type="GLfloat" />
     <param name="y" type="GLfloat" />
@@ -132,12 +109,10 @@
     <param name="w" type="GLfloat" />
   </proto>
   <proto name="Vertex4">
-    <return type="GLvoid" />
     <entry>glVertex4fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="Vertex4">
-    <return type="GLvoid" />
     <entry>glVertex4i</entry>
     <param name="x" type="GLint" />
     <param name="y" type="GLint" />
@@ -145,12 +120,10 @@
     <param name="w" type="GLint" />
   </proto>
   <proto name="Vertex4">
-    <return type="GLvoid" />
     <entry>glVertex4iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="Vertex4">
-    <return type="GLvoid" />
     <entry>glVertex4s</entry>
     <param name="x" type="GLshort" />
     <param name="y" type="GLshort" />
@@ -158,144 +131,118 @@
     <param name="w" type="GLshort" />
   </proto>
   <proto name="Vertex4">
-    <return type="GLvoid" />
     <entry>glVertex4sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="TexCoord1">
-    <return type="GLvoid" />
     <entry>glTexCoord1d</entry>
     <param name="s" type="GLdouble" />
   </proto>
   <proto name="TexCoord1">
-    <return type="GLvoid" />
     <entry>glTexCoord1dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="TexCoord1">
-    <return type="GLvoid" />
     <entry>glTexCoord1f</entry>
     <param name="s" type="GLfloat" />
   </proto>
   <proto name="TexCoord1">
-    <return type="GLvoid" />
     <entry>glTexCoord1fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="TexCoord1">
-    <return type="GLvoid" />
     <entry>glTexCoord1i</entry>
     <param name="s" type="GLint" />
   </proto>
   <proto name="TexCoord1">
-    <return type="GLvoid" />
     <entry>glTexCoord1iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="TexCoord1">
-    <return type="GLvoid" />
     <entry>glTexCoord1s</entry>
     <param name="s" type="GLshort" />
   </proto>
   <proto name="TexCoord1">
-    <return type="GLvoid" />
     <entry>glTexCoord1sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="TexCoord2">
-    <return type="GLvoid" />
     <entry>glTexCoord2d</entry>
     <param name="s" type="GLdouble" />
     <param name="t" type="GLdouble" />
   </proto>
   <proto name="TexCoord2">
-    <return type="GLvoid" />
     <entry>glTexCoord2dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="TexCoord2">
-    <return type="GLvoid" />
     <entry>glTexCoord2f</entry>
     <param name="s" type="GLfloat" />
     <param name="t" type="GLfloat" />
   </proto>
   <proto name="TexCoord2">
-    <return type="GLvoid" />
     <entry>glTexCoord2fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="TexCoord2">
-    <return type="GLvoid" />
     <entry>glTexCoord2i</entry>
     <param name="s" type="GLint" />
     <param name="t" type="GLint" />
   </proto>
   <proto name="TexCoord2">
-    <return type="GLvoid" />
     <entry>glTexCoord2iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="TexCoord2">
-    <return type="GLvoid" />
     <entry>glTexCoord2s</entry>
     <param name="s" type="GLshort" />
     <param name="t" type="GLshort" />
   </proto>
   <proto name="TexCoord2">
-    <return type="GLvoid" />
     <entry>glTexCoord2sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="TexCoord3">
-    <return type="GLvoid" />
     <entry>glTexCoord3d</entry>
     <param name="s" type="GLdouble" />
     <param name="t" type="GLdouble" />
     <param name="r" type="GLdouble" />
   </proto>
   <proto name="TexCoord3">
-    <return type="GLvoid" />
     <entry>glTexCoord3dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="TexCoord3">
-    <return type="GLvoid" />
     <entry>glTexCoord3f</entry>
     <param name="s" type="GLfloat" />
     <param name="t" type="GLfloat" />
     <param name="r" type="GLfloat" />
   </proto>
   <proto name="TexCoord3">
-    <return type="GLvoid" />
     <entry>glTexCoord3fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="TexCoord3">
-    <return type="GLvoid" />
     <entry>glTexCoord3i</entry>
     <param name="s" type="GLint" />
     <param name="t" type="GLint" />
     <param name="r" type="GLint" />
   </proto>
   <proto name="TexCoord3">
-    <return type="GLvoid" />
     <entry>glTexCoord3iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="TexCoord3">
-    <return type="GLvoid" />
     <entry>glTexCoord3s</entry>
     <param name="s" type="GLshort" />
     <param name="t" type="GLshort" />
     <param name="r" type="GLshort" />
   </proto>
   <proto name="TexCoord3">
-    <return type="GLvoid" />
     <entry>glTexCoord3sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="TexCoord4">
-    <return type="GLvoid" />
     <entry>glTexCoord4d</entry>
     <param name="s" type="GLdouble" />
     <param name="t" type="GLdouble" />
@@ -303,12 +250,10 @@
     <param name="q" type="GLdouble" />
   </proto>
   <proto name="TexCoord4">
-    <return type="GLvoid" />
     <entry>glTexCoord4dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="TexCoord4">
-    <return type="GLvoid" />
     <entry>glTexCoord4f</entry>
     <param name="s" type="GLfloat" />
     <param name="t" type="GLfloat" />
@@ -316,12 +261,10 @@
     <param name="q" type="GLfloat" />
   </proto>
   <proto name="TexCoord4">
-    <return type="GLvoid" />
     <entry>glTexCoord4fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="TexCoord4">
-    <return type="GLvoid" />
     <entry>glTexCoord4i</entry>
     <param name="s" type="GLint" />
     <param name="t" type="GLint" />
@@ -329,12 +272,10 @@
     <param name="q" type="GLint" />
   </proto>
   <proto name="TexCoord4">
-    <return type="GLvoid" />
     <entry>glTexCoord4iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="TexCoord4">
-    <return type="GLvoid" />
     <entry>glTexCoord4s</entry>
     <param name="s" type="GLshort" />
     <param name="t" type="GLshort" />
@@ -342,112 +283,94 @@
     <param name="q" type="GLshort" />
   </proto>
   <proto name="TexCoord4">
-    <return type="GLvoid" />
     <entry>glTexCoord4sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="MultiTexCoord1">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord1d</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLdouble" />
   </proto>
   <proto name="MultiTexCoord1">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord1dv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="MultiTexCoord1">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord1f</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLfloat" />
   </proto>
   <proto name="MultiTexCoord1">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord1fv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="MultiTexCoord1">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord1i</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLint" />
   </proto>
   <proto name="MultiTexCoord1">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord1iv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="MultiTexCoord1">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord1s</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLshort" />
   </proto>
   <proto name="MultiTexCoord1">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord1sv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="MultiTexCoord2">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord2d</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLdouble" />
     <param name="t" type="GLdouble" />
   </proto>
   <proto name="MultiTexCoord2">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord2dv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="MultiTexCoord2">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord2f</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLfloat" />
     <param name="t" type="GLfloat" />
   </proto>
   <proto name="MultiTexCoord2">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord2fv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="MultiTexCoord2">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord2i</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLint" />
     <param name="t" type="GLint" />
   </proto>
   <proto name="MultiTexCoord2">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord2iv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="MultiTexCoord2">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord2s</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLshort" />
     <param name="t" type="GLshort" />
   </proto>
   <proto name="MultiTexCoord2">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord2sv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="MultiTexCoord3">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord3d</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLdouble" />
@@ -455,13 +378,11 @@
     <param name="r" type="GLdouble" />
   </proto>
   <proto name="MultiTexCoord3">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord3dv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="MultiTexCoord3">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord3f</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLfloat" />
@@ -469,13 +390,11 @@
     <param name="r" type="GLfloat" />
   </proto>
   <proto name="MultiTexCoord3">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord3fv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="MultiTexCoord3">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord3i</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLint" />
@@ -483,13 +402,11 @@
     <param name="r" type="GLint" />
   </proto>
   <proto name="MultiTexCoord3">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord3iv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="MultiTexCoord3">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord3s</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLshort" />
@@ -497,13 +414,11 @@
     <param name="r" type="GLshort" />
   </proto>
   <proto name="MultiTexCoord3">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord3sv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="MultiTexCoord4">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord4d</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLdouble" />
@@ -512,13 +427,11 @@
     <param name="q" type="GLdouble" />
   </proto>
   <proto name="MultiTexCoord4">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord4dv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="MultiTexCoord4">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord4f</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLfloat" />
@@ -527,13 +440,11 @@
     <param name="q" type="GLfloat" />
   </proto>
   <proto name="MultiTexCoord4">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord4fv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="MultiTexCoord4">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord4i</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLint" />
@@ -542,13 +453,11 @@
     <param name="q" type="GLint" />
   </proto>
   <proto name="MultiTexCoord4">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord4iv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="MultiTexCoord4">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord4s</entry>
     <param name="target" type="GLenum" />
     <param name="s" type="GLshort" />
@@ -557,189 +466,157 @@
     <param name="q" type="GLshort" />
   </proto>
   <proto name="MultiTexCoord4">
-    <return type="GLvoid" />
     <entry>glMultiTexCoord4sv</entry>
     <param name="target" type="GLenum" />
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="Normal3">
-    <return type="GLvoid" />
     <entry>glNormal3b</entry>
     <param name="nx" type="GLbyte" />
     <param name="ny" type="GLbyte" />
     <param name="nz" type="GLbyte" />
   </proto>
   <proto name="Normal3">
-    <return type="GLvoid" />
     <entry>glNormal3bv</entry>
-    <param name="v" type="GLbyte" />
+    <param name="v" type="GLbyte*" />
   </proto>
   <proto name="Normal3">
-    <return type="GLvoid" />
     <entry>glNormal3d</entry>
     <param name="nx" type="GLdouble" />
     <param name="ny" type="GLdouble" />
     <param name="nz" type="GLdouble" />
   </proto>
   <proto name="Normal3">
-    <return type="GLvoid" />
     <entry>glNormal3dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="Normal3">
-    <return type="GLvoid" />
     <entry>glNormal3f</entry>
     <param name="nx" type="GLfloat" />
     <param name="ny" type="GLfloat" />
     <param name="nz" type="GLfloat" />
   </proto>
   <proto name="Normal3">
-    <return type="GLvoid" />
     <entry>glNormal3fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="Normal3">
-    <return type="GLvoid" />
     <entry>glNormal3i</entry>
     <param name="nx" type="GLint" />
     <param name="ny" type="GLint" />
     <param name="nz" type="GLint" />
   </proto>
   <proto name="Normal3">
-    <return type="GLvoid" />
     <entry>glNormal3iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="Normal3">
-    <return type="GLvoid" />
     <entry>glNormal3s</entry>
     <param name="nx" type="GLshort" />
     <param name="ny" type="GLshort" />
     <param name="nz" type="GLshort" />
   </proto>
   <proto name="Normal3">
-    <return type="GLvoid" />
     <entry>glNormal3sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="FogCoord">
-    <return type="GLvoid" />
     <entry>glFogCoordd</entry>
     <param name="coord" type="GLdouble" />
   </proto>
   <proto name="FogCoord">
-    <return type="GLvoid" />
     <entry>glFogCoorddv</entry>
-    <param name="coord" type="GLdouble" />
+    <param name="coord" type="GLdouble*" />
   </proto>
   <proto name="FogCoord">
-    <return type="GLvoid" />
     <entry>glFogCoordf</entry>
     <param name="coord" type="GLfloat" />
   </proto>
   <proto name="FogCoord">
-    <return type="GLvoid" />
     <entry>glFogCoordfv</entry>
-    <param name="coord" type="GLfloat" />
+    <param name="coord" type="GLfloat*" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3b</entry>
     <param name="red" type="GLbyte" />
     <param name="green" type="GLbyte" />
     <param name="blue" type="GLbyte" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3bv</entry>
-    <param name="v" type="GLbyte" />
+    <param name="v" type="GLbyte*" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3d</entry>
     <param name="red" type="GLdouble" />
     <param name="green" type="GLdouble" />
     <param name="blue" type="GLdouble" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3f</entry>
     <param name="red" type="GLfloat" />
     <param name="green" type="GLfloat" />
     <param name="blue" type="GLfloat" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3i</entry>
     <param name="red" type="GLint" />
     <param name="green" type="GLint" />
     <param name="blue" type="GLint" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3s</entry>
     <param name="red" type="GLshort" />
     <param name="green" type="GLshort" />
     <param name="blue" type="GLshort" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3ub</entry>
     <param name="red" type="GLubyte" />
     <param name="green" type="GLubyte" />
     <param name="blue" type="GLubyte" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3ubv</entry>
-    <param name="v" type="GLubyte" />
+    <param name="v" type="GLubyte*" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3ui</entry>
     <param name="red" type="GLuint" />
     <param name="green" type="GLuint" />
     <param name="blue" type="GLuint" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3uiv</entry>
-    <param name="v" type="GLuint" />
+    <param name="v" type="GLuint*" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3us</entry>
     <param name="red" type="GLushort" />
     <param name="green" type="GLushort" />
     <param name="blue" type="GLushort" />
   </proto>
   <proto name="Color3">
-    <return type="GLvoid" />
     <entry>glColor3usv</entry>
-    <param name="v" type="GLushort" />
+    <param name="v" type="GLushort*" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4b</entry>
     <param name="red" type="GLbyte" />
     <param name="green" type="GLbyte" />
@@ -747,12 +624,10 @@
     <param name="alpha" type="GLbyte" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4bv</entry>
-    <param name="v" type="GLbyte" />
+    <param name="v" type="GLbyte*" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4d</entry>
     <param name="red" type="GLdouble" />
     <param name="green" type="GLdouble" />
@@ -760,12 +635,10 @@
     <param name="alpha" type="GLdouble" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4f</entry>
     <param name="red" type="GLfloat" />
     <param name="green" type="GLfloat" />
@@ -773,12 +646,10 @@
     <param name="alpha" type="GLfloat" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4i</entry>
     <param name="red" type="GLint" />
     <param name="green" type="GLint" />
@@ -786,12 +657,10 @@
     <param name="alpha" type="GLint" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4s</entry>
     <param name="red" type="GLshort" />
     <param name="green" type="GLshort" />
@@ -799,12 +668,10 @@
     <param name="alpha" type="GLshort" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4ub</entry>
     <param name="red" type="GLubyte" />
     <param name="green" type="GLubyte" />
@@ -812,12 +679,10 @@
     <param name="alpha" type="GLubyte" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4ubv</entry>
-    <param name="v" type="GLubyte" />
+    <param name="v" type="GLubyte*" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4ui</entry>
     <param name="red" type="GLuint" />
     <param name="green" type="GLuint" />
@@ -825,12 +690,10 @@
     <param name="alpha" type="GLuint" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4uiv</entry>
-    <param name="v" type="GLuint" />
+    <param name="v" type="GLuint*" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4us</entry>
     <param name="red" type="GLushort" />
     <param name="green" type="GLushort" />
@@ -838,223 +701,185 @@
     <param name="alpha" type="GLushort" />
   </proto>
   <proto name="Color4">
-    <return type="GLvoid" />
     <entry>glColor4usv</entry>
-    <param name="v" type="GLushort" />
+    <param name="v" type="GLushort*" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3b</entry>
     <param name="red" type="GLbyte" />
     <param name="green" type="GLbyte" />
     <param name="blue" type="GLbyte" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3bv</entry>
-    <param name="v" type="GLbyte" />
+    <param name="v" type="GLbyte*" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3d</entry>
     <param name="red" type="GLdouble" />
     <param name="green" type="GLdouble" />
     <param name="blue" type="GLdouble" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3dv</entry>
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3f</entry>
     <param name="red" type="GLfloat" />
     <param name="green" type="GLfloat" />
     <param name="blue" type="GLfloat" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3fv</entry>
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3i</entry>
     <param name="red" type="GLint" />
     <param name="green" type="GLint" />
     <param name="blue" type="GLint" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3iv</entry>
-    <param name="v" type="GLint" />
+    <param name="v" type="GLint*" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3s</entry>
     <param name="red" type="GLshort" />
     <param name="green" type="GLshort" />
     <param name="blue" type="GLshort" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3sv</entry>
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3ub</entry>
     <param name="red" type="GLubyte" />
     <param name="green" type="GLubyte" />
     <param name="blue" type="GLubyte" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3ubv</entry>
-    <param name="v" type="GLubyte" />
+    <param name="v" type="GLubyte*" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3ui</entry>
     <param name="red" type="GLuint" />
     <param name="green" type="GLuint" />
     <param name="blue" type="GLuint" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3uiv</entry>
-    <param name="v" type="GLuint" />
+    <param name="v" type="GLuint*" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3us</entry>
     <param name="red" type="GLushort" />
     <param name="green" type="GLushort" />
     <param name="blue" type="GLushort" />
   </proto>
   <proto name="SecondaryColor3">
-    <return type="GLvoid" />
     <entry>glSecondaryColor3usv</entry>
-    <param name="v" type="GLushort" />
+    <param name="v" type="GLushort*" />
   </proto>
   <proto name="Index">
-    <return type="GLvoid" />
     <entry>glIndexd</entry>
     <param name="c" type="GLdouble" />
   </proto>
   <proto name="Index">
-    <return type="GLvoid" />
     <entry>glIndexdv</entry>
-    <param name="c" type="GLdouble" />
+    <param name="c" type="GLdouble*" />
   </proto>
   <proto name="Index">
-    <return type="GLvoid" />
     <entry>glIndexf</entry>
     <param name="c" type="GLfloat" />
   </proto>
   <proto name="Index">
-    <return type="GLvoid" />
     <entry>glIndexfv</entry>
-    <param name="c" type="GLfloat" />
+    <param name="c" type="GLfloat*" />
   </proto>
   <proto name="Index">
-    <return type="GLvoid" />
     <entry>glIndexi</entry>
     <param name="c" type="GLint" />
   </proto>
   <proto name="Index">
-    <return type="GLvoid" />
     <entry>glIndexiv</entry>
-    <param name="c" type="GLint" />
+    <param name="c" type="GLint*" />
   </proto>
   <proto name="Index">
-    <return type="GLvoid" />
     <entry>glIndexs</entry>
     <param name="c" type="GLshort" />
   </proto>
   <proto name="Index">
-    <return type="GLvoid" />
     <entry>glIndexsv</entry>
-    <param name="c" type="GLshort" />
+    <param name="c" type="GLshort*" />
   </proto>
   <proto name="VertexAttrib1">
-    <return type="GLvoid" />
     <entry>glVertexAttrib1d</entry>
     <param name="index" type="GLuint" />
     <param name="x" type="GLdouble" />
   </proto>
   <proto name="VertexAttrib1">
-    <return type="GLvoid" />
     <entry>glVertexAttrib1dv</entry>
     <param name="index" type="GLuint" />
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="VertexAttrib1">
-    <return type="GLvoid" />
     <entry>glVertexAttrib1f</entry>
     <param name="index" type="GLuint" />
     <param name="x" type="GLfloat" />
   </proto>
   <proto name="VertexAttrib1">
-    <return type="GLvoid" />
     <entry>glVertexAttrib1fv</entry>
     <param name="index" type="GLuint" />
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="VertexAttrib1">
-    <return type="GLvoid" />
     <entry>glVertexAttrib1s</entry>
     <param name="index" type="GLuint" />
     <param name="x" type="GLshort" />
   </proto>
   <proto name="VertexAttrib1">
-    <return type="GLvoid" />
     <entry>glVertexAttrib1sv</entry>
     <param name="index" type="GLuint" />
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="VertexAttrib2">
-    <return type="GLvoid" />
     <entry>glVertexAttrib2d</entry>
     <param name="index" type="GLuint" />
     <param name="x" type="GLdouble" />
     <param name="y" type="GLdouble" />
   </proto>
   <proto name="VertexAttrib2">
-    <return type="GLvoid" />
     <entry>glVertexAttrib2dv</entry>
     <param name="index" type="GLuint" />
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="VertexAttrib2">
-    <return type="GLvoid" />
     <entry>glVertexAttrib2f</entry>
     <param name="index" type="GLuint" />
     <param name="x" type="GLfloat" />
     <param name="y" type="GLfloat" />
   </proto>
   <proto name="VertexAttrib2">
-    <return type="GLvoid" />
     <entry>glVertexAttrib2fv</entry>
     <param name="index" type="GLuint" />
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="VertexAttrib2">
-    <return type="GLvoid" />
     <entry>glVertexAttrib2s</entry>
     <param name="index" type="GLuint" />
     <param name="x" type="GLshort" />
     <param name="y" type="GLshort" />
   </proto>
   <proto name="VertexAttrib2">
-    <return type="GLvoid" />
     <entry>glVertexAttrib2sv</entry>
     <param name="index" type="GLuint" />
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="VertexAttrib3">
-    <return type="GLvoid" />
     <entry>glVertexAttrib3d</entry>
     <param name="index" type="GLuint" />
     <param name="x" type="GLdouble" />
@@ -1062,13 +887,11 @@
     <param name="z" type="GLdouble" />
   </proto>
   <proto name="VertexAttrib3">
-    <return type="GLvoid" />
     <entry>glVertexAttrib3dv</entry>
     <param name="index" type="GLuint" />
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="VertexAttrib3">
-    <return type="GLvoid" />
     <entry>glVertexAttrib3f</entry>
     <param name="index" type="GLuint" />
     <param name="x" type="GLfloat" />
@@ -1076,13 +899,11 @@
     <param name="z" type="GLfloat" />
   </proto>
   <proto name="VertexAttrib3">
-    <return type="GLvoid" />
     <entry>glVertexAttrib3fv</entry>
     <param name="index" type="GLuint" />
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="VertexAttrib3">
-    <return type="GLvoid" />
     <entry>glVertexAttrib3s</entry>
     <param name="index" type="GLuint" />
     <param name="x" type="GLshort" />
@@ -1090,13 +911,11 @@
     <param name="z" type="GLshort" />
   </proto>
   <proto name="VertexAttrib3">
-    <return type="GLvoid" />
     <entry>glVertexAttrib3sv</entry>
     <param name="index" type="GLuint" />
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
   <proto name="VertexAttrib4">
-    <return type="GLvoid" />
     <entry>glVertexAttrib4d</entry>
     <param name="index" type="GLuint" />
     <param name="x" type="GLdouble" />
@@ -1105,13 +924,11 @@
     <param name="w" type="GLdouble" />
   </proto>
   <proto name="VertexAttrib4">
-    <return type="GLvoid" />
     <entry>glVertexAttrib4dv</entry>
     <param name="index" type="GLuint" />
-    <param name="v" type="GLdouble" />
+    <param name="v" type="GLdouble*" />
   </proto>
   <proto name="VertexAttrib4">
-    <return type="GLvoid" />
     <entry>glVertexAttrib4f</entry>
     <param name="index" type="GLuint" />
     <param name="x" type="GLfloat" />
@@ -1120,13 +937,11 @@
     <param name="w" type="GLfloat" />
   </proto>
   <proto name="VertexAttrib4">
-    <return type="GLvoid" />
     <entry>glVertexAttrib4fv</entry>
     <param name="index" type="GLuint" />
-    <param name="v" type="GLfloat" />
+    <param name="v" type="GLfloat*" />
   </proto>
   <proto name="VertexAttrib4">
-    <return type="GLvoid" />
     <entry>glVertexAttrib4s</entry>
     <param name="index" type="GLuint" />
     <param name="x" type="GLshort" />
@@ -1135,9 +950,8 @@
     <param name="w" type="GLshort" />
   </proto>
   <proto name="VertexAttrib4">
-    <return type="GLvoid" />
     <entry>glVertexAttrib4sv</entry>
     <param name="index" type="GLuint" />
-    <param name="v" type="GLshort" />
+    <param name="v" type="GLshort*" />
   </proto>
 </opengl>

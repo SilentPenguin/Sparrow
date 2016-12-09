@@ -1,12 +1,10 @@
 <opengl>
   <proto name="DepthRange">
-    <return type="GLvoid" />
     <entry>glDepthRange</entry>
     <param name="near" type="GLdouble" />
     <param name="far" type="GLdouble" />
   </proto>
   <proto name="Viewport">
-    <return type="GLvoid" />
     <entry>glViewport</entry>
     <param name="x" type="GLint" />
     <param name="y" type="GLint" />
@@ -14,9 +12,8 @@
     <param name="height" type="GLsizei" />
   </proto>
   <proto name="ClipPlane">
-    <return type="GLvoid" />
     <entry>glClipPlane</entry>
     <param name="plane" type="GLenum" />
-    <param name="equation" type="GLdouble" />
+    <param name="equation" type="GLdouble*" />
   </proto>
 </opengl>

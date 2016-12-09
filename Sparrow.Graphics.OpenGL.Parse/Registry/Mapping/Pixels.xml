@@ -1,6 +1,5 @@
 <opengl>
   <proto name="ReadPixels">
-    <return type="GLvoid" />
     <entry>glReadPixels</entry>
     <param name="x" type="GLint" />
     <param name="y" type="GLint" />
@@ -8,15 +7,13 @@
     <param name="height" type="GLsizei" />
     <param name="format" type="GLenum" />
     <param name="type" type="GLenum" />
-    <param name="pixels" type="GLvoid" />
+    <param name="pixels" type="GLvoid*" />
   </proto>
   <proto name="ReadBuffer">
-    <return type="GLvoid" />
     <entry>glReadBuffer</entry>
     <param name="src" type="GLenum" />
   </proto>
   <proto name="CopyPixels">
-    <return type="GLvoid" />
     <entry>glCopyPixels</entry>
     <param name="x" type="GLint" />
     <param name="y" type="GLint" />
@@ -25,7 +22,6 @@
     <param name="type" type="GLenum" />
   </proto>
   <proto name="BlitFramebuffer">
-    <return type="GLvoid" />
     <entry>glBlitFramebuffer</entry>
     <param name="srcX0" type="GLint" />
     <param name="srcY0" type="GLint" />

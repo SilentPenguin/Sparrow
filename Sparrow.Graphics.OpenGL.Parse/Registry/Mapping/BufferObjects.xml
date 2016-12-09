@@ -1,24 +1,20 @@
 <opengl>
   <proto name="GenBuffers">
-    <return type="GLvoid" />
     <entry>glGenBuffers</entry>
     <param name="n" type="GLsizei" />
-    <param name="buffers" type="GLuint" />
+    <param name="buffers" type="GLuint*" />
   </proto>
   <proto name="DeleteBuffers">
-    <return type="GLvoid" />
     <entry>glDeleteBuffers</entry>
     <param name="n" type="GLsizei" />
-    <param name="buffers" type="GLuint" />
+    <param name="buffers" type="GLuint*" />
   </proto>
   <proto name="BindBuffer">
-    <return type="GLvoid" />
     <entry>glBindBuffer</entry>
     <param name="target" type="GLenum" />
     <param name="buffer" type="GLuint" />
   </proto>
   <proto name="BindBufferRange">
-    <return type="GLvoid" />
     <entry>glBindBufferRange</entry>
     <param name="target" type="GLenum" />
     <param name="index" type="GLuint" />
@@ -27,30 +23,26 @@
     <param name="size" type="GLsizeiptr" />
   </proto>
   <proto name="BindBufferBase">
-    <return type="GLvoid" />
     <entry>glBindBufferBase</entry>
     <param name="target" type="GLenum" />
     <param name="index" type="GLuint" />
     <param name="buffer" type="GLuint" />
   </proto>
   <proto name="BufferData">
-    <return type="GLvoid" />
     <entry>glBufferData</entry>
     <param name="target" type="GLenum" />
     <param name="size" type="GLsizeiptr" />
-    <param name="data" type="GLvoid" />
+    <param name="data" type="GLvoid*" />
     <param name="usage" type="GLenum" />
   </proto>
   <proto name="BufferSubData">
-    <return type="GLvoid" />
     <entry>glBufferSubData</entry>
     <param name="target" type="GLenum" />
     <param name="offset" type="GLintptr" />
     <param name="size" type="GLsizeiptr" />
-    <param name="data" type="GLvoid" />
+    <param name="data" type="GLvoid*" />
   </proto>
   <proto name="MapBufferRange">
-    <return type="GLvoid" />
     <entry>glMapBufferRange</entry>
     <param name="target" type="GLenum" />
     <param name="offset" type="GLintptr" />
@@ -58,13 +50,11 @@
     <param name="access" type="GLbitfield" />
   </proto>
   <proto name="MapBuffer">
-    <return type="GLvoid" />
     <entry>glMapBuffer</entry>
     <param name="target" type="GLenum" />
     <param name="access" type="GLenum" />
   </proto>
   <proto name="FlushMappedBufferRange">
-    <return type="GLvoid" />
     <entry>glFlushMappedBufferRange</entry>
     <param name="target" type="GLenum" />
     <param name="offset" type="GLintptr" />
@@ -76,7 +66,6 @@
     <param name="target" type="GLenum" />
   </proto>
   <proto name="CopyBufferSubData">
-    <return type="GLvoid" />
     <entry>glCopyBufferSubData</entry>
     <param name="readTarget" type="GLenum" />
     <param name="writeTarget" type="GLenum" />
@@ -85,19 +74,16 @@
     <param name="size" type="GLsizeiptr" />
   </proto>
   <proto name="GenVertexArrays">
-    <return type="GLvoid" />
     <entry>glGenVertexArrays</entry>
     <param name="n" type="GLsizei" />
-    <param name="arrays" type="GLuint" />
+    <param name="arrays" type="GLuint*" />
   </proto>
   <proto name="DeleteVertexArrays">
-    <return type="GLvoid" />
     <entry>glDeleteVertexArrays</entry>
     <param name="n" type="GLsizei" />
-    <param name="arrays" type="GLuint" />
+    <param name="arrays" type="GLuint*" />
   </proto>
   <proto name="BindVertexArray">
-    <return type="GLvoid" />
     <entry>glBindVertexArray</entry>
     <param name="array" type="GLuint" />
   </proto>
@@ -107,26 +93,23 @@
     <param name="buffer" type="GLuint" />
   </proto>
   <proto name="GetBufferParameter">
-    <return type="GLvoid" />
     <entry>glGetBufferParameteriv</entry>
     <param name="target" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLint" />
+    <param name="params" type="GLint*" />
   </proto>
   <proto name="GetBufferSubData">
-    <return type="GLvoid" />
     <entry>glGetBufferSubData</entry>
     <param name="target" type="GLenum" />
     <param name="offset" type="GLintptr" />
     <param name="size" type="GLsizeiptr" />
-    <param name="data" type="GLvoid" />
+    <param name="data" type="GLvoid*" />
   </proto>
   <proto name="GetBufferPointer">
-    <return type="GLvoid" />
     <entry>glGetBufferPointerv</entry>
     <param name="target" type="GLenum" />
     <param name="pname" type="GLenum" />
-    <param name="params" type="GLvoid" />
+    <param name="params" type="GLvoid**" />
   </proto>
   <proto name="IsVertexArray">
     <return type="GLboolean" />
