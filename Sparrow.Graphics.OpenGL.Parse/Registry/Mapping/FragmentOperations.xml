@@ -51,15 +51,6 @@
     <entry>glDepthFunc</entry>
     <param name="func" type="GLenum" />
   </proto>
-  <proto name="BeginQuery">
-    <entry>glBeginQuery</entry>
-    <param name="target" type="GLenum" />
-    <param name="id" type="GLuint" />
-  </proto>
-  <proto name="EndQuery">
-    <entry>glEndQuery</entry>
-    <param name="target" type="GLenum" />
-  </proto>
   <proto name="BlendEquation">
     <entry>glBlendEquation</entry>
     <param name="mode" type="GLenum" />

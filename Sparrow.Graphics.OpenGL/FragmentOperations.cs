@@ -20,10 +20,6 @@ public static partial class Gl
     public static extern unsafe void StencilOpSeparate(uint face, uint sfail, uint dpfail, uint dppass);
     [DllImport(DllName, EntryPoint = "glDepthFunc")]
     public static extern unsafe void DepthFunc(uint func);
-    [DllImport(DllName, EntryPoint = "glBeginQuery")]
-    public static extern unsafe void BeginQuery(uint target, uint id);
-    [DllImport(DllName, EntryPoint = "glEndQuery")]
-    public static extern unsafe void EndQuery(uint target);
     [DllImport(DllName, EntryPoint = "glBlendEquation")]
     public static extern unsafe void BlendEquation(uint mode);
     [DllImport(DllName, EntryPoint = "glBlendEquationSeparate")]
