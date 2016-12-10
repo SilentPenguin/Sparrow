@@ -100,8 +100,6 @@ public static partial class Gl
     public static extern unsafe void GetTransformFeedbackVarying(uint program, uint index, int bufSize, int* length, int* size, uint* type, char* name);
     [DllImport(DllName, EntryPoint = "glValidateProgram")]
     public static extern unsafe void ValidateProgram(uint program);
-    [DllImport(DllName, EntryPoint = "glGetProgramiv")]
-    public static extern unsafe void GetProgram(uint program, uint pname, int* @params);
     [DllImport(DllName, EntryPoint = "glBindFragDataLocation")]
     public static extern unsafe void BindFragDataLocation(uint program, uint color, char* name);
     [DllImport(DllName, EntryPoint = "glGetFragDataLocation")]

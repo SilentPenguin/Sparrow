@@ -34,10 +34,6 @@ public static partial class Gl
     public static extern unsafe void Rotate(double angle, double x, double y, double z);
     [DllImport(DllName, EntryPoint = "glRotatef")]
     public static extern unsafe void Rotate(float angle, float x, float y, float z);
-    [DllImport(DllName, EntryPoint = "glLoadMatrixd")]
-    public static extern unsafe void LoadMatrix(double* m);
-    [DllImport(DllName, EntryPoint = "glLoadMatrixf")]
-    public static extern unsafe void LoadMatrix(float* m);
     [DllImport(DllName, EntryPoint = "glTranslated")]
     public static extern unsafe void Translate(double x, double y, double z);
     [DllImport(DllName, EntryPoint = "glTranslatef")]
