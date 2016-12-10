@@ -300,12 +300,6 @@
     <entry>glValidateProgram</entry>
     <param name="program" type="GLuint" />
   </proto>
-  <proto name="GetProgram">
-    <entry>glGetProgramiv</entry>
-    <param name="program" type="GLuint" />
-    <param name="pname" type="GLenum" />
-    <param name="params" type="GLint*" />
-  </proto>
   <proto name="BindFragDataLocation">
     <entry>glBindFragDataLocation</entry>
     <param name="program" type="GLuint" />

@@ -84,14 +84,6 @@
     <param name="y" type="GLfloat" />
     <param name="z" type="GLfloat" />
   </proto>
-  <proto name="LoadMatrix">
-    <entry>glLoadMatrixd</entry>
-    <param name="m" type="GLdouble*" />
-  </proto>
-  <proto name="LoadMatrix">
-    <entry>glLoadMatrixf</entry>
-    <param name="m" type="GLfloat*" />
-  </proto>
   <proto name="Translate">
     <entry>glTranslated</entry>
     <param name="x" type="GLdouble" />

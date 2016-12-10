@@ -79,7 +79,6 @@
         <method>(MultiTransposeMatrix)[fd]</method>
         <method>(LoadIdentity)</method>
         <method>(Rotate)[fd]</method>
-        <method>(LoadMatrix)[fd]</method>
         <method>(Translate)[fd]</method>
         <method>(Scale)[fd]</method>
         <method>(Frustrum)</method>
@@ -145,7 +144,6 @@
         <method>(TransformFeedbackVaryings)</method>
         <method>(GetTransformFeedbackVarying)</method>
         <method>(ValidateProgram)</method>
-        <method>(GetProgram)iv</method>
         <method>(BindFragDataLocation)</method>
         <method>(GetFragDataLocation)</method>
         <method>(IsShader)</method>
@@ -248,8 +246,6 @@
         <method>(StencilOp)</method>
         <method>(StencilOpSeparate)</method>
         <method>(DepthFunc)</method>
-        <method>(BeginQuery)</method>
-        <method>(EndQuery)</method>
         <method>(BlendEquation)</method>
         <method>(BlendEquationSeparate)</method>
         <method>(BlendFunc)</method>
