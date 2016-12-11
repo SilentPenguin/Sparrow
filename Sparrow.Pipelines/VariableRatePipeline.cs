@@ -6,7 +6,8 @@ namespace Sparrow.Pipelines
     {
         public Action<FrameState> action;
 
-        public override void ProcessFrame(FrameState frame) {
+        public override void ProcessFrame(FrameState frame)
+        {
             action(frame);
             LastProcessedFrame = frame.FrameInfo;
         }

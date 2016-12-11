@@ -9,7 +9,7 @@ namespace Sparrow.Pipelines
             this.actions = actions;    
         }
 
-        private Action<FrameState>[] actions;
+        public Action<FrameState>[] actions;
 
         public override void ProcessFrame(FrameState frame)
         {
@@ -18,6 +18,8 @@ namespace Sparrow.Pipelines
                 if (frame.HaltFrame) break;
                 action(frame);
             }
+
+            LastProcessedFrame = frame.FrameInfo;
         }
     }
 }
