@@ -7,18 +7,17 @@ namespace Sparrow
 {
     public class FrameGenerator : IEnumerable<GameTime>
     {
-        private GameTime frame;
-        private Stopwatch timer;
-
         public IEnumerator<GameTime> GetEnumerator()
         {
-            frame = new GameTime();
-            timer = new Stopwatch();
+            var frame = new GameTime();
+            var timer = new Stopwatch();
+            var ticks = timer.Elapsed;
+            
+            timer.Start();
 
-            while (true)
+            while (timer.IsRunning)
             {
-                var ticks = timer.Elapsed;
-                timer.Restart();
+                ticks = timer.Elapsed - ticks;
                 yield return frame += ticks;
             }
         }
