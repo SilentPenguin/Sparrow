@@ -4,7 +4,7 @@ namespace Sparrow.Pipelines
 {
     public class FixedRatePipeline : PipelineBase
     {
-        public FixedRatePipeline(int framerate)
+        public FixedRatePipeline(int framerate = 60)
         {
             frameDuration = TimeSpan.FromTicks(1 / framerate * TimeSpan.TicksPerMillisecond);
         }
