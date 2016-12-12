@@ -2,13 +2,13 @@ namespace Sparrow
 {
     public class FrameState
     {
-        public FrameState(FrameInfo frame)
+        public FrameState(GameTime time)
         {
-            FrameInfo = frame;
+            FrameTime = time;
             HaltFrame = false;
         }
 
-        public FrameInfo FrameInfo { get; private set; }
+        public GameTime FrameTime { get; private set; }
         public bool HaltFrame {get; set;}
     }
 }
