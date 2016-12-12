@@ -4,20 +4,14 @@ using System.Collections.Generic;
 
 namespace Sparrow
 {
-    public class FrameGenerator : IEnumerable<FrameInfo>
+    public class FrameGenerator : IEnumerable<GameTime>
     {
-        private FrameInfo frame;
+        private GameTime frame;
 
-        public IEnumerator<FrameInfo> GetEnumerator()
+        public IEnumerator<GameTime> GetEnumerator()
         {
-            frame = new FrameInfo { Time = DateTime.UtcNow };
-
-            while (true)
-                yield return frame = new FrameInfo
-                (
-                    lastTime: frame.Time,
-                    currentTime: DateTime.UtcNow
-                );
+            frame = new GameTime();
+            while (true) yield return frame += DateTime.UtcNow - frame.Now;
         }
         
         IEnumerator IEnumerable.GetEnumerator()

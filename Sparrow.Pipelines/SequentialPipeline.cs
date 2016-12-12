@@ -19,7 +19,7 @@ namespace Sparrow.Pipelines
                 action(frame);
             }
 
-            LastProcessedFrame = frame.FrameInfo;
+            LastProcessedFrame = frame.FrameTime;
         }
     }
 }
