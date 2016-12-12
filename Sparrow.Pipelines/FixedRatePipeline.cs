@@ -18,7 +18,7 @@ namespace Sparrow.Pipelines
             if (nextFrame.FrameTime > frame.FrameTime) return;
             action(nextFrame);
             frame.HaltFrame = nextFrame.HaltFrame;
-            LastProcessedFrame = nextFrame.FrameTime;
+            LastFrame = nextFrame.FrameTime;
             nextFrame = new FrameState(nextFrame.FrameTime + frameDuration);
         }
     }

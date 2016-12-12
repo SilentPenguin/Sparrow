@@ -1,6 +1,6 @@
 using System;
 
-namespace Sparrow
+namespace Sparrow.Numerics
 {
     public class GameTime
     {   
@@ -12,26 +12,17 @@ namespace Sparrow
             Now = time.Now;
             Elapsed = time.Elapsed;
             Step = time.Step;
-            Speed = time.Speed;
         }
 
-        public DateTime Epoch { get; private set; }
-        public DateTime Now { get; private set; } 
-        public TimeSpan Elapsed { get; private set; }
-        public TimeSpan Step { get; private set; }
-        public double Speed { get; set; }
-        public bool IsPaused { get { return Speed == 0; } }
+        public DateTime Epoch { get; protected set; }
+        public DateTime Now { get; protected set; } 
+        public TimeSpan Elapsed { get; protected set; }
+        public TimeSpan Step { get; protected set; }
 
-        public void Increment(TimeSpan period)
+        public virtual void Increment(TimeSpan period)
         {
-            Step = Scale(period, Speed);
-            Now += Step;
-            Elapsed += Step;
-        }
-
-        private static TimeSpan Scale(TimeSpan period, double speed)
-        {
-            return TimeSpan.FromTicks((long)(period.Ticks * speed));
+            Now += period;
+            Elapsed += period;
         }
 
         public static GameTime operator +(GameTime time, TimeSpan period)
