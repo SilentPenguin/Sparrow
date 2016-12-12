@@ -9,7 +9,7 @@ namespace Sparrow.Pipelines
         public override void ProcessFrame(FrameState frame)
         {
             action(frame);
-            LastProcessedFrame = frame.FrameTime;
+            LastFrame = frame.FrameTime;
         }
     }
 }
