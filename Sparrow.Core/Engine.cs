@@ -7,7 +7,7 @@ namespace Sparrow
     public class Engine
     {
         public Action<FrameState> action;
-        private IEnumerable<FrameInfo> frameGenerator = new FrameGenerator();
+        private IEnumerable<GameTime> frameGenerator = new FrameGenerator();
 
         public void Loop()
         {

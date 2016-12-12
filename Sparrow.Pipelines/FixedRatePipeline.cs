@@ -10,17 +10,16 @@ namespace Sparrow.Pipelines
         }
 
         public Action<FrameState> action;
-        private FrameState nextFixedFrame;
+        private FrameState nextFrame;
         private TimeSpan frameDuration;
 
         public override void ProcessFrame(FrameState frame)
         {
-            if (nextFixedFrame.FrameInfo.Time > frame.FrameInfo.Time) return;
-            action(nextFixedFrame);
-            frame.HaltFrame = nextFixedFrame.HaltFrame;
-            LastProcessedFrame = nextFixedFrame.FrameInfo;
-            var nextFrameInfo = new FrameInfo { Time = nextFixedFrame.FrameInfo.Time + frameDuration, TimeSinceLastFrame = frameDuration };
-            nextFixedFrame = new FrameState(nextFrameInfo);
+            if (nextFrame.FrameTime > frame.FrameTime) return;
+            action(nextFrame);
+            frame.HaltFrame = nextFrame.HaltFrame;
+            LastProcessedFrame = nextFrame.FrameTime;
+            nextFrame = new FrameState(nextFrame.FrameTime + frameDuration);
         }
     }
 }
