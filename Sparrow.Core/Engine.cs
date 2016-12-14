@@ -1,6 +1,8 @@
 using System;
 using System.Threading;
 using System.Collections.Generic;
+using Sparrow.Pipelines;
+using Sparrow.Numerics;
 
 namespace Sparrow
 {

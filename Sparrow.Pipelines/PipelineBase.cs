@@ -1,3 +1,5 @@
+using Sparrow.Numerics;
+
 namespace Sparrow.Pipelines
 {
     public abstract class PipelineBase
