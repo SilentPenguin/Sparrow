@@ -1,6 +1,4 @@
-using Sparrow.Numerics;
-
-namespace Sparrow.Pipelines
+namespace Sparrow
 {
     public class FrameState
     {

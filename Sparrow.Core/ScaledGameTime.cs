@@ -1,6 +1,6 @@
 using System;
 
-namespace Sparrow.Numerics
+namespace Sparrow
 {
     public class ScaledGameTime : GameTime
     {
