@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Sparrow.Numerics;
 
 namespace Sparrow
 {
@@ -12,7 +12,7 @@ namespace Sparrow
             var frame = new GameTime();
             var timer = new Stopwatch();
             var ticks = timer.Elapsed;
-            
+
             timer.Start();
 
             while (timer.IsRunning)
