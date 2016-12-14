@@ -1,6 +1,6 @@
 using System;
 
-namespace Sparrow
+namespace Sparrow.Numerics
 {
     public class GameTime
     {   
