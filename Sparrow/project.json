@@ -1,9 +1,13 @@
 {
   "version": "1.0.0-*",
   "buildOptions": {
-    "debugType": "portable"
+    "debugType": "portable",
+    "emitEntryPoint": true
   },
-  "dependencies": {},
+  "dependencies": {
+    "Sparrow.Core": "1.0.0-*",
+    "Sparrow.Pipelines": "1.0.0-*"
+  },
   "frameworks": {
     "netcoreapp1.0": {
       "dependencies": {
