@@ -25,23 +25,22 @@ namespace Sparrow.Numerics
         private readonly T[] items;
         private static readonly Math<T> math;
 
-        public T this[int i] { get { return items[i]; } }
+        public T this[int i] { get { return math.Get(this, i); } }
         public int Count { get { return items.Length; } }
 
-        public T x { get { return items[0]; } }
-        public T y { get { return items[1]; } }
-        public T z { get { return items[2]; } }
-        public T w { get { return items[3]; } }
+        public T x { get { return this[0]; } }
+        public T y { get { return this[1]; } }
+        public T z { get { return this[2]; } }
+        public T w { get { return this[3]; } }
 
         public static T Dot(Vector<T> a, Vector<T> b) { return math.Dot(a, b); }
         public static Vector<T> Cross(Vector<T> a, Vector<T> b) { return math.Cross(a, b); }
-        public static Vector<T> Zeros(int size) { return math.Zeros(size); }
-        public static Vector<T> Ones(int size) { return math.Ones(size); }
         public static Vector<T> operator +(Vector<T> a, Vector<T> b) { return math.Add(a, b); }
         public static Vector<T> operator -(Vector<T> a, Vector<T> b) { return math.Sub(a, b); }
         public static Vector<T> operator *(Vector<T> a, T b) { return math.Mul(a, b); }
         public static Vector<T> operator *(T a, Vector<T> b) { return math.Mul(b, a); }
 
+        public static Vector<T> Identity { get { return new Vector<T>(); } }
         public Vector<T> Unit { get { return math.Unit(this); } }
         public T Magnitude { get { return math.Magnitude(this); } }
         public T SquareMagnitude { get { return math.SquareMagnitude(this); } }

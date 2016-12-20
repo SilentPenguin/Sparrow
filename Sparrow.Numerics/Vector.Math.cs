@@ -4,6 +4,7 @@ namespace Sparrow.Numerics
     {
         abstract class Math<S> where S : struct
         {
+            public abstract S Get(Vector<S> a, int i);
             public abstract Vector<S> Add(Vector<S> a, Vector<S> b);
             public abstract Vector<S> Sub(Vector<S> a, Vector<S> b);
             public abstract Vector<S> Mul(Vector<S> a, S b);
@@ -18,9 +19,15 @@ namespace Sparrow.Numerics
 
         class MathFloat : Math<float>
         {
+            public override float Get(Vector<float> a, int i)
+            {
+                return i < a.Count ? a.items[i] : 0;
+            }
+
             public override Vector<float> Add(Vector<float> a, Vector<float> b)
             {
-                var v = new float[a.Count];
+                var count = System.Math.Max(a.Count, b.Count);
+                var v = new float[count];
                 for(int i = v.Length; i-- != 0;)
                     v[i] = a[i] + b[i];
                 return new Vector<float>(v);
@@ -28,7 +35,8 @@ namespace Sparrow.Numerics
 
             public override Vector<float> Sub(Vector<float> a, Vector<float> b)
             {
-                var v = new float[a.Count];
+                var count = System.Math.Max(a.Count, b.Count);
+                var v = new float[count];
                 for(int i = v.Length; i-- != 0;)
                     v[i] = a[i] - b[i];
                 return new Vector<float>(v);
@@ -92,9 +100,15 @@ namespace Sparrow.Numerics
 
         class MathDouble : Math<double>
         {
+            public override double Get(Vector<double> a, int i)
+            {
+                return i < a.Count ? a.items[i] : 0;
+            }
+            
             public override Vector<double> Add(Vector<double> a, Vector<double> b)
             {
-                var v = new double[a.Count];
+                var count = System.Math.Max(a.Count, b.Count);
+                var v = new double[count];
                 for(int i = v.Length; i-- != 0;)
                     v[i] = a[i] + b[i];
                 return new Vector<double>(v);
@@ -102,7 +116,8 @@ namespace Sparrow.Numerics
 
             public override Vector<double> Sub(Vector<double> a, Vector<double> b)
             {
-                var v = new double[a.Count];
+                var count = System.Math.Max(a.Count, b.Count);
+                var v = new double[count];
                 for(int i = v.Length; i-- != 0;)
                     v[i] = a[i] - b[i];
                 return new Vector<double>(v);

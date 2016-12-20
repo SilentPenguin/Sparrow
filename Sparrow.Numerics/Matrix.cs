@@ -22,7 +22,7 @@ namespace Sparrow.Numerics
         private readonly T[,] items;
         private static readonly Math<T> math;
 
-        public T this[int x, int y] { get { return items[x, y]; } }
+        public T this[int x, int y] { get { return math.Get(this, x, y); } }
 
         public int Width { get { return items.GetLength(0); } }
         public int Height { get { return items.GetLength(1); } }
@@ -55,7 +55,7 @@ namespace Sparrow.Numerics
             }
         }
 
-        public static Matrix<T> Identity(int size) { return math.Identity(size); }
+        public static Matrix<T> Identity() { return new Matrix<T>(); }
         public static Matrix<T> Empty(int size) { return math.Empty(size, size); }
         public static Matrix<T> Empty(int width, int height) { return math.Empty(width, height); }
         public static Matrix<T> operator * (Matrix<T> a, Matrix<T> b) { return math.Mul(a, b); }
