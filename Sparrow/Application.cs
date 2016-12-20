@@ -14,10 +14,13 @@ namespace Sparrow
             var physics = new PhysicsPipeline();
             var animation = new AnimationPipeline();
             var render = new RenderPipeline();
-            
-            var actions = new Action<FrameState>[]{
-                inputs.ProcessFrame, physics.ProcessFrame,
-                animation.ProcessFrame, render.ProcessFrame
+
+            var actions = new Action<FrameState>[]
+            {
+                inputs.ProcessFrame,
+                physics.ProcessFrame,
+                animation.ProcessFrame,
+                render.ProcessFrame
             };
 
             var sequence = new SequentialPipeline(actions);
