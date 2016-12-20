@@ -5,7 +5,7 @@ namespace Sparrow.Numerics
     public partial class Transform<T> where T : struct
     {
 
-        public Transform() : this (Vector<T>.Zeros(3), Quaternion<T>.Identity, Vector<T>.Zeros(3)) {}
+        public Transform() : this (Vector<T>.Identity, Quaternion<T>.Identity, Vector<T>.Identity) {}
         public Transform(Vector<T> translate, Quaternion<T> rotate, Vector<T> scale)
         {
             t = translate;
@@ -46,9 +46,9 @@ namespace Sparrow.Numerics
 
         public static Matrix<T> Matrix(Vector<T>? translate = null, Quaternion<T>? rotate = null, Vector<T>? scale = null)
         {
-            var t = translate ?? Vector<T>.Zeros(3);
+            var t = translate ?? Vector<T>.Identity;
             var q = rotate ?? Quaternion<T>.Identity;
-            var s = scale ?? Vector<T>.Zeros(3);
+            var s = scale ?? Vector<T>.Identity;
             return math.Matrix(t, q, s);
         }
     }
