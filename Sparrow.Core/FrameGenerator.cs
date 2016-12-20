@@ -4,9 +4,9 @@ using System.Diagnostics;
 
 namespace Sparrow
 {
-    public class FrameGenerator : IEnumerable<GameTime>
+    public class FrameGenerator : IEnumerable<FrameState>
     {
-        public IEnumerator<GameTime> GetEnumerator()
+        public IEnumerator<FrameState> GetEnumerator()
         {
             var frame = new GameTime();
             var timer = new Stopwatch();
@@ -17,7 +17,8 @@ namespace Sparrow
             while (timer.IsRunning)
             {
                 ticks = timer.Elapsed - ticks;
-                yield return frame += ticks;
+                frame += ticks;
+                yield return new FrameState(frame);
             }
         }
         

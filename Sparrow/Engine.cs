@@ -7,13 +7,13 @@ namespace Sparrow
     public class Engine
     {
         public Action<FrameState> action;
-        private IEnumerable<GameTime> frameGenerator = new FrameGenerator();
+        private IEnumerable<FrameState> frameGenerator = new FrameGenerator();
 
         public void Loop()
         {
             foreach (var frame in frameGenerator)
             {
-                action(new FrameState(frame));
+                action(frame);
                 Thread.Sleep(0);
             }
         }
