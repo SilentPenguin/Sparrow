@@ -1,7 +1,8 @@
+/*
 using System;
 using System.Threading;
 
-namespace Sparrow.Sdl
+namespace Sparrow.Sdl2
 {
     public class Program
     {
@@ -43,3 +44,4 @@ namespace Sparrow.Sdl
         }
     }
 }
+*/
