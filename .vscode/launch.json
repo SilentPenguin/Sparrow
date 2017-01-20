@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}/Sparrow.SDL2/bin/Debug/netcoreapp1.0/Sparrow.SDL2.dll",
+            "program": "${workspaceRoot}/Sparrow/bin/Debug/netcoreapp1.0/Sparrow.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "externalConsole": false,

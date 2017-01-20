@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace Sparrow.Sdl
+namespace Sparrow.Sdl2
 {
 
     public static partial class Sdl

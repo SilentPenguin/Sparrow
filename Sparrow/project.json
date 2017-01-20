@@ -5,9 +5,9 @@
     "emitEntryPoint": true
   },
   "dependencies": {
-    "sdl2": "2.0.5",
     "Sparrow.Core": "1.0.0-*",
-    "Sparrow.Pipelines": "1.0.0-*"
+    "Sparrow.Pipelines": "1.0.0-*",
+    "Sparrow.SDL2": "1.0.0-*"
   },
   "frameworks": {
     "netcoreapp1.0": {
