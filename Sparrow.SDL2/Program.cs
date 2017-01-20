@@ -8,7 +8,7 @@ namespace Sparrow.Sdl
         public static void Main(string[] args)
         {  
             var s = Sdl.Init();
-            s = Sdl.InitSubSystem(Sdl.InitFlag.VIDEO);
+            s = Sdl.InitSubSystem(Sdl.InitFlag.Video);
             var u = Sdl.WindowPosition.Undefined;
             var f = Sdl.WindowFlags.OpenGL | Sdl.WindowFlags.Shown;
             var w = Sdl.CreateWindow("test", u, u, 640, 480, f);
