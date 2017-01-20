@@ -12,14 +12,14 @@ namespace Sparrow.Sdl
         public enum InitFlag : UInt32
         {
             Timer =             0x00000001,
-            AUDIO =             0x00000010,
-            VIDEO =             0x00000020,
-            JOYSTICK =          0x00000200,
-            HAPTIC =            0x00001000,
-            GAMECONTROLLER =    0x00002000,
-            EVENTS =            0x00004000,
-            NOPARACHUTE =       0x00100000,
-            EVERYTHING =        0x00007231
+            Audio =             0x00000010,
+            Video =             0x00000020,
+            Joystick =          0x00000200,
+            Haptic =            0x00001000,
+            GameController =    0x00002000,
+            Events =            0x00004000,
+            NoParachute =       0x00100000,
+            Everything =        0x00007231
         }
 
         [DllImport(DllName, EntryPoint = "SDL_Init")]
