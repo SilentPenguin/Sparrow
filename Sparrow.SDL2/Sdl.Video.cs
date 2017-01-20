@@ -6,24 +6,24 @@ namespace Sparrow.Sdl
     public static partial class Sdl
     {
         [Flags]
-		public enum WindowFlags : uint
-		{
-            Fullscreen =	    0x00000001,
-			OpenGL =            0x00000002,
-			Shown =             0x00000004,
-			Hidden =	        0x00000008,
-			Borderless =        0x00000010,
-			Resizable =         0x00000020,
-			Minimized =         0x00000040,
-			Maximized =         0x00000080,
-			InputGrabbed =      0x00000100,
-			InputFocus =        0x00000200,
-			MouseFocus =        0x00000400,
-			FullscreenDesktop = 0x00001000 | Fullscreen,
-			Foreign =           0x00000800,
-			AllowHighDpi =      0x00002000,
-			MouseCapture =      0x00004000,
-		}
+        public enum WindowFlags : uint
+        {
+            Fullscreen =        0x00000001,
+            OpenGL =            0x00000002,
+            Shown =             0x00000004,
+            Hidden =            0x00000008,
+            Borderless =        0x00000010,
+            Resizable =         0x00000020,
+            Minimized =         0x00000040,
+            Maximized =         0x00000080,
+            InputGrabbed =      0x00000100,
+            InputFocus =        0x00000200,
+            MouseFocus =        0x00000400,
+            FullscreenDesktop = 0x00001000 | Fullscreen,
+            Foreign =           0x00000800,
+            AllowHighDpi =      0x00002000,
+            MouseCapture =      0x00004000,
+        }
 
         public static class WindowPosition
         {
@@ -77,7 +77,7 @@ namespace Sparrow.Sdl
             public static extern IntPtr CreateContext(IntPtr window);
 
             [DllImport(DllName, EntryPoint = "SDL_GL_DeleteContext")]
-		    public static extern void DeleteContext(IntPtr context);
+            public static extern void DeleteContext(IntPtr context);
         }
     }
 }
