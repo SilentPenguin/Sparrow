@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace Sparrow.Sdl
+namespace Sparrow.Sdl2
 {
     public static partial class Sdl
     {
@@ -94,58 +94,35 @@ namespace Sparrow.Sdl
             public UInt32 timestamp;
         }
 
-        [StructLayout(LayoutKind.Explicit)]
+        [StructLayout(LayoutKind.Explicit, Size=56)]
         public struct Event
         {
-            [FieldOffset(0)]
-            public EventType type;
+            [FieldOffset(0)] public EventType type;
             /*
-            [FieldOffset(0)]
-            public WindowEvent window;
-            [FieldOffset(0)]
-            public KeyboardEvent key;
-            [FieldOffset(0)]
-            public TextEditingEvent edit;
-            [FieldOffset(0)]
-            public TextInputEvent text;
-            [FieldOffset(0)]
-            public MouseMotionEvent motion;
-            [FieldOffset(0)]
-            public MouseButtonEvent button;
-            [FieldOffset(0)]
-            public MouseWheelEvent wheel;
-            [FieldOffset(0)]
-            public JoyAxisEvent jaxis;
-            [FieldOffset(0)]
-            public JoyBallEvent jball;
-            [FieldOffset(0)]
-            public JoyHatEvent jhat;
-            [FieldOffset(0)]
-            public JoyButtonEvent jbutton;
-            [FieldOffset(0)]
-            public JoyDeviceEvent jdevice;
-            [FieldOffset(0)]
-            public ControllerAxisEvent caxis;
-            [FieldOffset(0)]
-            public ControllerButtonEvent cbutton;
-            [FieldOffset(0)]
-            public ControllerDeviceEvent cdevice;
+            [FieldOffset(0)] public WindowEvent window;
+            [FieldOffset(0)] public KeyboardEvent key;
+            [FieldOffset(0)] public TextEditingEvent edit;
+            [FieldOffset(0)] public TextInputEvent text;
+            [FieldOffset(0)] public MouseMotionEvent motion;
+            [FieldOffset(0)] public MouseButtonEvent button;
+            [FieldOffset(0)] public MouseWheelEvent wheel;
+            [FieldOffset(0)] public JoyAxisEvent jaxis;
+            [FieldOffset(0)] public JoyBallEvent jball;
+            [FieldOffset(0)] public JoyHatEvent jhat;
+            [FieldOffset(0)] public JoyButtonEvent jbutton;
+            [FieldOffset(0)] public JoyDeviceEvent jdevice;
+            [FieldOffset(0)] public ControllerAxisEvent caxis;
+            [FieldOffset(0)] public ControllerButtonEvent cbutton;
+            [FieldOffset(0)] public ControllerDeviceEvent cdevice;
             */
-            [FieldOffset(0)]
-            public QuitEvent quit;
+            [FieldOffset(0)] public QuitEvent quit;
             /*
-            [FieldOffset(0)]
-            public UserEvent user;
-            [FieldOffset(0)]
-            public SysWMEvent syswm;
-            [FieldOffset(0)]
-            public TouchFingerEvent tfinger;
-            [FieldOffset(0)]
-            public MultiGestureEvent mgesture;
-            [FieldOffset(0)]
-            public DollarGestureEvent dgesture;
-            [FieldOffset(0)]
-            public DropEvent drop;
+            [FieldOffset(0)] public UserEvent user;
+            [FieldOffset(0)] public SysWMEvent syswm;
+            [FieldOffset(0)] public TouchFingerEvent tfinger;
+            [FieldOffset(0)] public MultiGestureEvent mgesture;
+            [FieldOffset(0)] public DollarGestureEvent dgesture;
+            [FieldOffset(0)] public DropEvent drop;
 */
         }
 

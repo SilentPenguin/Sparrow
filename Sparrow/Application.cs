@@ -1,11 +1,43 @@
 using System;
+using System.Threading;
 using Sparrow.Pipelines;
+using Sparrow.Sdl2;
 
 namespace Sparrow
 {
     public class Application
     {
         public static void Main(string[] args)
+        {
+            CreateWindow();
+            CreateEngine();
+        }
+
+        public static void CreateWindow()
+        {
+            // initialise SDL and create a window
+            var s = Sdl.Init();
+            s = Sdl.InitSubSystem(Sdl.InitFlag.Video);
+            var u = Sdl.WindowPosition.Undefined;
+            var f = Sdl.WindowFlags.OpenGL | Sdl.WindowFlags.Shown;
+            var w = Sdl.CreateWindow("Application", u, u, 640, 480, f);
+
+            if (w == null) {
+                var message = Sdl.GetError();
+                throw new Exception(message);
+            }
+
+            // Create a GL rendering context 
+            Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.ContextMajorVersion, 2);
+            Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.ContextMinorVersion, 0);
+            Sdl.Gl.SetSwapInterval(0);
+            Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.DoubleBuffer, 1);
+            Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.DepthSize, 24);
+            var c = Sdl.Gl.CreateContext(w);
+            var r = Sdl.CreateRenderer(w, flags: Sdl.RendererFlags.Accelerated | Sdl.RendererFlags.TargetTexture);
+        }
+
+        public static void CreateEngine()
         {
             // The pipeline processors for our application.
             // These are responsible for consuming frames
@@ -27,7 +59,7 @@ namespace Sparrow
 
             // create our engine.
             var engine = new Engine();
-            engine.action = sequence.ProcessFrame;
+            engine.action = inputs.ProcessFrame;
             engine.Loop();
         }
     }
