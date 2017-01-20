@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceRoot}/Sparrow.Graphics.OpenGL.Parse/bin/Debug/netcoreapp1.0/Sparrow.Graphics.OpenGL.Parse.dll",
+            "program": "${workspaceRoot}/Sparrow.SDL2/bin/Debug/netcoreapp1.0/Sparrow.SDL2.dll",
             "args": [],
             "cwd": "${workspaceRoot}",
             "externalConsole": false,
