@@ -75,7 +75,7 @@ namespace Sparrow.Sdl
 			/* Only available in SDL 2.0.2 or higher */
             RenderTargetsReset = 0x2000,
 			/* Only available in SDL 2.0.4 or higher */
-			SDL_RENDER_DEVICE_RESET,
+            RenderDeviceReset,
 
 			/* Events SDL_USEREVENT through SDL_LASTEVENT are for
 			 * your use, and should be allocated with
