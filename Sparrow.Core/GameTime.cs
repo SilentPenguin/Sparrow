@@ -23,6 +23,7 @@ namespace Sparrow
         {
             Now += period;
             Elapsed += period;
+            Step = period;
         }
 
         public static GameTime operator +(GameTime time, TimeSpan period)

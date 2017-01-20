@@ -1,11 +1,13 @@
 {
     "projects": [
+        "Sparrow",
         "Sparrow.Core",
         "Sparrow.Graphics",
         "Sparrow.Graphics.OpenGL",
         "Sparrow.Graphics.OpenGL.Parse",
         "Sparrow.Numerics",
         "Sparrow.Pipelines",
-        "Sparrow.Reactive"
+        "Sparrow.Reactive",
+        "Sparrow.SDL2"
     ]
 }

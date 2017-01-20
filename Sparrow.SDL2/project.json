@@ -4,11 +4,7 @@
     "debugType": "portable",
     "emitEntryPoint": true
   },
-  "dependencies": {
-    "sdl2": "2.0.5",
-    "Sparrow.Core": "1.0.0-*",
-    "Sparrow.Pipelines": "1.0.0-*"
-  },
+  "dependencies": {},
   "frameworks": {
     "netcoreapp1.0": {
       "dependencies": {
@@ -17,7 +13,7 @@
           "version": "1.0.0"
         }
       },
-      "imports": "dnxcore50"
+      "imports": [ "portable-net45+win8+wp8+wpa81" ]
     }
   }
 }
