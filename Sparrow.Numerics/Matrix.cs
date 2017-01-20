@@ -16,7 +16,7 @@ namespace Sparrow.Numerics
             else if (typeof(T) == typeof(double))
                 math = new MathDouble() as Math<T>;
             if(math == null)
-                throw new InvalidOperationException("Type " + typeof(T) + " is not supported by Vector.");
+                throw new InvalidOperationException("Type " + typeof(T) + " is not supported by Matrix.");
         }
 
         private readonly T[,] items;

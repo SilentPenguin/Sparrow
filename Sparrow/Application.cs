@@ -5,7 +5,7 @@ namespace Sparrow
 {
     public class Application
     {
-        public static void Main(string args)
+        public static void Main(string[] args)
         {
             // The pipeline processors for our application.
             // These are responsible for consuming frames

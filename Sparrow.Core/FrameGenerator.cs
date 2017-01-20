@@ -10,14 +10,15 @@ namespace Sparrow
         {
             var frame = new GameTime();
             var timer = new Stopwatch();
-            var ticks = timer.Elapsed;
+            var last = timer.Elapsed;
 
             timer.Start();
 
             while (timer.IsRunning)
             {
-                ticks = timer.Elapsed - ticks;
-                frame += ticks;
+                var current = timer.Elapsed;
+                frame += current - last;
+                last = current;
                 yield return new FrameState(frame);
             }
         }
