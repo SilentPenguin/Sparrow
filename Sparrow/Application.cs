@@ -1,5 +1,4 @@
 using System;
-using System.Threading;
 using Sparrow.Pipelines;
 using Sparrow.Sdl2;
 
@@ -30,7 +29,7 @@ namespace Sparrow
             // Create a GL rendering context 
             Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.ContextMajorVersion, 2);
             Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.ContextMinorVersion, 0);
-            Sdl.Gl.SetSwapInterval(0);
+            Sdl.Gl.SetSwapInterval(Sdl.Gl.SwapInterval.Immediate);
             Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.DoubleBuffer, 1);
             Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.DepthSize, 24);
             var c = Sdl.Gl.CreateContext(w);
