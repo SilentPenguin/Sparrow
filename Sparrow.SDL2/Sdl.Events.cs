@@ -5,7 +5,10 @@ namespace Sparrow.Sdl2
 {
     public static partial class Sdl
     {
-
+        /// <summary>
+		/// Event type codes returned within <see cref='Event'/>
+		/// </summary>
+        /// <seealso cref="Event"/>
         public enum EventType : uint
         {
             FirstEvent = 0,
@@ -87,6 +90,10 @@ namespace Sparrow.Sdl2
             LastEvent = 0xFFFF
         }
 
+        /// <summary>
+		/// The event returned when quit is requested
+		/// </summary>
+        /// <seealso cref="PollEvent()"/>
         [StructLayout(LayoutKind.Sequential)]
         public struct QuitEvent
         {
@@ -94,6 +101,10 @@ namespace Sparrow.Sdl2
             public UInt32 timestamp;
         }
 
+        /// <summary>
+		/// The full event structure returned and used by <see cref='PollEvent()'/>
+		/// </summary>
+        /// <seealso cref="PollEvent()"/>
         [StructLayout(LayoutKind.Explicit, Size=56)]
         public struct Event
         {
@@ -123,10 +134,27 @@ namespace Sparrow.Sdl2
             [FieldOffset(0)] public MultiGestureEvent mgesture;
             [FieldOffset(0)] public DollarGestureEvent dgesture;
             [FieldOffset(0)] public DropEvent drop;
-*/
+            */
         }
 
+        /// <summary>
+        /// Poll for currently pending events.
+        /// </summary>
+        /// <param name="@event">the <see cref='Event'/> structure to be filled with the next event from the queue, or null</param>
+        /// <returns>Returns 1 if there is a pending event or 0 if there are none available.</returns>
+        /// <remarks>
+        /// If event is not null, the next event is removed from the queue and stored in the <see cref='Event'/> structure pointed to by event.
+        /// If event is null, it simply returns 1 if there is an event in the queue, but will not remove it.
+        /// As this function implicitly calls <see cref='PumpEvents()'/>, you can only call this function in the thread that set the video mode.
+        /// <see cref='PollEvents()'/> is the favored way of receiving system events since it can be done from the main loop and does not suspend the main loop while waiting on an event to be posted.
+        /// </remarks>
+        /// <seealso cref="GetEventFilter()"/>
+        /// <seealso cref="PeepEvents()"/>
+        /// <seealso cref="PushEvent()"/>
+        /// <seealso cref="SetEventFilter()"/>
+        /// <seealso cref="WaitEvent()"/>
+        /// <seealso cref="WaitEventTimeout()"/>
         [DllImport(DllName, EntryPoint = "SDL_PollEvent")]
-        public static extern uint PollEvent(out Event _event);
+        public static extern uint PollEvent(out Event @event);
     }
 }
