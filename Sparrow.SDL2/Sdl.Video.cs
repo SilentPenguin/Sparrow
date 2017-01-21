@@ -132,7 +132,7 @@ namespace Sparrow.Sdl2
             }
 
             /// <summary>
-            /// The OpenGL context returned by <see cref="CreateContext()"/>
+            /// The OpenGL context handle returned by <see cref="CreateContext()"/>
             /// </summary>
             /// <seealso cref="CreateContext()"/>
             public class Context : SafeHandle
