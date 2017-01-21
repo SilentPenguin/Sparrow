@@ -3,7 +3,7 @@
 
 # OS specific files
 .DS_Store
-.vscode/
+.vscode/settings.json
 
 # User-specific files
 *.suo
