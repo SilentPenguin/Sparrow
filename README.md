@@ -14,6 +14,7 @@ Using `Sparrow.Application` as an entry point generates a window with an OpenGL 
 
 # Roadmap
 
-My next steps will be to flesh out the graphics layer, currently the OpenGL wrapper uses unsafe code. that will be going.
+My next steps will be to flesh out the graphics layer.
+Currently the OpenGL wrapper uses unsafe code, that will be going.
 I also intend to implement input handling and collision detection.
 I am also considering options regarding a hierarchy structure and a component model.
