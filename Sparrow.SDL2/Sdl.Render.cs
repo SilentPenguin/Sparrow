@@ -18,6 +18,10 @@ namespace Sparrow.Sdl2
             TargetTexture = 0x00000008
         }
 
+        /// <summary>
+        /// Renderer handle returned by <see cref="CreateRenderer()"/>
+        /// </summary>
+        /// <seealso cref="CreateRenderer()"/>
         public class Renderer : SafeHandle
         {
             Renderer() : base(new IntPtr(), true){}
