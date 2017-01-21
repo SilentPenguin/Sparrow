@@ -6,8 +6,8 @@ namespace Sparrow.Sdl2
     public static partial class Sdl
     {
         /// <summary>
-		/// The types of renderer that can be created with <see cref='CreateRenderer()'/>
-		/// </summary>
+        /// The types of renderer that can be created with <see cref='CreateRenderer()'/>
+        /// </summary>
         /// <seealso cref="CreateRenderer()"/>
         [Flags]
         public enum RendererFlags : uint
