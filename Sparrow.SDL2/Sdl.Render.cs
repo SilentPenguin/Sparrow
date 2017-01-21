@@ -18,6 +18,20 @@ namespace Sparrow.Sdl2
             TargetTexture = 0x00000008
         }
 
+        public class Renderer : SafeHandle
+        {
+            Renderer() : base(new IntPtr(), true){}
+            public override bool IsInvalid
+            {
+                get { return handle == null; }
+            }
+            protected override bool ReleaseHandle()
+            {
+                DestroyRenderer(this);
+                return true;
+            }
+        }
+
         /// <summary>
         /// Create a 2D rendering context for a window.
         /// </summary>
@@ -34,7 +48,7 @@ namespace Sparrow.Sdl2
         /// <seealso cref="GetNumRenderDrivers()"/>
         /// <seealso cref="GetRendererInfo()"/>
         [DllImport(DllName, EntryPoint = "SDL_CreateRenderer")]
-        public static extern IntPtr CreateRenderer(IntPtr window, int index = -1, RendererFlags flags = 0);
+        public static extern Renderer CreateRenderer(Window window, int index = -1, RendererFlags flags = 0);
 
         /// <summary>
         /// Destroy the rendering context for a window and free associated textures.
@@ -42,6 +56,6 @@ namespace Sparrow.Sdl2
         /// <param name="renderer">A previously created rendering context.</param>
         /// <seealso cref="CreateRenderer()"/>
         [DllImport(DllName, EntryPoint = "SDL_DestroyRenderer")]
-        public static extern void DestroyRenderer(IntPtr renderer);
+        public static extern void DestroyRenderer(Renderer renderer);
     }
 }

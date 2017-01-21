@@ -6,7 +6,7 @@ namespace Sparrow.Sdl2
     public static partial class Sdl
     {
         /// <summary>
-		/// The properties for a window created with <see cref='CreateWindow()'/>
+		/// The properties for a window created with <see cref='CreateWindow()'/>.
 		/// </summary>
         /// <seealso cref="CreateWindow()"/>
         [Flags]
@@ -30,7 +30,7 @@ namespace Sparrow.Sdl2
         }
 
         /// <summary>
-		/// Constants for positioning of a window created with <see cref='CreateWindow()'/>
+		/// Constants for positioning of a window created with <see cref='CreateWindow()'/>.
 		/// </summary>
         /// <seealso cref="CreateWindow()"/>
         public static class WindowPosition
@@ -41,7 +41,24 @@ namespace Sparrow.Sdl2
             public const int Centered =      0x2FFF0000;
         }
 
-        
+        /// <summary>
+        /// The window handle obtained when creating a window with <see cref='CreateWindow()'/>.
+        /// </summary>
+        /// <seealso cref="CreateWindow()"/>
+        public class Window : SafeHandle
+        {
+            Window() : base(new IntPtr(), true){}
+            override public bool IsInvalid
+            {
+                get { return handle == null; }
+            }
+            override protected bool ReleaseHandle()
+            {
+                DestroyWindow(this);
+                return true;
+            }
+        }
+
         /// <summary>
         /// Create a window with the specified position, dimensions, and flags.
         /// </summary>
@@ -55,12 +72,21 @@ namespace Sparrow.Sdl2
         /// <seealso cref="CreateWindowFrom()"/>
         /// <seealso cref="DestroyWindow()"/>
         [DllImport(DllName, EntryPoint = "SDL_CreateWindow")]
-        public static extern IntPtr CreateWindow([In]string title, int x, int y, int w, int h, WindowFlags flags=0);
+        public static extern Window CreateWindow([In]string title, int x, int y, int w, int h, WindowFlags flags=0);
+
+        /// <summary>
+        /// Destroy a window.
+        /// </summary>
+        /// <param name="window">The window to destroy</param>
+        /// <seealso cref="CreateWindow()"/>
+        /// <seealso cref="CreateWindowFrom()"/>
+        [DllImport(DllName, EntryPoint = "SDL_DestroyWindow")]
+        public static extern void DestroyWindow(Window window);
 
         public static class Gl {
 
             /// <summary>
-            /// Different options for the gl context to be set
+            /// Different options for the gl context to be set.
             /// </summary>
             /// <seealso cref="GetAttribute()"/>
             /// <seealso cref="SetAttribute()"/>
@@ -106,6 +132,24 @@ namespace Sparrow.Sdl2
             }
 
             /// <summary>
+            /// The OpenGL context returned by <see cref="CreateContext()"/>
+            /// </summary>
+            /// <seealso cref="CreateContext()"/>
+            public class Context : SafeHandle
+            {
+                Context() : base(new IntPtr(), true) {}
+                public override bool IsInvalid
+                {
+                    get { return handle == null; }
+                }
+                protected override bool ReleaseHandle()
+                {
+                    DeleteContext(this);
+                    return true;
+                }
+            }
+
+            /// <summary>
             /// Set an OpenGL window attribute before window creation.
             /// </summary>
             /// <param name="attr">The OpenGL attribute to set</param>
@@ -147,15 +191,15 @@ namespace Sparrow.Sdl2
             /// <seealso cref="DeleteContext()"/>
             /// <seealso cref="MakeCurrent()"/>
             [DllImport(DllName, EntryPoint = "SDL_GL_CreateContext")]
-            public static extern IntPtr CreateContext(IntPtr window);
+            public static extern Gl.Context CreateContext(Window window);
 
             /// <summary>
             /// Delete an OpenGL context.
             /// </summary>
             /// <param name="context">The OpenGL context to be deleted</param>
-            /// <seealso cref="CreateContext"/>
+            /// <seealso cref="CreateContext()"/>
             [DllImport(DllName, EntryPoint = "SDL_GL_DeleteContext")]
-            public static extern void DeleteContext(IntPtr context);
+            public static extern void DeleteContext(Gl.Context context);
         }
     }
 }
