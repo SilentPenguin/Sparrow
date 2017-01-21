@@ -1,5 +1,6 @@
 # Sparrow
 Sparrow is a game engine framework built in C#.
+Sparrow is intended to be run and consumed by .net core applications.
 
 The core design philosophy behind Sparrow supports the idea of quiet, modular components.
 The design focuses around not forcing design choices onto the programmer.
@@ -13,6 +14,6 @@ Using `Sparrow.Application` as an entry point generates a window with an OpenGL 
 
 # Roadmap
 
-My next steps will be to flesh out the graphics layer, currently the OpenGL wrapper uses unsafe code, so that'll be going.
+My next steps will be to flesh out the graphics layer, currently the OpenGL wrapper uses unsafe code. that will be going.
 I also intend to implement input handling and collision detection.
 I am also considering options regarding a hierarchy structure and a component model.

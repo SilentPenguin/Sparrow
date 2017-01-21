@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 namespace Sparrow
 {
-    public class Engine : Engine<FrameState> {}
-
     /// <summary>
     /// Engine<T> contains the core of sparrow.
     /// </summary>

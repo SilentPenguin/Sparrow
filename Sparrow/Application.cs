@@ -1,6 +1,7 @@
 using System;
 using Sparrow.Pipelines;
 using Sparrow.Sdl2;
+using Engine = Sparrow.Engine<Sparrow.FrameState>;
 
 namespace Sparrow
 {
