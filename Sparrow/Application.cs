@@ -59,6 +59,7 @@ namespace Sparrow
             // create our engine.
             var engine = new Engine();
             engine.action = inputs.ProcessFrame;
+            engine.generator = new FrameGenerator();
             engine.Loop();
         }
     }
