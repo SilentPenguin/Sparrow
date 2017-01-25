@@ -181,6 +181,17 @@ namespace Sparrow.Sdl2
             public static extern int SetSwapInterval(SwapInterval interval);
 
             /// <summary>
+            /// Update a window with OpenGL rendering.
+            /// </summary>
+            /// <param name="window">the window to change</param>
+            /// <remarks>
+            /// This is used with double-buffered OpenGL contexts, which are the default.
+            /// On Mac OS X make sure you bind 0 to the draw framebuffer before swapping the window, otherwise nothing will happen.
+            /// </remarks>
+            [DllImport(DllName, EntryPoint = "SDL_GL_SwapWindow")]
+            public static extern void SwapWindow(Window window);
+
+            /// <summary>
             /// Create an OpenGL context for use with an OpenGL window, and make it current.
             /// </summary>
             /// <param name="window">The window to associate with the context</param>

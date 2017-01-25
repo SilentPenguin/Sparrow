@@ -7,10 +7,15 @@ namespace Sparrow
 {
     public class Application
     {
+
+        public static Sdl.Window window;
+        public static Engine engine;
+
         public static void Main(string[] args)
         {
             CreateWindow();
             CreateEngine();
+            RunEngine();
         }
 
         public static void CreateWindow()
@@ -20,21 +25,21 @@ namespace Sparrow
             s = Sdl.InitSubSystem(Sdl.InitFlag.Video);
             var u = Sdl.WindowPosition.Undefined;
             var f = Sdl.WindowFlags.OpenGL | Sdl.WindowFlags.Shown;
-            var w = Sdl.CreateWindow("Application", u, u, 640, 480, f);
+            window = Sdl.CreateWindow("Application", u, u, 640, 480, f);
 
-            if (w == null) {
+            if (window == null) {
                 var message = Sdl.GetError();
                 throw new Exception(message);
             }
 
-            // Create a GL rendering context 
+            // Create a GL rendering context
             Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.ContextMajorVersion, 2);
             Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.ContextMinorVersion, 0);
             Sdl.Gl.SetSwapInterval(Sdl.Gl.SwapInterval.Immediate);
             Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.DoubleBuffer, 1);
             Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.DepthSize, 24);
-            var c = Sdl.Gl.CreateContext(w);
-            var r = Sdl.CreateRenderer(w, flags: Sdl.RendererFlags.Accelerated | Sdl.RendererFlags.TargetTexture);
+            var c = Sdl.Gl.CreateContext(window);
+            var r = Sdl.CreateRenderer(window, flags: Sdl.RendererFlags.Accelerated | Sdl.RendererFlags.TargetTexture);
         }
 
         public static void CreateEngine()
@@ -58,9 +63,13 @@ namespace Sparrow
             var sequence = new SequentialPipeline(actions);
 
             // create our engine.
-            var engine = new Engine();
+            engine = new Engine();
             engine.action = inputs.ProcessFrame;
             engine.generator = new FrameGenerator();
+        }
+
+        public static void RunEngine()
+        {
             engine.Loop();
         }
     }

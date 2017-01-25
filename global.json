@@ -1,5 +1,6 @@
 {
     "projects": [
+        "Example.Basic",
         "Sparrow",
         "Sparrow.Core",
         "Sparrow.Graphics",
