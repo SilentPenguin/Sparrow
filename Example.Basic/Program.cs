@@ -24,8 +24,8 @@ namespace ConsoleApplication
     public class Program
     {
 
-        static string vertSource = File.ReadAllText("Example.Basic/shader.vert");
-        static string fragSource = File.ReadAllText("Example.Basic/shader.frag");
+        static string vertSource = File.ReadAllText("shader.vert");
+        static string fragSource = File.ReadAllText("shader.frag");
 
         static Gl.Shader vertShader;
         static Gl.Shader fragShader;

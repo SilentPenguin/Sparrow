@@ -35,7 +35,7 @@ namespace Sparrow
             foreach (var frame in generator)
             {
                 action(frame);
-                Thread.Sleep(1);
+                //Thread.Sleep(1);
             }
         }
     }
