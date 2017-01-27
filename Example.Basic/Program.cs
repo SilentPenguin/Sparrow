@@ -6,21 +6,21 @@ using Sparrow.Pipelines;
 using Sparrow.OpenGL;
 using Sparrow.Sdl2;
 
-/// <summary>
-/// This is a super basic example to prove that Sparrow runs.
-///
-/// This uses the Sparrow.OpenGL assembly, this assembly was created
-/// specifically for this example as a wrapper to OpenGL without unmanaged types
-///
-/// As a result, this example may change in future releases to reflect
-/// adjustments made to Sparrow.
-///
-/// This example demonstrates how the engine is hookable, and that the pipeline
-/// can be structured differently, or replaced to suit the needs of the game.
-/// </summary>
-
 namespace ConsoleApplication
 {
+
+    /// <summary>
+    /// This is a super basic example to prove that Sparrow runs.
+    ///
+    /// This uses the Sparrow.OpenGL assembly, this assembly was created
+    /// specifically for this example as a wrapper to OpenGL without unmanaged types
+    ///
+    /// As a result, this example may change in future releases to reflect
+    /// adjustments made to Sparrow.
+    ///
+    /// This example demonstrates how the engine is hookable, and that the pipeline
+    /// can be structured differently, or replaced to suit the needs of the game.
+    /// </summary>
     public class Program
     {
 
@@ -30,7 +30,6 @@ namespace ConsoleApplication
         static Gl.Shader vertShader;
         static Gl.Shader fragShader;
         static Gl.Program program;
-
         public static void Main(string[] args)
         {
             SetupEnvironment();
@@ -65,7 +64,7 @@ namespace ConsoleApplication
             Gl.GenBuffers(1, vboArray);
             uint vbo = vboArray[0];
             Gl.BindBuffer(Gl.BufferTarget.ArrayBuffer, vbo);
-            float[] vertices = new float[]{0.0f, 0.5f, 0.45f, -0.5f, -0.45f, -0.5f};
+            float[] vertices = {0.0f, 0.5f, 0.45f, -0.5f, -0.45f, -0.5f};
             IntPtr pointer = GCHandle.Alloc(vertices, GCHandleType.Pinned).AddrOfPinnedObject();
             int size = vertices.Length * sizeof(float);
             Gl.BufferData(Gl.BufferTarget.ArrayBuffer, size, pointer, Gl.BufferUsage.StaticDraw);
