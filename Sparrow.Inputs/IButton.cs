@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Sparrow.Inputs
 {
-    public interface IButton
+    public interface IButton : IInput
     {
     }
 }

@@ -1,18 +1,24 @@
 using System;
+using Sparrow.Pipelines;
 using Sparrow.Sdl2;
 
-namespace Sparrow.Pipelines
+namespace Sparrow.Inputs
 {
-    public class InputsPipeline : VariableRatePipeline {
-        Sdl.Event e;
+    public class InputsPipeline : VariableRatePipeline
+    {
+
+        EventQueue eventQueue = new EventQueue();
+
         public override void ProcessFrame(FrameState frame)
         {
-            while(Sdl.PollEvent(out e) != 0)
+            foreach (var evt in eventQueue)
             {
-                if (e.type == Sdl.EventType.Quit)
+                switch (evt.type)
                 {
-                    Sdl.Quit();
-                    Environment.Exit(0);
+                    case Sdl.EventType.Quit:
+                        Sdl.Quit();
+                        Environment.Exit(0);
+                        break;
                 }
             }
         }
