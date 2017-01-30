@@ -7,10 +7,6 @@ namespace Sparrow.Inputs
 {
     public class EventQueue : IEnumerable<Sdl.Event>
     {
-        public EventQueue()
-        {
-        }
-
         public IEnumerator<Sdl.Event> GetEnumerator()
         {
             Sdl.Event evt;

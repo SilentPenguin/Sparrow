@@ -48,12 +48,14 @@ namespace ConsoleApplication
 
         public static void SetupPipelines()
         {
-            var inputs = new InputsPipeline();
+            Application.inputs = new InputsPipeline();
             var actions = new Action<FrameState>[]
             {
-                inputs.ProcessFrame,
+                Application.inputs.ProcessFrame,
                 Tick
             };
+
+            Application.inputs.Quit += Application.OnQuit;
 
             var sequence = new SequentialPipeline(actions);
             Application.engine.action = sequence.ProcessFrame;
@@ -100,6 +102,10 @@ namespace ConsoleApplication
             Gl.Clear(Gl.ClearBufferMask.Color);
             Gl.DrawArrays(Gl.PrimitiveType.Triangles, 0, 3);
             Sdl.Gl.SwapWindow(Application.window);
+            if (Application.inputs.Mouse.Left.IsPressed)
+            {
+                Console.WriteLine("left mouse button is pressed");
+            }
         }
     }
 }

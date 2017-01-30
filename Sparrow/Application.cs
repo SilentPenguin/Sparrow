@@ -12,6 +12,11 @@ namespace Sparrow
         public static Sdl.Window window;
         public static Engine engine;
 
+        public static InputsPipeline inputs;
+        public static PhysicsPipeline physics;
+        public static AnimationPipeline animation;
+        public static RenderPipeline rendering;
+
         public static void Main(string[] args)
         {
             CreateWindow();
@@ -41,24 +46,26 @@ namespace Sparrow
             Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.DepthSize, 24);
             var c = Sdl.Gl.CreateContext(window);
             var r = Sdl.CreateRenderer(window, flags: Sdl.RendererFlags.Accelerated | Sdl.RendererFlags.TargetTexture);
-        }
-
+        }   
+          
         public static void CreateEngine()
         {
             // The pipeline processors for our application.
             // These are responsible for consuming frames
             // created by the engine class.
-            var inputs = new InputsPipeline();
-            var physics = new PhysicsPipeline();
-            var animation = new AnimationPipeline();
-            var render = new RenderPipeline();
+            inputs = new InputsPipeline();
+            physics = new PhysicsPipeline();
+            animation = new AnimationPipeline();
+            rendering = new RenderPipeline();
+
+            inputs.Quit += OnQuit;
 
             var actions = new Action<FrameState>[]
             {
                 inputs.ProcessFrame,
                 physics.ProcessFrame,
                 animation.ProcessFrame,
-                render.ProcessFrame
+                rendering.ProcessFrame
             };
 
             var sequence = new SequentialPipeline(actions);
@@ -72,6 +79,12 @@ namespace Sparrow
         public static void RunEngine()
         {
             engine.Loop();
+        }
+
+        public static void OnQuit(Sdl.QuitEvent evt)
+        {
+            Sdl.Quit();
+            Environment.Exit(0);
         }
     }
 }

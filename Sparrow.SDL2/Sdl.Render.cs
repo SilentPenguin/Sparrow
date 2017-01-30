@@ -25,10 +25,12 @@ namespace Sparrow.Sdl2
         public class Renderer : SafeHandle
         {
             Renderer() : base(new IntPtr(), true){}
+
             public override bool IsInvalid
             {
                 get { return handle == null; }
             }
+
             protected override bool ReleaseHandle()
             {
                 DestroyRenderer(this);

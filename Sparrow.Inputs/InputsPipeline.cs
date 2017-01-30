@@ -7,7 +7,23 @@ namespace Sparrow.Inputs
     public class InputsPipeline : VariableRatePipeline
     {
 
-        EventQueue eventQueue = new EventQueue();
+        public InputsPipeline()
+        {
+            Mouse = new Mouse();
+            MouseMotion += Mouse.OnMouseMove;
+            MouseButton += Mouse.OnMouseButton;
+            MouseWheel += Mouse.OnMouseWheel;
+        }
+
+        private readonly EventQueue eventQueue = new EventQueue();
+
+        public event Action<Sdl.QuitEvent> Quit;
+        public event Action<Sdl.KeyboardEvent> KeyboardKey;
+        public event Action<Sdl.MouseMotionEvent> MouseMotion;
+        public event Action<Sdl.MouseButtonEvent> MouseButton;
+        public event Action<Sdl.MouseWheelEvent> MouseWheel;
+
+        public Mouse Mouse { get; private set; }
 
         public override void ProcessFrame(FrameState frame)
         {
@@ -16,8 +32,21 @@ namespace Sparrow.Inputs
                 switch (evt.type)
                 {
                     case Sdl.EventType.Quit:
-                        Sdl.Quit();
-                        Environment.Exit(0);
+                        Quit(evt.quit);
+                        break;
+                    case Sdl.EventType.KeyDown:
+                    case Sdl.EventType.KeyUp:
+                        KeyboardKey(evt.key);
+                        break;
+                    case Sdl.EventType.MouseMotion:
+                        MouseMotion(evt.motion);
+                        break;
+                    case Sdl.EventType.MouseButtonDown:
+                    case Sdl.EventType.MouseButtonUp:
+                        MouseButton(evt.button);
+                        break;
+                    case Sdl.EventType.MouseWheel:
+                        MouseWheel(evt.wheel);
                         break;
                 }
             }

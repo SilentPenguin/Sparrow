@@ -90,6 +90,37 @@ namespace Sparrow.Sdl2
             LastEvent = 0xFFFF
         }
 
+        public enum MouseWheelDirection : uint
+        {
+            Normal,
+            Flipped
+        }
+
+        [Flags]
+        public enum MouseButton : byte
+        {
+            Left = 1 << 0,
+            Middle = 1 << 1,
+            Right = 1 << 2,
+            X1 = 1 << 3,
+            X2 = 1 << 4,
+        }
+
+        public enum ButtonState : byte
+        {
+            Pressed = 1,
+            Released = 0,
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct KeySymbol
+        {
+            public Scancode scancode;
+            public Keycode keycode;
+            public KeyModifier modifers; /* UInt16 */
+            public uint unicode; /* Deprecated */
+        }
+
         /// <summary>
 		/// The event returned when quit is requested
 		/// </summary>
@@ -98,7 +129,64 @@ namespace Sparrow.Sdl2
         public struct QuitEvent
         {
             public EventType type;
-            public UInt32 timestamp;
+            public uint timestamp;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct KeyboardEvent
+        {
+            public EventType type;
+            public uint timestamp;
+            public uint windowID;
+            public ButtonState state;
+            public byte repeat; /* non-zero if this is a repeat */
+            private byte padding2;
+            private byte padding3;
+            public KeySymbol keySymbol;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct MouseMotionEvent
+        {
+            public EventType type;
+            public uint timestamp;
+            public uint windowId;
+            public uint which;
+            public MouseButton state;
+            private byte padding1;
+            private byte padding2;
+            private byte padding3;
+            public int x;
+            public int y;
+            public int xrel;
+            public int yrel;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct MouseButtonEvent
+        {
+            public EventType type;
+            public uint timestamp;
+            public uint windowId;
+            public uint which;
+            public MouseButton button;
+            public ButtonState state;
+            public byte clicks; /* click count */
+            private byte padding1;
+            public int x;
+            public int y;
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct MouseWheelEvent
+        {
+            public EventType type;
+            public uint timestamp;
+            public uint windowId;
+            public uint which;
+            public int x; /* amount scrolled horizontally */
+            public int y; /* amount scrolled vertically */
+            public MouseWheelDirection direction; /* Set to one of the SDL_MOUSEWHEEL_* defines */
         }
 
         /// <summary>
@@ -111,12 +199,16 @@ namespace Sparrow.Sdl2
             [FieldOffset(0)] public EventType type;
             /*
             [FieldOffset(0)] public WindowEvent window;
+            */
             [FieldOffset(0)] public KeyboardEvent key;
+            /*
             [FieldOffset(0)] public TextEditingEvent edit;
             [FieldOffset(0)] public TextInputEvent text;
+            */
             [FieldOffset(0)] public MouseMotionEvent motion;
             [FieldOffset(0)] public MouseButtonEvent button;
             [FieldOffset(0)] public MouseWheelEvent wheel;
+            /*
             [FieldOffset(0)] public JoyAxisEvent jaxis;
             [FieldOffset(0)] public JoyBallEvent jball;
             [FieldOffset(0)] public JoyHatEvent jhat;
