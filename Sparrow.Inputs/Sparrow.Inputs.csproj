@@ -11,21 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sparrow.Core\Sparrow.Core.csproj">
-      <Project>{070C890B-3889-4A36-9E51-04B917B98116}</Project>
-      <Name>Sparrow.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sparrow.Pipelines\Sparrow.Pipelines.csproj">
-      <Project>{F9F818B7-DAE3-4C4C-A305-0DE9E0EF162B}</Project>
-      <Name>Sparrow.Pipelines</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sparrow.SDL2\Sparrow.SDL2.csproj">
       <Project>{92AC116C-E44B-47A3-AE87-40E71E80056E}</Project>
       <Name>Sparrow.SDL2</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sparrow.Inputs\Sparrow.Inputs.csproj">
-      <Project>{4A82CECF-7338-49A0-BD8E-19D426C9D3FE}</Project>
-      <Name>Sparrow.Inputs</Name>
+    <ProjectReference Include="..\Sparrow.Pipelines\Sparrow.Pipelines.csproj">
+      <Project>{F9F818B7-DAE3-4C4C-A305-0DE9E0EF162B}</Project>
+      <Name>Sparrow.Pipelines</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

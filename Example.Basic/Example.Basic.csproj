@@ -32,5 +32,9 @@
       <Project>{070C890B-3889-4A36-9E51-04B917B98116}</Project>
       <Name>Sparrow.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Sparrow.Inputs\Sparrow.Inputs.csproj">
+      <Project>{4A82CECF-7338-49A0-BD8E-19D426C9D3FE}</Project>
+      <Name>Sparrow.Inputs</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

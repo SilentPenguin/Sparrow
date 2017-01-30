@@ -2,6 +2,7 @@
 using System.IO;
 using System.Runtime.InteropServices;
 using Sparrow;
+using Sparrow.Inputs;
 using Sparrow.Pipelines;
 using Sparrow.OpenGL;
 using Sparrow.Sdl2;
@@ -30,6 +31,7 @@ namespace ConsoleApplication
         static Gl.Shader vertShader;
         static Gl.Shader fragShader;
         static Gl.Program program;
+
         public static void Main(string[] args)
         {
             SetupEnvironment();

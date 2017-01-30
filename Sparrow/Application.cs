@@ -1,5 +1,6 @@
 using System;
 using Sparrow.Pipelines;
+using Sparrow.Inputs;
 using Sparrow.Sdl2;
 using Engine = Sparrow.Engine<Sparrow.FrameState>;
 
