@@ -10,6 +10,9 @@ namespace Sparrow
     {
 
         public static Sdl.Window window;
+        public static Sdl.Gl.Context context;
+        public static Sdl.Renderer renderer;
+
         public static Engine engine;
 
         public static InputsPipeline inputs;
@@ -44,10 +47,10 @@ namespace Sparrow
             Sdl.Gl.SetSwapInterval(Sdl.Gl.SwapInterval.Immediate);
             Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.DoubleBuffer, 1);
             Sdl.Gl.SetAttribute(Sdl.Gl.Attribute.DepthSize, 24);
-            var c = Sdl.Gl.CreateContext(window);
-            var r = Sdl.CreateRenderer(window, flags: Sdl.RendererFlags.Accelerated | Sdl.RendererFlags.TargetTexture);
-        }   
-          
+            context = Sdl.Gl.CreateContext(window);
+            renderer = Sdl.CreateRenderer(window, flags: Sdl.RendererFlags.Accelerated | Sdl.RendererFlags.TargetTexture);
+        }
+
         public static void CreateEngine()
         {
             // The pipeline processors for our application.

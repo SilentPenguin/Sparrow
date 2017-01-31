@@ -4,15 +4,12 @@ using Sparrow.Sdl2;
 
 namespace Sparrow.Inputs
 {
-    public class InputsPipeline : VariableRatePipeline
+    public class InputsPipeline : VariableRatePipeline, IMouseDispatcher, IKeyboardDispatcher
     {
 
         public InputsPipeline()
         {
-            Mouse = new Mouse();
-            MouseMotion += Mouse.OnMouseMove;
-            MouseButton += Mouse.OnMouseButton;
-            MouseWheel += Mouse.OnMouseWheel;
+            Mouse = new Mouse(this);
         }
 
         private readonly EventQueue eventQueue = new EventQueue();

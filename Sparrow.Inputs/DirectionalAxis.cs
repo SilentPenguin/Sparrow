@@ -3,13 +3,13 @@ namespace Sparrow.Inputs
 {
     public class DirectionalAxis
     {
-        public DirectionalAxis(IAxis horizontal, IAxis vertical)
+        public DirectionalAxis()
         {
-            Horizontal = horizontal;
-            Vertical = vertical;
+            Horizontal = new Axis();
+            Vertical = new Axis();
         }
 
-        public IAxis Horizontal { get; private set; }
-        public IAxis Vertical { get; private set; }
+        public Axis Horizontal { get; private set; }
+        public Axis Vertical { get; private set; }
     }
 }

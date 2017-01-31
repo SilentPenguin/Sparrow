@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Sparrow.Inputs
 {
-    public class Device
+    public abstract class Device
     {
         public Device(string name)
         {
