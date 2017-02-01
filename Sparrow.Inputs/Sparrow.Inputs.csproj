@@ -11,12 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sparrow.Events\Sparrow.Events.csproj">
-      <Project>{8C33D602-F3BD-4FA1-BBF5-BDBD4A864F95}</Project>
-      <Name>Sparrow.Events</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Old\" />
+    <ProjectReference Include="..\Sparrow.Events\Sparrow.Events.csproj"/>
+    <ProjectReference Include="..\Sparrow.SDL2\Sparrow.SDL2.csproj"/>
   </ItemGroup>
 </Project>

@@ -9,8 +9,4 @@
       <Version>1.6.1</Version>
     </PackageReference>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Linq\" />
-  </ItemGroup>
 </Project>

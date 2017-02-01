@@ -1,7 +1,10 @@
 using System;
-using Sparrow.Pipelines;
+
 using Sparrow.Events;
+using Sparrow.Inputs;
+using Sparrow.Pipelines;
 using Sparrow.Sdl2;
+
 using Engine = Sparrow.Engine<Sparrow.FrameState>;
 
 namespace Sparrow
@@ -14,6 +17,8 @@ namespace Sparrow
         public static Sdl.Renderer renderer;
 
         public static Engine engine;
+
+        public static StateContainer inputStates;
 
         public static EventPipeline events;
         public static PhysicsPipeline physics;
@@ -70,6 +75,9 @@ namespace Sparrow
                 animation.ProcessFrame,
                 rendering.ProcessFrame
             };
+
+            inputStates = new StateContainer();
+            inputStates.Attach(events);
 
             var sequence = new SequentialPipeline(actions);
 

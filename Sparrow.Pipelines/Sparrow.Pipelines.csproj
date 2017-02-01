@@ -11,13 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sparrow.SDL2\Sparrow.SDL2.csproj">
-      <Project>{92AC116C-E44B-47A3-AE87-40E71E80056E}</Project>
-      <Name>Sparrow.SDL2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sparrow.Core\Sparrow.Core.csproj">
-      <Project>{070C890B-3889-4A36-9E51-04B917B98116}</Project>
-      <Name>Sparrow.Core</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\Sparrow.SDL2\Sparrow.SDL2.csproj"/>
+    <ProjectReference Include="..\Sparrow.Core\Sparrow.Core.csproj"/>
   </ItemGroup>
 </Project>

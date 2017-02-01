@@ -12,29 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sparrow\Sparrow.csproj">
-      <Project>{215AA83E-584B-4B73-8C39-8718735F2701}</Project>
-      <Name>Sparrow</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sparrow.Pipelines\Sparrow.Pipelines.csproj">
-      <Project>{F9F818B7-DAE3-4C4C-A305-0DE9E0EF162B}</Project>
-      <Name>Sparrow.Pipelines</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sparrow.SDL2\Sparrow.SDL2.csproj">
-      <Project>{92AC116C-E44B-47A3-AE87-40E71E80056E}</Project>
-      <Name>Sparrow.SDL2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sparrow.OpenGL\Sparrow.OpenGL.csproj">
-      <Project>{275EC651-7A86-40BC-B150-9F2BC6116D4F}</Project>
-      <Name>Sparrow.OpenGL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sparrow.Core\Sparrow.Core.csproj">
-      <Project>{070C890B-3889-4A36-9E51-04B917B98116}</Project>
-      <Name>Sparrow.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sparrow.Events\Sparrow.Events.csproj">
-      <Project>{8C33D602-F3BD-4FA1-BBF5-BDBD4A864F95}</Project>
-      <Name>Sparrow.Events</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\Sparrow\Sparrow.csproj"/>
+    <ProjectReference Include="..\Sparrow.Pipelines\Sparrow.Pipelines.csproj"/>
+    <ProjectReference Include="..\Sparrow.SDL2\Sparrow.SDL2.csproj"/>
+    <ProjectReference Include="..\Sparrow.OpenGL\Sparrow.OpenGL.csproj"/>
+    <ProjectReference Include="..\Sparrow.Core\Sparrow.Core.csproj"/>
+    <ProjectReference Include="..\Sparrow.Events\Sparrow.Events.csproj"/>
+    <ProjectReference Include="..\Sparrow.Events\Sparrow.Inputs.csproj"/>
   </ItemGroup>
 </Project>
