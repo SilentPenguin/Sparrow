@@ -3,6 +3,11 @@ namespace Sparrow.Sdl2
 {
     public static partial class Sdl
     {
+
+        /* This is not a key, simply marks the number of scancodes
+         * so that you know how big to make your arrays. */
+        public const int NumScancodes = 512;
+        
         public enum Scancode
         {
             Unknown = 0,
@@ -142,9 +147,9 @@ namespace Sparrow.Sdl2
             VolumeUp = 128,
             VolumeDown = 129,
             /* not sure whether there's a reason to enable these */
-            /*  LOCKINGCAPSLOCK = 130, */
-            /*  LOCKINGNUMLOCK = 131, */
-            /*  LOCKINGSCROLLLOCK = 132, */
+            /* LockingCapsLock = 130, */
+            /* LockingNumLock = 131, */
+            /* LockingScrollLock = 132, */
             KeypadComma = 133,
             KeypadEqualsAs400 = 134,
 
@@ -269,10 +274,6 @@ namespace Sparrow.Sdl2
 
             App1 = 283,
             App2 = 284,
-
-            /* This is not a key, simply marks the number of scancodes
-             * so that you know how big to make your arrays. */
-            NumScancodes = 512
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Runtime.InteropServices;
 using Sparrow;
-using Sparrow.Inputs;
+using Sparrow.Events;
 using Sparrow.Pipelines;
 using Sparrow.OpenGL;
 using Sparrow.Sdl2;
@@ -48,14 +48,14 @@ namespace ConsoleApplication
 
         public static void SetupPipelines()
         {
-            Application.inputs = new InputsPipeline();
+            Application.events = new EventPipeline();
             var actions = new Action<FrameState>[]
             {
-                Application.inputs.ProcessFrame,
+                Application.events.ProcessFrame,
                 Tick
             };
 
-            Application.inputs.Quit += Application.OnQuit;
+            Application.events.Subscribe<Sdl.QuitEvent>(Application.OnQuit);
 
             var sequence = new SequentialPipeline(actions);
             Application.engine.action = sequence.ProcessFrame;
@@ -102,10 +102,12 @@ namespace ConsoleApplication
             Gl.Clear(Gl.ClearBufferMask.Color);
             Gl.DrawArrays(Gl.PrimitiveType.Triangles, 0, 3);
             Sdl.Gl.SwapWindow(Application.window);
+            /*
             if (Application.inputs.Mouse.Left.IsPressed)
             {
                 Console.WriteLine("left mouse button is pressed");
             }
+            */
         }
     }
 }

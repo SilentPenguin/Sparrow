@@ -1,6 +1,6 @@
 using System;
 using Sparrow.Pipelines;
-using Sparrow.Inputs;
+using Sparrow.Events;
 using Sparrow.Sdl2;
 using Engine = Sparrow.Engine<Sparrow.FrameState>;
 
@@ -15,7 +15,7 @@ namespace Sparrow
 
         public static Engine engine;
 
-        public static InputsPipeline inputs;
+        public static EventPipeline events;
         public static PhysicsPipeline physics;
         public static AnimationPipeline animation;
         public static RenderPipeline rendering;
@@ -56,16 +56,16 @@ namespace Sparrow
             // The pipeline processors for our application.
             // These are responsible for consuming frames
             // created by the engine class.
-            inputs = new InputsPipeline();
+            events = new EventPipeline();
             physics = new PhysicsPipeline();
             animation = new AnimationPipeline();
             rendering = new RenderPipeline();
 
-            inputs.Quit += OnQuit;
+            events.Subscribe<Sdl.QuitEvent>(OnQuit);
 
             var actions = new Action<FrameState>[]
             {
-                inputs.ProcessFrame,
+                events.ProcessFrame,
                 physics.ProcessFrame,
                 animation.ProcessFrame,
                 rendering.ProcessFrame
@@ -75,7 +75,7 @@ namespace Sparrow
 
             // create our engine.
             engine = new Engine();
-            engine.action = inputs.ProcessFrame;
+            engine.action = events.ProcessFrame;
             engine.generator = new FrameGenerator();
         }
 

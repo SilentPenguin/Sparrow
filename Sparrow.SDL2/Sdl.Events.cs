@@ -137,7 +137,7 @@ namespace Sparrow.Sdl2
         {
             public EventType type;
             public uint timestamp;
-            public uint windowID;
+            public uint windowId;
             public ButtonState state;
             public byte repeat; /* non-zero if this is a repeat */
             private byte padding2;
@@ -188,7 +188,48 @@ namespace Sparrow.Sdl2
             public int y; /* amount scrolled vertically */
             public MouseWheelDirection direction; /* Set to one of the SDL_MOUSEWHEEL_* defines */
         }
-
+        
+        [StructLayout(LayoutKind.Sequential)]
+        public struct ControllerAxisEvent
+        {
+            public EventType type;
+            public uint timestamp;
+            public int which; /* SDL_JoystickID */
+            public byte axis;
+            private byte padding1;
+            private byte padding2;
+            private byte padding3;
+            public short axisValue; /* value, lolC# */
+            private ushort padding4;
+        }
+        
+        [StructLayout(LayoutKind.Sequential)]
+        public struct ControllerDeviceEvent
+        {
+            public EventType type;
+            public uint timestamp;
+            public int which;
+        }
+        
+        [StructLayout(LayoutKind.Sequential)]
+        public struct ControllerButtonEvent
+        {
+            public EventType type;
+            public uint timestamp;
+            public int which; /* SDL_JoystickID */
+            public byte button;
+            public byte state;
+            private byte padding1;
+            private byte padding2;
+        }
+        
+        [StructLayout(LayoutKind.Sequential)]
+        public struct CommonEvent
+        {
+            public EventType type;
+            public uint timestamp;
+        }
+        
         /// <summary>
 		/// The full event structure returned and used by <see cref='PollEvent()'/>
 		/// </summary>
@@ -196,7 +237,7 @@ namespace Sparrow.Sdl2
         [StructLayout(LayoutKind.Explicit, Size=56)]
         public struct Event
         {
-            [FieldOffset(0)] public EventType type;
+            [FieldOffset(0)] public CommonEvent common;
             /*
             [FieldOffset(0)] public WindowEvent window;
             */
@@ -214,10 +255,10 @@ namespace Sparrow.Sdl2
             [FieldOffset(0)] public JoyHatEvent jhat;
             [FieldOffset(0)] public JoyButtonEvent jbutton;
             [FieldOffset(0)] public JoyDeviceEvent jdevice;
+            */
             [FieldOffset(0)] public ControllerAxisEvent caxis;
             [FieldOffset(0)] public ControllerButtonEvent cbutton;
             [FieldOffset(0)] public ControllerDeviceEvent cdevice;
-            */
             [FieldOffset(0)] public QuitEvent quit;
             /*
             [FieldOffset(0)] public UserEvent user;

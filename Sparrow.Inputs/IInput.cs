@@ -1,8 +1,8 @@
 ﻿using System;
 namespace Sparrow.Inputs
 {
-    public interface IInput
+    public interface IInput<T>
     {
-        float Value { get; }
+        public T Value { get; }
     }
 }
