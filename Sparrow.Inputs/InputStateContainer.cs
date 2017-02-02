@@ -4,7 +4,7 @@ using Sparrow.Events;
 
 namespace Sparrow.Inputs
 {
-    public class StateContainer
+    public class InputStateContainer
     {
 
         public void HandleInput(InputEvent input)

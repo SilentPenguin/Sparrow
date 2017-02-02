@@ -45,7 +45,7 @@ namespace Sparrow.Events
             foreach (var evt in eventQueue)
             {
                 var type = evt.GetType();
-                if (actions.TryGetValue(type, out action)) continue;
+                if (!actions.TryGetValue(type, out action)) continue;
                 action(evt);
             }
         }

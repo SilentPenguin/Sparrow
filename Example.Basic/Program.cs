@@ -63,7 +63,7 @@ namespace ConsoleApplication
             var sequence = new SequentialPipeline(actions);
             Application.engine.action = sequence.ProcessFrame;
 
-            Application.inputStates = new StateContainer();
+            Application.inputStates = new InputStateContainer();
             Application.events.Subscribe<InputEvent>(Application.inputStates.HandleInput);
         }
 

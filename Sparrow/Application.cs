@@ -18,7 +18,7 @@ namespace Sparrow
 
         public static Engine engine;
 
-        public static StateContainer inputStates;
+        public static InputStateContainer inputStates;
 
         public static EventPipeline events;
         public static PhysicsPipeline physics;
@@ -76,7 +76,7 @@ namespace Sparrow
                 rendering.ProcessFrame
             };
 
-            inputStates = new StateContainer();
+            inputStates = new InputStateContainer();
             events.Subscribe<InputEvent>(inputStates.HandleInput);
 
             var sequence = new SequentialPipeline(actions);
