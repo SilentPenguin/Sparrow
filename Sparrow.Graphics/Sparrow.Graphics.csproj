@@ -11,9 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sparrow.Numerics\Sparrow.Numerics.csproj">
-      <Project>{E1B7FAC9-A6F4-46AB-9EB2-BDDA075C8CCB}</Project>
-      <Name>Sparrow.Numerics</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\Sparrow.Numerics\Sparrow.Numerics.csproj"/>
   </ItemGroup>
 </Project>

@@ -58,13 +58,13 @@ namespace ConsoleApplication
                 Tick
             };
 
-            Application.events.Subscribe<Sdl.QuitEvent>(Application.OnQuit);
+            Application.events.Subscribe<QuitEvent>(Application.OnQuit);
 
             var sequence = new SequentialPipeline(actions);
             Application.engine.action = sequence.ProcessFrame;
 
             Application.inputStates = new StateContainer();
-            Application.inputStates.Attach(Application.events);
+            Application.events.Subscribe<InputEvent>(Application.inputStates.HandleInput);
         }
 
         public static void SetupGl()

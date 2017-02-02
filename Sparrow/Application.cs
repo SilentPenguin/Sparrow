@@ -66,7 +66,7 @@ namespace Sparrow
             animation = new AnimationPipeline();
             rendering = new RenderPipeline();
 
-            events.Subscribe<Sdl.QuitEvent>(OnQuit);
+            events.Subscribe<QuitEvent>(OnQuit);
 
             var actions = new Action<FrameState>[]
             {
@@ -77,7 +77,7 @@ namespace Sparrow
             };
 
             inputStates = new StateContainer();
-            inputStates.Attach(events);
+            events.Subscribe<InputEvent>(inputStates.HandleInput);
 
             var sequence = new SequentialPipeline(actions);
 
@@ -92,7 +92,7 @@ namespace Sparrow
             engine.Loop();
         }
 
-        public static void OnQuit(Sdl.QuitEvent evt)
+        public static void OnQuit(QuitEvent evt)
         {
             Sdl.Quit();
             Environment.Exit(0);
