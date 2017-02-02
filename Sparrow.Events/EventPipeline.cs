@@ -40,10 +40,13 @@ namespace Sparrow.Events
 
         public override void ProcessFrame(FrameState frame)
         {
+            Action<Event> action;
+
             foreach (var evt in eventQueue)
             {
                 var type = evt.GetType();
-                if (actions.ContainsKey(type)) actions[type](evt);
+                if (actions.TryGetValue(type, out action)) continue;
+                action(evt);
             }
         }
 
