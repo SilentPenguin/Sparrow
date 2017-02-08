@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
+
 using Sparrow.Pipelines;
 using Sparrow.Sdl2;
 
@@ -34,8 +35,19 @@ namespace Sparrow.Events
         private Dictionary<Type, Action<Event>> actions;
         private static IEnumerable<Type> eventTypes = new List<Type>
         {
-            typeof(QuitEvent),
+            typeof(ControllerAxisEvent),
+            typeof(ControllerButtonEvent),
+            typeof(ControllerDeviceEvent),
+            typeof(JoystickAxisEvent),
+            typeof(JoystickBallEvent),
+            typeof(JoystickButtonEvent),
+            typeof(JoystickDeviceEvent),
+            typeof(JoystickHatEvent),
             typeof(KeyboardEvent),
+            typeof(MouseButtonEvent),
+            typeof(MouseMoveEvent),
+            typeof(MouseWheelEvent),
+            typeof(QuitEvent),
         };
 
         public override void ProcessFrame(FrameState frame)

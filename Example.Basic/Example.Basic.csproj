@@ -18,6 +18,6 @@
     <ProjectReference Include="..\Sparrow.OpenGL\Sparrow.OpenGL.csproj"/>
     <ProjectReference Include="..\Sparrow.Core\Sparrow.Core.csproj"/>
     <ProjectReference Include="..\Sparrow.Events\Sparrow.Events.csproj"/>
-    <ProjectReference Include="..\Sparrow.Events\Sparrow.Inputs.csproj"/>
+    <ProjectReference Include="..\Sparrow.Inputs\Sparrow.Inputs.csproj"/>
   </ItemGroup>
 </Project>

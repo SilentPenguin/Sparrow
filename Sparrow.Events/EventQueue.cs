@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+
 using Sparrow.Sdl2;
 
 namespace Sparrow.Events
@@ -22,20 +23,44 @@ namespace Sparrow.Events
             {
                 switch (evt.common.type)
                 {
-                    case Sdl.EventType.Quit:
-                        yield return new QuitEvent();
+                    case Sdl.EventType.ControllerAxisEvent:
+                        yield return new ControllerAxisEvent();
+                        break;
+                    case Sdl.EventType.ControllerButtonEvent:
+                        yield return new ControllerButtonEvent();
+                        break;
+                    case Sdl.EventType.ControllerDeviceEvent:
+                        yield return new ControllerDeviceEvent();
+                        break;
+                    case Sdl.EventType.JoystickAxisEvent:
+                        yield return new JoystickAxisEvent();
+                        break;
+                    case Sdl.EventType.JoystickBallEvent:
+                        yield return new JoystickBallEvent();
+                        break;
+                    case Sdl.EventType.JoystickButtonEvent:
+                        yield return new JoystickButtonEvent();
+                        break;
+                    case Sdl.EventType.JoystickDeviceEvent:
+                        yield return new JoystickDeviceEvent();
+                        break;
+                    case Sdl.EventType.JoystickHatEvent:
+                        yield return new JoystickHatEvent();
                         break;
                     case Sdl.EventType.KeyDown:
                     case Sdl.EventType.KeyUp:
                         yield return new KeyboardEvent();
                         break;
-                    // case Sdl.EventType.MouseMotion:
-                    //     yield return new MouseMoveEvent(evt);
-                    //     break;
-                    // case Sdl.EventType.MouseButtonDown:
-                    // case Sdl.EventType.MouseButtonUp:
-                    //     yield return new MouseButtonEvent(evt);
-                    //     break;
+                    case Sdl.EventType.MouseButtonDown:
+                    case Sdl.EventType.MouseButtonUp:
+                        yield return new MouseButtonEvent();
+                        break;
+                    case Sdl.EventType.MouseMotion:
+                        yield return new MouseMoveEvent();
+                        break;
+                    case Sdl.EventType.Quit:
+                        yield return new QuitEvent();
+                        break;
                 }
             }
         }
