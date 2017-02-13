@@ -16,6 +16,7 @@ namespace Sparrow.Events
     /// </remarks>
     public class EventQueue : IEnumerable<Event>
     {
+
         public IEnumerator<Event> GetEnumerator()
         {
             Sdl.Event evt;
@@ -71,6 +72,9 @@ namespace Sparrow.Events
                         break;
                     case Sdl.EventType.MouseMotion:
                         yield return new MouseMoveEvent();
+                        break;
+                    case Sdl.EventType.MouseWheel:
+                        yield return new MouseWheelEvent();
                         break;
                     case Sdl.EventType.MultiGesture:
                         yield return new MultiGestureEvent();
