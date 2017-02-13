@@ -4,7 +4,6 @@ using System.Reflection;
 using System.Collections.Generic;
 
 using Sparrow.Pipelines;
-using Sparrow.Sdl2;
 
 namespace Sparrow.Events
 {
