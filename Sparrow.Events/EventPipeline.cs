@@ -37,6 +37,8 @@ namespace Sparrow.Events
             typeof(ControllerAxisEvent),
             typeof(ControllerButtonEvent),
             typeof(ControllerDeviceEvent),
+            typeof(DollarGestureEvent),
+            typeof(DropEvent),
             typeof(JoystickAxisEvent),
             typeof(JoystickBallEvent),
             typeof(JoystickButtonEvent),
@@ -46,7 +48,14 @@ namespace Sparrow.Events
             typeof(MouseButtonEvent),
             typeof(MouseMoveEvent),
             typeof(MouseWheelEvent),
+            typeof(MultiGestureEvent),
             typeof(QuitEvent),
+            typeof(SystemWMEvent),
+            typeof(TextEditingEvent),
+            typeof(TextInputEvent),
+            typeof(TouchFingerEvent),
+            typeof(UserEvent),
+            typeof(WindowEvent),
         };
 
         public override void ProcessFrame(FrameState frame)
