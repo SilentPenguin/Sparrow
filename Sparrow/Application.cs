@@ -77,7 +77,7 @@ namespace Sparrow
             };
 
             inputStates = new InputStateContainer();
-            events.Subscribe<InputEvent>(inputStates.HandleInput);
+            events.Subscribe<InputDeviceEvent>(inputStates.HandleInput);
 
             var sequence = new SequentialPipeline(actions);
 

@@ -1,4 +1,4 @@
 namespace Sparrow.Events
 {
-    public class JoystickAxisEvent : JoystickEvent { }
+    public class JoystickAxisEvent : Event { }
 }

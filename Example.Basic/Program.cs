@@ -64,7 +64,7 @@ namespace ConsoleApplication
             Application.engine.action = sequence.ProcessFrame;
 
             Application.inputStates = new InputStateContainer();
-            Application.events.Subscribe<InputEvent>(Application.inputStates.HandleInput);
+            Application.events.Subscribe<InputDeviceEvent>(Application.inputStates.HandleInput);
         }
 
         public static void SetupGl()

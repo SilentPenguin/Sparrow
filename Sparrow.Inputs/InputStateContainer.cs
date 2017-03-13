@@ -5,7 +5,7 @@ namespace Sparrow.Inputs
 {
     public class InputStateContainer
     {
-        public void HandleInput(InputEvent input)
+        public void HandleInput(InputDeviceEvent input)
         {
             if (input is KeyboardEvent)
             {

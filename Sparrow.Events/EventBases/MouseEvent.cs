@@ -1,4 +1,4 @@
 namespace Sparrow.Events
 {
-    public abstract class MouseEvent : InputEvent { }
+    public abstract class MouseEvent : InputDeviceEvent {}
 }
