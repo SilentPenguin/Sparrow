@@ -7,6 +7,9 @@ namespace Sparrow.Numerics
 {
     public partial struct Vector<T> : IEnumerable<T> where T : struct
     {
+        private readonly T[] items;
+        private static readonly Math<T> math;
+
         public Vector(T x, T y) : this(new T[] {x, y}) {}
         public Vector(T x, T y, T z) : this(new T[] {x, y, z}) {}
         public Vector(T x, T y, T z, T w) : this(new T[] {x, y, z, w}) {}
@@ -22,28 +25,89 @@ namespace Sparrow.Numerics
                 throw new InvalidOperationException("Type " + typeof(T) + " is not supported by Vector.");
         }
 
-        private readonly T[] items;
-        private static readonly Math<T> math;
-
-        public T this[int i] { get { return math.Get(this, i); } }
+        public T this[int i] { get { return math.Get(items, i); } }
         public int Count { get { return items.Length; } }
 
-        public T x { get { return this[0]; } }
-        public T y { get { return this[1]; } }
-        public T z { get { return this[2]; } }
-        public T w { get { return this[3]; } }
+        public static T Dot(Vector<T> a, Vector<T> b)
+        {
+            if (a.Count != b.Count)
+            {
+                throw new ArithmeticException("Vector dimensions must match");
+            }
+            return math.Dot(a.items, b.items, a.Count);
+        }
 
-        public static T Dot(Vector<T> a, Vector<T> b) { return math.Dot(a, b); }
-        public static Vector<T> Cross(Vector<T> a, Vector<T> b) { return math.Cross(a, b); }
-        public static Vector<T> operator +(Vector<T> a, Vector<T> b) { return math.Add(a, b); }
-        public static Vector<T> operator -(Vector<T> a, Vector<T> b) { return math.Sub(a, b); }
-        public static Vector<T> operator *(Vector<T> a, T b) { return math.Mul(a, b); }
-        public static Vector<T> operator *(T a, Vector<T> b) { return math.Mul(b, a); }
+        public static Vector<T> Cross(Vector<T> a, Vector<T> b)
+        {
+            if (a.Count != 3 || b.Count != 3)
+            {
+                throw new ArithmeticException("Vector dimensions must be 3");
+            }
+            var result = math.Cross(a.items, b.items, a.Count);
+            return new Vector<T>(result);
+        }
 
-        public static Vector<T> Identity { get { return new Vector<T>(); } }
-        public Vector<T> Unit { get { return math.Unit(this); } }
-        public T Magnitude { get { return math.Magnitude(this); } }
-        public T SquareMagnitude { get { return math.SquareMagnitude(this); } }
+        public static Vector<T> operator +(Vector<T> a, Vector<T> b)
+        {
+            if (a.Count != b.Count)
+            {
+                throw new ArithmeticException("Vector dimensions must match");
+            }
+            var result = math.Add(a.items, b.items, a.Count);
+            return new Vector<T>(result);
+        }
+
+        public static Vector<T> operator -(Vector<T> a, Vector<T> b)
+        {
+            if (a.Count != b.Count)
+            {
+                throw new ArithmeticException("Vector dimensions must match");
+            }
+            var result = math.Sub(a.items, b.items, a.Count);
+            return new Vector<T>(result);
+        }
+
+        public static Vector<T> operator *(Vector<T> a, T b)
+        {
+            var result = math.Mul(a.items, b, a.Count);
+            return new Vector<T>(result);
+        }
+        public static Vector<T> operator *(T a, Vector<T> b)
+        {
+            var result = math.Mul(b.items, a, b.Count);
+            return new Vector<T>(result);
+        }
+
+        public static Vector<T> Identity(int size)
+        {
+            var result = math.Zeros(size);
+            return new Vector<T>(result);
+        }
+
+        public Vector<T> Unit
+        {
+            get
+            {
+                var result = math.Unit(items, Count);
+                return new Vector<T>(result);
+            }
+        }
+
+        public T Magnitude
+        {
+            get
+            {
+                return math.Magnitude(items, Count);
+            }
+        }
+
+        public T SquareMagnitude
+        {
+            get
+            {
+                return math.SquareMagnitude(items, Count);
+            }
+        }
 
         public Vector<T> Resize(int size)
         {
@@ -56,7 +120,7 @@ namespace Sparrow.Numerics
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator() { return items.GetEnumerator() as IEnumerator<T>; }
         IEnumerator IEnumerable.GetEnumerator() { return items.GetEnumerator(); }
-        
+
         public override string ToString()
         {
             var sb = new StringBuilder();

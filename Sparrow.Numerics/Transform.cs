@@ -5,7 +5,7 @@ namespace Sparrow.Numerics
     public partial class Transform<T> where T : struct
     {
 
-        public Transform() : this (Vector<T>.Identity, Quaternion<T>.Identity, Vector<T>.Identity) {}
+        public Transform() : this (Vector<T>.Identity(3), Quaternion<T>.Identity, Vector<T>.Identity(3)) {}
         public Transform(Vector<T> translate, Quaternion<T> rotate, Vector<T> scale)
         {
             t = translate;
@@ -22,7 +22,7 @@ namespace Sparrow.Numerics
             if (math == null)
                 throw new InvalidOperationException("Type " + typeof(T) + " is not supported by Transform.");
         }
-        
+
         private static Math<T> math;
 
         public Vector<T> Translation { get { return t; } set { t = value; m = null; } }
@@ -46,9 +46,9 @@ namespace Sparrow.Numerics
 
         public static Matrix<T> Matrix(Vector<T>? translate = null, Quaternion<T>? rotate = null, Vector<T>? scale = null)
         {
-            var t = translate ?? Vector<T>.Identity;
+            var t = translate ?? Vector<T>.Identity(3);
             var q = rotate ?? Quaternion<T>.Identity;
-            var s = scale ?? Vector<T>.Identity;
+            var s = scale ?? Vector<T>.Identity(3);
             return math.Matrix(t, q, s);
         }
     }

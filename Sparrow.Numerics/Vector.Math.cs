@@ -1,180 +1,198 @@
+using System;
+
 namespace Sparrow.Numerics
 {
     public partial struct Vector<T> where T : struct
     {
         abstract class Math<S> where S : struct
         {
-            public abstract S Get(Vector<S> a, int i);
-            public abstract Vector<S> Add(Vector<S> a, Vector<S> b);
-            public abstract Vector<S> Sub(Vector<S> a, Vector<S> b);
-            public abstract Vector<S> Mul(Vector<S> a, S b);
-            public abstract S Dot(Vector<S> a, Vector<S> b);
-            public abstract Vector<S> Cross(Vector<S> a, Vector<S> b);
-            public abstract Vector<S> Unit(Vector<S> a);
-            public abstract S Magnitude(Vector<S> a);
-            public abstract S SquareMagnitude(Vector<S> a);
-            public abstract Vector<S> Zeros(int size);
-            public abstract Vector<S> Ones(int size);
+            public abstract S Get(S[] a, int i);
+            public abstract S[] Add(S[] a, S[] b, int size);
+            public abstract S[] Sub(S[] a, S[] b, int size);
+            public abstract S[] Mul(S[] a, S b, int size);
+            public abstract S Dot(S[] a, S[] b, int size);
+            public abstract S[] Cross(S[] a, S[] b, int size);
+            public abstract S[] Unit(S[] a, int size);
+            public abstract S Magnitude(S[] a, int size);
+            public abstract S SquareMagnitude(S[] a, int size);
+            public abstract S[] Zeros(int size);
+            public abstract S[] Ones(int size);
         }
 
         class MathFloat : Math<float>
         {
-            public override float Get(Vector<float> a, int i)
+            public override float Get(float[] a, int i)
             {
-                return i < a.Count ? a.items[i] : 0;
+                return a[i];
             }
 
-            public override Vector<float> Add(Vector<float> a, Vector<float> b)
+            public override float[] Add(float[] a, float[] b, int size)
             {
-                var count = System.Math.Max(a.Count, b.Count);
-                var v = new float[count];
+                var v = new float[size];
                 for(int i = v.Length; i-- != 0;)
                     v[i] = a[i] + b[i];
-                return new Vector<float>(v);
+                return v;
             }
 
-            public override Vector<float> Sub(Vector<float> a, Vector<float> b)
+            public override float[] Sub(float[] a, float[] b, int size)
             {
-                var count = System.Math.Max(a.Count, b.Count);
-                var v = new float[count];
+                var v = new float[size];
                 for(int i = v.Length; i-- != 0;)
                     v[i] = a[i] - b[i];
-                return new Vector<float>(v);
+                return v;
             }
-            
-            public override Vector<float> Mul(Vector<float> a, float b)
+
+            public override float[] Mul(float[] a, float b, int size)
             {
-                var v = new float[a.Count];
+                var v = new float[size];
                 for(int i = v.Length; i-- != 0;)
                     v[i] *= a[i] * b;
-                return new Vector<float>(v);
+                return v;
             }
-        
-            public override float Dot(Vector<float> a, Vector<float> b)
+
+            public override float Dot(float[] a, float[] b, int size)
             {
                 float result = 0;
-                for (int i = System.Math.Min(a.Count, b.Count); i-- != 0;)
+                for (int i = size; i-- != 0;)
                     result += a[i] * b[i];
                 return result;
             }
 
-            public override Vector<float> Cross(Vector<float> v1, Vector<float> v2)
+            public override float[] Cross(float[] a, float[] b, int size)
             {
-                return new Vector<float>
-                (
-                    v1.y * v2.z - v1.z * v2.y,
-                    v1.z * v2.x - v1.x * v2.z,
-                    v1.x * v2.y - v1.y * v2.x
-                );
+                if (size == 3)
+                {
+                    return new float[]
+                    {
+                        a[1] * b[2] - a[2] * b[1],
+                        a[2] * b[0] - a[0] * b[2],
+                        a[0] * b[1] - a[1] * b[0]
+                    };
+                }
+                else if (size == 7)
+                {
+                    throw new NotImplementedException();
+                }
+                else
+                {
+                    throw new ArgumentException("value must be 3 or 7", "size");
+                }
             }
 
-            public override Vector<float> Unit(Vector<float> a)
+            public override float[] Unit(float[] a, int size)
             {
-                return Mul(a, 1 / Magnitude(a));
+                return Mul(a, 1 / Magnitude(a, size), size);
             }
 
-            public override float Magnitude(Vector<float> a)
+            public override float Magnitude(float[] a, int size)
             {
-                return (float)System.Math.Sqrt(SquareMagnitude(a));
+                return (float)System.Math.Sqrt(SquareMagnitude(a, size));
             }
 
-            public override float SquareMagnitude(Vector<float> a)
+            public override float SquareMagnitude(float[] a, int size)
             {
-                return Dot(a, a);
+                return Dot(a, a, size);
             }
 
-            public override Vector<float> Zeros(int size)
+            public override float[] Zeros(int size)
             {
-                var result = new float[size];
-                return new Vector<float>(result);
+                return new float[size];
             }
 
-            public override Vector<float> Ones(int size)
+            public override float[] Ones(int size)
             {
                 var result = new float[size];
                 for(int i = size; i-- != 0;)
                     result[i] = 1;
-                return new Vector<float>(result);
+                return result;
             }
         }
 
         class MathDouble : Math<double>
         {
-            public override double Get(Vector<double> a, int i)
+            public override double Get(double[] a, int i)
             {
-                return i < a.Count ? a.items[i] : 0;
-            }
-            
-            public override Vector<double> Add(Vector<double> a, Vector<double> b)
-            {
-                var count = System.Math.Max(a.Count, b.Count);
-                var v = new double[count];
-                for(int i = v.Length; i-- != 0;)
-                    v[i] = a[i] + b[i];
-                return new Vector<double>(v);
+                return a[i];
             }
 
-            public override Vector<double> Sub(Vector<double> a, Vector<double> b)
+            public override double[] Add(double[] a, double[] b, int size)
             {
-                var count = System.Math.Max(a.Count, b.Count);
-                var v = new double[count];
+                var v = new double[size];
+                for(int i = v.Length; i-- != 0;)
+                    v[i] = a[i] + b[i];
+                return v;
+            }
+
+            public override double[] Sub(double[] a, double[] b, int size)
+            {
+                var v = new double[size];
                 for(int i = v.Length; i-- != 0;)
                     v[i] = a[i] - b[i];
-                return new Vector<double>(v);
+                return v;
             }
-            
-            public override Vector<double> Mul(Vector<double> a, double b)
+
+            public override double[] Mul(double[] a, double b, int size)
             {
-                var v = new double[a.Count];
+                var v = new double[size];
                 for(int i = v.Length; i-- != 0;)
                     v[i] *= a[i] * b;
-                return new Vector<double>(v);
+                return v;
             }
-        
-            public override double Dot(Vector<double> a, Vector<double> b)
+
+            public override double Dot(double[] a, double[] b, int size)
             {
                 double result = 0;
-                for (int i = System.Math.Min(a.Count, b.Count); i-- != 0;)
+                for (int i = size; i-- != 0;)
                     result += a[i] * b[i];
                 return result;
             }
 
-            public override Vector<double> Cross(Vector<double> v1, Vector<double> v2)
+            public override double[] Cross(double[] a, double[] b, int size)
             {
-                return new Vector<double>
-                (
-                    v1.y * v2.z - v1.z * v2.y,
-                    v1.z * v2.x - v1.x * v2.z,
-                    v1.x * v2.y - v1.y * v2.x
-                );
+                if (size == 3)
+                {
+                    return new double[]
+                    {
+                        a[1] * b[2] - a[2] * b[1],
+                        a[2] * b[0] - a[0] * b[2],
+                        a[0] * b[1] - a[1] * b[0]
+                    };
+                }
+                else if (size == 7)
+                {
+                    throw new NotImplementedException();
+                }
+                else
+                {
+                    throw new ArgumentException("value must be 3 or 7", "size");
+                }
             }
 
-            public override Vector<double> Unit(Vector<double> a)
+            public override double[] Unit(double[] a, int size)
             {
-                return Mul(a, 1 / Magnitude(a));
+                return Mul(a, 1 / Magnitude(a, size), size);
             }
 
-            public override double Magnitude(Vector<double> a)
+            public override double Magnitude(double[] a, int size)
             {
-                return System.Math.Sqrt(SquareMagnitude(a));
+                return System.Math.Sqrt(SquareMagnitude(a, size));
             }
 
-            public override double SquareMagnitude(Vector<double> a) {
-                return Dot(a, a);
+            public override double SquareMagnitude(double[] a, int size) {
+                return Dot(a, a, size);
             }
 
-            public override Vector<double> Zeros(int size)
+            public override double[] Zeros(int size)
             {
-                var result = new double[size];
-                return new Vector<double>(result);
+                return new double[size];
             }
 
-            public override Vector<double> Ones(int size)
+            public override double[] Ones(int size)
             {
                 var result = new double[size];
                 for(int i = size; i-- != 0;)
                     result[i] = 1;
-                return new Vector<double>(result);
+                return result;
             }
         }
     }

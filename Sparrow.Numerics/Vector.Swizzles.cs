@@ -2,6 +2,10 @@ namespace Sparrow.Numerics
 {
     public partial struct Vector<T> where T : struct
     {
+        public T x { get { return this[0]; } }
+        public T y { get { return this[1]; } }
+        public T z { get { return this[2]; } }
+        public T w { get { return this[3]; } }
         public Vector<T> xx { get { return new Vector<T>(x, x); } }
         public Vector<T> xy { get { return new Vector<T>(x, y); } }
         public Vector<T> xz { get { return new Vector<T>(x, z); } }
