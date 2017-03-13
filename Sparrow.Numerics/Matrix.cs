@@ -26,7 +26,7 @@ namespace Sparrow.Numerics
 
         public int Width { get { return items.GetLength(0); } }
         public int Height { get { return items.GetLength(1); } }
-        
+
         public Vector<T> Column(int x)
         {
             var result = new T[Height];
@@ -60,7 +60,7 @@ namespace Sparrow.Numerics
         public static Matrix<T> Empty(int width, int height) { return math.Empty(width, height); }
         public static Matrix<T> operator * (Matrix<T> a, Matrix<T> b) { return math.Mul(a, b); }
         public static Vector<T> operator * (Matrix<T> a, Vector<T> b) { return math.Mul(a, b); }
-        
+
         public Matrix<T> Resize(int size) { return Resize(size, size); }
         public Matrix<T> Resize(int width, int height)
         {
@@ -83,12 +83,12 @@ namespace Sparrow.Numerics
             sb.Append(">(");
             for(int i = 0; i < this.Width; i++)
             {
+                if (i != 0) sb.Append("; ");
                 for (int j = 0; j < this.Height; j++)
                 {
                     if (j != 0) sb.Append(", ");
                     sb.Append(items[i, j]);
                 }
-                sb.Append("; ");
             }
             sb.Append(")");
             return sb.ToString();
