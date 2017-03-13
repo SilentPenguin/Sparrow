@@ -129,6 +129,8 @@ namespace Sparrow.Numerics
             sb.Append(">(");
             for(int i = 0; i < this.Count; i++)
             {
+                if (i != 0)
+                    sb.Append(", ");
                 sb.Append(items[i]);
             }
             sb.Append(")");
