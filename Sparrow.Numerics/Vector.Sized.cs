@@ -1,10 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
+
 namespace Sparrow.Numerics
 {
-    public partial struct Vector<T> where T : struct
+    public partial struct Vector<T> : IEnumerable<T>  where T : struct
     {
-        public partial struct Two
+        public partial struct Two : IEnumerable<T>
         {
-            private readonly T[] data;
+            internal readonly T[] data;
 
             public Two(T x, T y) => this.data = new T[] {x, y};
             internal Two(T[] data) => this.data = data;
@@ -25,11 +28,14 @@ namespace Sparrow.Numerics
             public static implicit operator Vector<T>(Two v) => new Vector<T>(v.data);
             public static implicit operator Three(Two v) => new Three(v.x, v.y, default(T));
             public static implicit operator Four(Two v) => new Four(v.x, v.y, default(T), default(T));
+
+            IEnumerator<T> IEnumerable<T>.GetEnumerator() => data.GetEnumerator() as IEnumerator<T>;
+            IEnumerator IEnumerable.GetEnumerator() => data.GetEnumerator();
         }
 
-        public partial struct Three
+        public partial struct Three : IEnumerable<T>
         {
-            private readonly T[] data;
+            internal readonly T[] data;
 
             public Three(T x, T y, T z) => this.data = new T[] {x, y, z};
             internal Three(T[] data) => this.data = data;
@@ -51,11 +57,14 @@ namespace Sparrow.Numerics
             public static implicit operator Vector<T>(Three v) => new Vector<T>(v.data);
             public static explicit operator Two(Three v) => new Two(v.x, v.y);
             public static implicit operator Four(Three v) => new Four(v.x, v.y, v.z, default(T));
+
+            IEnumerator<T> IEnumerable<T>.GetEnumerator() => data.GetEnumerator() as IEnumerator<T>;
+            IEnumerator IEnumerable.GetEnumerator() => data.GetEnumerator();
         }
 
-        public partial struct Four
+        public partial struct Four : IEnumerable<T>
         {
-            private readonly T[] data;
+            internal readonly T[] data;
 
             public Four(T x, T y, T z, T w) => this.data = new T[] {x, y, z, w};
             internal Four(T[] data) => this.data = data;
@@ -76,6 +85,9 @@ namespace Sparrow.Numerics
             public static implicit operator Vector<T>(Four v) => new Vector<T>(v.data);
             public static explicit operator Two(Four v) => new Two(v.x, v.y);
             public static explicit operator Three(Four v) => new Three(v.x, v.y, v.z);
+
+            IEnumerator<T> IEnumerable<T>.GetEnumerator() => data.GetEnumerator() as IEnumerator<T>;
+            IEnumerator IEnumerable.GetEnumerator() => data.GetEnumerator();
         }
     }
 }

@@ -4,79 +4,135 @@ namespace Sparrow.Numerics
 {
     public partial struct Matrix<T> where T : struct
     {
-        abstract class Math<S> where S : struct
+        private static readonly Math<T> math;
+
+        static Matrix()
         {
-            public abstract S Get(Matrix<S> a, int x, int y);
-            public abstract Matrix<S> Mul(Matrix<S> a, Matrix<S> b);
-            public abstract Vector<S> Mul(Matrix<S> a, Vector<S> b);
-            public abstract Matrix<S> Empty(int width, int height);
-        }
-        
-        class MathFloat : Math<float>
-        {
-            public override float Get(Matrix<float> a, int x, int y)
+            if (typeof(T) == typeof(float))
             {
-                return x < a.Width && y < a.Height
-                    ? a[x, y] : (x == y ? 1 : 0);
+                math = new MathFloat() as Math<T>;
             }
-
-            public override Matrix<float> Mul(Matrix<float> a, Matrix<float> b)
+            else if (typeof(T) == typeof(double))
             {
-                if (a.Height != b.Width) throw new ArgumentException();
-                var result = new float[a.Width, b.Height];
-                for(int i = a.Width; i-- != 0;)
-                    for (int j = b.Height; i-- != 0;)
-                        result[i, j] = Vector<float>.Dot(a.Row(i), b.Column(j));
-                return new Matrix<float>(result);
+                math = new MathDouble() as Math<T>;
             }
-
-            public override Vector<float> Mul(Matrix<float> a, Vector<float> b)
+            else
             {
-                if (a.Width != b.Count) throw new Exception();
-                var result = new float[b.Count];
-                for (int i = result.Length; i-- != 0;)
-                    result[i] = Vector<float>.Dot(a.Row(i), b);
-                return new Vector<float>(result);
-            }
-
-            public override Matrix<float> Empty(int width, int height)
-            {
-                var result = new float[width, height];
-                return new Matrix<float>(result);
+                var message = String.Format("Type {0} is not supported by Vector.", typeof(T));
+                throw new InvalidOperationException(message);
             }
         }
-        
-        class MathDouble : Math<double>
+
+        internal abstract class Math<S> where S : struct
         {
-            public override double Get(Matrix<double> a, int x, int y)
+            public abstract S[,] Identity(int x, int y);
+            public abstract S[,] Resize(S[,] a, int x, int y);
+            public abstract S[,] Zeros(int x, int y);
+
+            public S[,] Mul(S[,] a, S[,] b)
             {
-                return x < a.Width && y < a.Height
-                    ? a[x, y] : (x == y ? 1 : 0);
+                var width = a.GetLength(0);
+                var height = a.GetLength(1);
+                var result = new S[width, height];
+                for(int i = width; i-- != 0;)
+                    for (int j = height; i-- != 0;)
+                        result[i, j] = Vector<S>.math.Dot(Row(a, i), Col(a, j));
+                return result;
             }
 
-            public override Matrix<double> Mul(Matrix<double> a, Matrix<double> b)
+            public S[] Mul(S[,] a, S[] b)
             {
-                if (a.Height != b.Width) throw new ArgumentException();
-                var result = new double[a.Width, b.Height];
-                for(int i = a.Width; i-- != 0;)
-                    for (int j = b.Height; i-- != 0;)
-                        result[i, j] = Vector<double>.Dot(a.Row(i), b.Column(j));
-                return new Matrix<double>(result);
-            }
-            
-            public override Vector<double> Mul(Matrix<double> a, Vector<double> b)
-            {
-                if (a.Width != b.Count) throw new Exception();
-                var result = new double[b.Count];
-                for (int i = result.Length; i-- != 0;)
-                    result[i] = Vector<double>.Dot(a.Row(i), b);
-                return new Vector<double>(result);
+                var length = b.Length;
+                var result = new S[length];
+                for(int i = length; i-- != 0;)
+                        result[i] = Vector<S>.math.Dot(Row(a, i), b);
+                return result;
             }
 
-            public override Matrix<double> Empty(int width, int height)
+            public S[,] Transpose(S[,] a)
             {
-                var result = new double[width, height];
-                return new Matrix<double>(result);
+                var width = a.GetLength(0);
+                var height = a.GetLength(1);
+                var result = new S[height, width];
+                for (int i = width; i-- != 0;)
+                    for (int j = height; j-- != 0;)
+                        result[j, i] = a[i, j];
+                return result;
+            }
+
+            public S[] Col(S[,] a, int x)
+            {
+                var height = a.GetLength(1);
+                var result = new S[height];
+                for (int i = height; i-- != 0;)
+                    result[i] = a[x, i];
+                return result;
+            }
+            public S[] Row(S[,] a, int y)
+            {
+                var width = a.GetLength(0);
+                var result = new S[width];
+                for (int i = width; i-- != 0;)
+                    result[i] = a[i, y];
+                return result;
+            }
+        }
+
+        internal class MathFloat : Math<float>
+        {
+            public override float[,] Identity(int x, int y)
+            {
+                var result = new float[x, y];
+                for (var i = x; i-- != 0;)
+                    for (var j = y; j-- != 0;)
+                        result[i, j] = i == j ? 1 : 0;
+                return result;
+            }
+
+            public override float[,] Resize(float[,] a, int x, int y)
+            {
+                var width = a.GetLength(0);
+                var height = a.GetLength(1);
+                var result = new float[x, y];
+                for (var i = x; i-- != 0;)
+                    for (var j = y; j-- != 0;)
+                        result[i, j] = i < width && j < height ? a[i, j] : (i == j ? 1 : 0);
+                return result;
+            }
+
+            public override float[,] Zeros(int x, int y)
+            {
+                var result = new float[x, y];
+                return result;
+            }
+        }
+
+        internal class MathDouble : Math<double>
+        {
+            public override double[,] Identity(int x, int y)
+            {
+                var result = new double[x, y];
+                for (var i = x; i-- != 0;)
+                    for (var j = y; j-- != 0;)
+                        result[i, j] = i == j ? 1 : 0;
+                return result;
+            }
+
+            public override double[,] Resize(double[,] a, int x, int y)
+            {
+                var width = a.GetLength(0);
+                var height = a.GetLength(1);
+                var result = new double[x, y];
+                for (var i = x; i-- != 0;)
+                    for (var j = y; j-- != 0;)
+                        result[i, j] = i < width && j < height ? a[i, j] : (i == j ? 1 : 0);
+                return result;
+            }
+
+            public override double[,] Zeros(int x, int y)
+            {
+                var result = new double[x, y];
+                return result;
             }
         }
     }

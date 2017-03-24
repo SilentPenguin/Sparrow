@@ -4,7 +4,7 @@ namespace Sparrow.Numerics
 {
     public partial struct Vector<T> where T : struct
     {
-        private static readonly Math<T> math;
+        internal static readonly Math<T> math;
 
         static Vector()
         {
@@ -23,7 +23,7 @@ namespace Sparrow.Numerics
             }
         }
 
-        private abstract class Math<S>
+        internal abstract class Math<S>
         {
             public abstract S[] Add(S[] a, S[] b);
             public abstract S[] Sub(S[] a, S[] b);
@@ -36,7 +36,7 @@ namespace Sparrow.Numerics
             public abstract S[] Resize(S[] a, int size);
         }
 
-        private class MathFloat : Math<float>
+        internal class MathFloat : Math<float>
         {
             public override float[] Add(float[] a, float[] b)
             {
@@ -99,7 +99,7 @@ namespace Sparrow.Numerics
             }
         }
 
-        private class MathDouble : Math<double>
+        internal class MathDouble : Math<double>
         {
             public override double[] Add(double[] a, double[] b)
             {

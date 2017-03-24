@@ -1,10 +1,11 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Sparrow.Numerics
 {
-    public partial struct Vector<T> where T : struct
+    public partial struct Vector<T> : IEnumerable<T> where T : struct
     {
-        private readonly T[] data;
+        internal readonly T[] data;
 
         public Vector(params T[] data) => this.data = data;
 
@@ -25,5 +26,8 @@ namespace Sparrow.Numerics
         public static explicit operator Two(Vector<T> v) => new Two(math.Resize(v.data, 2));
         public static explicit operator Three(Vector<T> v) => new Three(math.Resize(v.data, 3));
         public static explicit operator Four(Vector<T> v) => new Four(math.Resize(v.data, 4));
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator() => data.GetEnumerator() as IEnumerator<T>;
+        IEnumerator IEnumerable.GetEnumerator() => data.GetEnumerator();
     }
 }
