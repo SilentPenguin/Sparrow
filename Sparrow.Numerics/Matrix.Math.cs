@@ -28,7 +28,7 @@ namespace Sparrow.Numerics
             public abstract S[,] Identity(int x, int y);
             public abstract S[,] Resize(S[,] a, int x, int y);
 
-            public float[,] Zeros(int x, int y)
+            public T[,] Zeros(int x, int y)
             {
                 var result = new T[x, y];
                 return result;
