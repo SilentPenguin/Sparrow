@@ -8,6 +8,7 @@ namespace Sparrow.Numerics
         internal readonly T[] data;
 
         public Vector(params T[] data) => this.data = data;
+        public Vector(T[,][,] patches) => this.data = math.Flatten(patches);
 
         public T this[int i] { get => data[i]; }
         public int Count { get => data.Length; }

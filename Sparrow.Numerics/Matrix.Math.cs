@@ -27,7 +27,42 @@ namespace Sparrow.Numerics
         {
             public abstract S[,] Identity(int x, int y);
             public abstract S[,] Resize(S[,] a, int x, int y);
-            public abstract S[,] Zeros(int x, int y);
+
+            public float[,] Zeros(int x, int y)
+            {
+                var result = new T[x, y];
+                return result;
+            }
+
+            public S[,] Flatten(S[,][,] patches)
+            {
+                var width = 0;
+                for (int i = patches.GetLength(0); i-- != 0;)
+                    width += patches[i,0].GetLength(0);
+
+                var height = 0;
+                for (int i = patches.GetLength(1); i-- != 0;)
+                    height += patches[0,i].GetLength(1);
+
+                var result = new S[width, height];
+
+                for(int i = patches.GetLength(0); i-- != 0;)
+                {
+                    for (int j = patches.GetLength(0); i-- != 0;)
+                    {
+                        var subdata = patches[i, j];
+                        for(int x = subdata.GetLength(0); x-- != 0;)
+                        {
+                            for (int y = subdata.GetLength(1); y-- != 0;)
+                            {
+                                result[i + x, j + y] = subdata[x, y];
+                            }
+                        }
+                    }
+                }
+
+                return result;
+            }
 
             public S[,] Mul(S[,] a, S[,] b)
             {
@@ -99,12 +134,6 @@ namespace Sparrow.Numerics
                         result[i, j] = i < width && j < height ? a[i, j] : (i == j ? 1 : 0);
                 return result;
             }
-
-            public override float[,] Zeros(int x, int y)
-            {
-                var result = new float[x, y];
-                return result;
-            }
         }
 
         internal class MathDouble : Math<double>
@@ -126,12 +155,6 @@ namespace Sparrow.Numerics
                 for (var i = x; i-- != 0;)
                     for (var j = y; j-- != 0;)
                         result[i, j] = i < width && j < height ? a[i, j] : (i == j ? 1 : 0);
-                return result;
-            }
-
-            public override double[,] Zeros(int x, int y)
-            {
-                var result = new double[x, y];
                 return result;
             }
         }

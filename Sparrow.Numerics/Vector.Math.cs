@@ -34,6 +34,26 @@ namespace Sparrow.Numerics
             public abstract S Magnitude(S[] a);
             public abstract S SquareMagnitude(S[] a);
             public abstract S[] Resize(S[] a, int size);
+
+            public S[] Flatten(S[][] patches)
+            {
+                var length = 0;
+                for (int i = patches.Length; i-- != 0;)
+                    length += patches[i].Length;
+
+                var result = new S[length];
+
+                for (int i = patches.Length; i-- != 0;)
+                {
+                    var subdata = patches[i];
+                    for (int j = subdata.Length; j-- != 0;)
+                    {
+                        result[i + j] = subdata[j];
+                    }
+                }
+
+                return result;
+            }
         }
 
         internal class MathFloat : Math<float>

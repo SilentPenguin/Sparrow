@@ -8,6 +8,7 @@ namespace Sparrow.Numerics
         internal readonly T[,] data;
 
         public Matrix(T[,] data) => this.data = data;
+        public Matrix(T[,][,] patches) => this.data = math.Flatten(patches);
 
         public T this[int x, int y] { get => data[x, y]; }
 
@@ -23,6 +24,10 @@ namespace Sparrow.Numerics
 
         public static Matrix<T> operator * (Matrix<T> a, Matrix<T> b) => new Matrix<T>(math.Mul(a.data, b.data));
         public static Vector<T> operator * (Matrix<T> a, Vector<T> b) => new Vector<T>(math.Mul(a.data, b.data));
+
+        public static explicit operator Two(Matrix<T> v) => new Two(math.Resize(v.data, 2, 2));
+        public static explicit operator Three(Matrix<T> v) => new Three(math.Resize(v.data, 3, 3));
+        public static explicit operator Four(Matrix<T> v) => new Four(math.Resize(v.data, 4, 4));
 
         IEnumerator<T> IEnumerable<T>.GetEnumerator() => data.GetEnumerator() as IEnumerator<T>;
         IEnumerator IEnumerable.GetEnumerator() => data.GetEnumerator();
