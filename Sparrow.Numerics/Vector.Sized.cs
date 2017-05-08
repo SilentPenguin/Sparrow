@@ -19,6 +19,7 @@ namespace Sparrow.Numerics
             public T SquareMagnitude { get => math.SquareMagnitude(data); }
 
             public static T Dot(Two a, Two b) => math.Dot(a.data, b.data);
+            public static Two Identity() => new Two(new T[2]);
 
             public static Two operator +(Two a, Two b) => new Two(math.Add(a.data, b.data));
             public static Two operator -(Two a, Two b) => new Two(math.Sub(a.data, b.data));
@@ -48,6 +49,7 @@ namespace Sparrow.Numerics
 
             public static T Dot(Three a, Three b) => math.Dot(a.data, b.data);
             public static Three Cross(Three a, Three b) => new Three(math.Cross(a.data, b.data));
+            public static Three Identity() => new Three(new T[3]);
 
             public static Three operator +(Three a, Three b) => new Three(math.Add(a.data, b.data));
             public static Three operator -(Three a, Three b) => new Three(math.Sub(a.data, b.data));
@@ -76,6 +78,7 @@ namespace Sparrow.Numerics
             public T SquareMagnitude { get => math.SquareMagnitude(data); }
 
             public static T Dot(Four a, Four b) => math.Dot(a.data, b.data);
+            public static Four Identity() => new Four(new T[4]);
 
             public static Four operator +(Four a, Four b) => new Four(math.Add(a.data, b.data));
             public static Four operator -(Four a, Four b) => new Four(math.Sub(a.data, b.data));
